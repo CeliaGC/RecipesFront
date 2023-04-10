@@ -21,5 +21,17 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "vite": "^4.2.0"
-  }
+  },
+  "main": "vite.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Proyecto-Pedagogico-Recetas/Frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Proyecto-Pedagogico-Recetas/Frontend/issues"
+  },
+  "homepage": "https://github.com/Proyecto-Pedagogico-Recetas/Frontend#readme",
+  "description": ""
 }
