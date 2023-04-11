@@ -1,16 +1,11 @@
-import './App.css'
-import FormLogin from './Component/FormLogin'
-import { useState } from 'react'
+import Root from './Router/Root';
 
 function App() {
-  const [user, setUser] = useState([])
-
   return (
-    <div className="App">
-      {
-       <FormLogin setUser={setUser} />
-      }
-    </div>
+    <div className='App'>
+         <Root style={{ background: '#F2CC49' }}></Root>
+
+      </div>
   )
 }
 
