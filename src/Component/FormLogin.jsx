@@ -19,8 +19,6 @@ export function FormLogin() {
     }
 
 
-
-
     return (
         <section>
             <h1>Login</h1>
@@ -41,4 +39,44 @@ export function FormLogin() {
 
 
     )
+} 
+
+/* import React, { useState } from 'react';
+
+
+function FormLogin() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Enviar datos al servidor
+  };
+  return (
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="name">Nombre:</label>
+        <input type="text" id="name" value={name} onChange={handleNameChange} required />
+      </div>
+      <div>
+        <label htmlFor="email">Correo electrónico:</label>
+        <input type="email" id="email" value={email} onChange={handleEmailChange} required />
+      </div>
+      <div>
+        <label htmlFor="password">Contraseña:</label>
+        <input type="password" id="password" value={password} onChange={handlePasswordChange} required />
+      </div>
+      <button type="submit">Registrarse</button>
+    </form>
+  );
 }
+export default FormLogin; */
