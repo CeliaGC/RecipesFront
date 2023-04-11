@@ -4,22 +4,23 @@ import { useState } from "react"
 
 
 export function FormLogin({setUser}) {
-    const [nombre, setNombre] = useState("")
+    const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState(false)
 
     const handleSubmit = (event) => {
-        event.preventDefault()
-
-        if (nombre === "" || password === "") {
-            setError(true)
-            return
-        }
-
-        setError (false)
-        setUser([nombre])
-
-    }
+      event.preventDefault()
+  
+      if (name === "" || password === "") {
+          setError(true)
+          return
+      }
+  
+      setError(false)
+  
+      setUser([name])
+  }
+  
 
 
     return (
@@ -29,8 +30,8 @@ export function FormLogin({setUser}) {
             onSubmit={handleSubmit}>
 
                 <input type="text"
-                    value={nombre}
-                    onChange={event => setNombre(event.target.value)} />
+                    value={name}
+                    onChange={event => setName(event.target.value)} />
                 <input type="password"
                 value={password}
                 onChange={event => setPassword(event.target.value)} />
