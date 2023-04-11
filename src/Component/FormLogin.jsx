@@ -3,7 +3,7 @@ import { useState } from "react"
 
 
 
-export function FormLogin() {
+export function FormLogin({setUser}) {
     const [nombre, setNombre] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState(false)
@@ -15,6 +15,9 @@ export function FormLogin() {
             setError(true)
             return
         }
+
+        setError (false)
+        setUser([nombre])
 
     }
 
