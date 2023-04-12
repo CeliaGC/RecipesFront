@@ -1,7 +1,9 @@
 .recipe-form-container {
-    width: 80%;
-    margin: 0 auto;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* para centrar verticalmente el formulario */
+  }  
   
   .recipe-form-container form {
     background-color: #f8f9fa;
@@ -30,11 +32,8 @@
   .recipe-form-container .btn-primary {
     border-radius: 5px;
     background-color: #FCA375;
-    border-color: #007bff;
+ //   border-color: #007bff;
   }
   
-  .recipe-form-container .btn-primary:hover {
-    background-color: #0069d9;
-    border-color: #0062cc;
-  }
+ 
   
