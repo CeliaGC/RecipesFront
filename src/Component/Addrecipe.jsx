@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-//import "../Style/Register.css";
+import "../Style/Addrecipe.css";
 
 function RecipeForm() {
   const [name, setName] = useState("");
