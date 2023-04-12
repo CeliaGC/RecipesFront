@@ -37,14 +37,17 @@ function RegisterForm() {
           <Form.Label><FontAwesomeIcon icon={faUser} /> Nombre</Form.Label>
           <Form.Control type="text" placeholder="Nombre" value={name} onChange={handleNameChange} required />
         </Form.Group>
+        <br/>
         <Form.Group className="mb-3">
           <Form.Label><FontAwesomeIcon icon={faEnvelope} /> Correo electrónico</Form.Label>
           <Form.Control type="email" placeholder="Correo electrónico" value={email} onChange={handleEmailChange} required />
         </Form.Group>
+        <br/>
         <Form.Group className="mb-3">
           <Form.Label><FontAwesomeIcon icon={faLock} /> Contraseña</Form.Label>
           <Form.Control type="password" placeholder="Contraseña" value={password} onChange={handlePasswordChange} required />
         </Form.Group>
+        <br/>
         <Button variant="primary" type="submit">Registrarse</Button>
       </Form>
     </div>
