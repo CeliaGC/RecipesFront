@@ -1,17 +1,20 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../Component/Navbar";
 import '../Style/Home.css';
-import { FormLogin } from "../Component/FormLogin";
+import FormLogin from "../Component/FormLogin";
 import { useState } from 'react';
 import Home from "../Pages/home";
 
 
 function Root() {
-  const [user, setUser] = useState([])
+  const [UserEmail, setUserEmail] = useState([])
+  const [UserName, setUserName] = useState([])
+
+  
   const navigation = useNavigation()
   
   function handleLogout() {
-    setUser([]);
+    setUserEmail([]);
     navigation.navigate("/FormLogin");
   }
 
@@ -25,13 +28,12 @@ function Root() {
         )}
 
         {
-          !user.length > 0
-            ? <FormLogin setUser={setUser} />
+          !UserEmail.length > 0
+            ? <FormLogin setUserEmail={setUserEmail} />
 
-            : <Home user={user} handleLogout={handleLogout} />
-
-
+            : <Home UserName={UserName} handleLogout={handleLogout} />
         }
+     {/*    <Outlet /> */}
 
       </main>
     </>

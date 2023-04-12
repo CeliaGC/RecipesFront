@@ -4,7 +4,7 @@ import Home from "../Pages/home";
 import NotFound from "../Pages/NotFound";
 import Menu from "../Pages/Menu";
 import ViewMenu from "../Pages/ViewMenu";
-import { FormLogin } from "../Component/FormLogin";
+import FormLogin from "../Component/FormLogin";
 
 
 
