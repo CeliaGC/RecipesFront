@@ -1,6 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
-
 import Navbar from "../Component/Navbar";
+import Home from "../Pages/Home"
 import Recipe from "../Component/Recipe"
 
 
@@ -10,6 +10,7 @@ function Root() {
   return (
     <>
     <Navbar></Navbar>
+    <Home></Home>
      <Recipe></Recipe>
       <main className="container">
         {navigation.state === "loading" && (
