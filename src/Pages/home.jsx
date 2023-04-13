@@ -1,4 +1,4 @@
-import Register from "../Component/register"
+import Register from "../Component/Register.jsx"
 
 function Home() {
     return (
