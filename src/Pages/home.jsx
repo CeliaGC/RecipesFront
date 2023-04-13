@@ -10,7 +10,7 @@ function Home( { UserName,handleLogout } ) {
   
 
     return (
-      <div className='App'>
+      <div className='App'style={{ backgroundColor: '#D6C6B4' }}>
           <h1>este es el home</h1>
           <h1>Bienvenido, {UserName}!</h1>
           <Button variant="primary" type="submit" onClick={handleLogout}>Cerrar sesion</Button>
