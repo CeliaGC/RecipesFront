@@ -1,0 +1,36 @@
+.navbarmenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(220, 197, 167, 1);
+  }
+  
+  .navbarmenu-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .navbarmenu-nav > li {
+    padding: 0;
+  }
+  
+  .navbarmenu-nav > li > .nav-link {
+    padding: 15px 30px;
+  }
+  
+  .navbarmenu-light .navbarmenu-nav .nav-link {
+    color: black;
+  }
+  
+  @media (max-width: 768px) {
+    .navbarmenu-expand-lg .navbarmenu-collapse {
+      background-color: rgba(220, 197, 167, 1);
+    }
+    
+    .navbarmenu-light .navbarmenu-nav .nav-link {
+      color: white;
+    }
+  }
+  

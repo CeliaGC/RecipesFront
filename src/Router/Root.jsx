@@ -1,5 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../Component/Navbar";
+import NavbarMenu from "../Component/NavbarMenu"
 
 
 function Root() {
@@ -11,8 +12,11 @@ function Root() {
         {navigation.state === "loading" && (
           <div className="alert alert-info my-S">Loading...</div>
         )}
+        <NavbarMenu />
         <Outlet />
+
       </main>
+      
     </>
   )
 }
