@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,6 +10,7 @@ import image20 from '../assets/image20.jpg';
 import image19 from '../assets/image19.jpg';
 import { ButtonGroup, Button } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
+import RecipeForm from "../Component/Addrecipe";
 
 const CarouselComponent = () => {
   return (
@@ -131,23 +131,12 @@ const Home = () => {
       <Botones />
       <ContenedoresImagenes />
       <MiComponente />
+      <RecipeForm />
     </div>
   );
 };
 
 export default Home;
-=======
-import RecipeForm from "../Component/Addrecipe";
 
-function Home() {
-    return (
-      <div className='App'>
-      
-          <h1>este es el home</h1>
-          <RecipeForm />
-        </div>
-    )
-  }
-  
-  export default Home
->>>>>>> feature/addrecipe
+
+
