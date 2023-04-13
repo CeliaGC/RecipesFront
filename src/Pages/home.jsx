@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -135,3 +136,18 @@ const Home = () => {
 };
 
 export default Home;
+=======
+import RecipeForm from "../Component/Addrecipe";
+
+function Home() {
+    return (
+      <div className='App'>
+      
+          <h1>este es el home</h1>
+          <RecipeForm />
+        </div>
+    )
+  }
+  
+  export default Home
+>>>>>>> feature/addrecipe
