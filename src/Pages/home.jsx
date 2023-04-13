@@ -1,11 +1,11 @@
-import RecipeForm from "./AddRecipe";
+import AddRecipe from "../Component/AddRecipe.jsx";
 
 function Home() {
     return (
       <div className='App'>
       
           <h1>este es el home</h1>
-          <RecipeForm />
+          <AddRecipe />
         </div>
     )
 
