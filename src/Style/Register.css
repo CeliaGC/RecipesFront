@@ -1,7 +1,7 @@
 .registration-form-container {
     display: flex;
-    justify-content: center;
     align-items: center;
+    margin-top: 50px;
     flex-direction: column; /* Agregar esta propiedad */
     height: 100vh;
     width: 100vw;

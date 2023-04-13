@@ -50,6 +50,10 @@ function RegisterForm() {
         <br/>
         <Button variant="primary" type="submit">Registrarse</Button>
       </Form>
+      <div className="registration-form-footer">
+        <p>Already Registered?</p>
+        <a href="#">Login</a>
+      </div>
     </div>
   );
 }
