@@ -10,6 +10,7 @@ function Navb() {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
+      {/* <Navbar.Toggle aria-controls="navb" /> */}
         <Navbar.Collapse id="navb" className='ms-auto'>
             <Nav.Link href="#" disabled>
             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">

@@ -1,7 +1,7 @@
 import { Outlet, useNavigation } from "react-router-dom";
 
 import Navbar from "../Component/Navbar";
-import Recipe from "../Component/Recipe";
+import CardRecipe from "../Component/CardRecipe";
 
 
 
@@ -10,7 +10,7 @@ function Root() {
   return (
     <>
     <Navbar></Navbar>
-     <Recipe></Recipe>
+     <CardRecipe></CardRecipe>
       <main className="container">
         {navigation.state === "loading" && (
           <div className="alert alert-info my-S">Loading...</div>

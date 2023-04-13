@@ -1,20 +1,27 @@
-import Card from 'react-bootstrap/Card';
 
-function CardRecipe() {
+import React from 'react';
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const Tarjeta = () => {
   return (
-    <Card style={{ width: '14rem', backgroundColor: '#DCC5A7'}}>
-      <Card.Body>
-        <Card.Title>Nombre</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">4 personas</Card.Subtitle>
-        <Card.Subtitle className="mb-2 text-muted">Nivel de dificultad</Card.Subtitle>
-        <Card.Text>
-          Breve descripción
-        </Card.Text>
-        <Card.Link href="#">Ver receta</Card.Link>
-        <Card.Link href="#">Favorito</Card.Link>
-      </Card.Body>
-    </Card>
+    <div className="container mt-4">
+      <div className="row justify-content-center">
+        <div className="col-md-6">
+          <div className="card">
+            <div className="card-body">
+              <h3 className="card-title">Receta</h3>
+              <h6 className="card-subtitle mb-2 text-muted">Personas</h6>
+              <h6 className="card-subtitle mb-2 text-muted">Breve descripcion</h6>
+              <div className="d-flex justify-content-between mt-4">
+                <button className="btn btn-primary">Botón 1</button>
+                <button className="btn btn-secondary">Botón 2</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-}
+};
 
-export default CardRecipe;
+export default Tarjeta;
