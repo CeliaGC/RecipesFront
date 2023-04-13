@@ -2,7 +2,7 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import "bootstrap/dist/css/bootstrap.min.css"; // Importar archivo de estilos de Bootstrap
+import "bootstrap/dist/css/bootstrap.min.css"; 
 
 
 const RecipeCard = () => {
@@ -51,7 +51,7 @@ const RecipeCard = () => {
                     <td>200</td>
                     <td>gramos</td>
                   </tr>
-                  {/* Agrega más filas según tus necesidades */}
+                  
                 </tbody>
               </Table>
             </Card.Body>

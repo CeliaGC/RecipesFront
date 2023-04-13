@@ -2,7 +2,7 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Tarjeta = () => {
+const CardRecipe = () => {
   return (
     <div className="container mt-4">
       <div className="row justify-content-center">
@@ -24,4 +24,4 @@ const Tarjeta = () => {
   );
 };
 
-export default Tarjeta;
+export default CardRecipe;
