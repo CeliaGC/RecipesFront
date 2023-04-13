@@ -1,4 +1,4 @@
-
+import NavbarMenu from "../Component/NavbarMenu"
 
 function Menu() {
   return (
