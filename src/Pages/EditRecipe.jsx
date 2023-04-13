@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import "../Style/Addrecipe.css";
+import "../Style/EditRecipe.css";
 
-function RecipeForm() {
+function EditRecipeForm() {
     const [name, setName] = useState("");
     const [ingredients, setIngredients] = useState("");
     const [preparationTime, setPreparationTime] = useState("");
@@ -73,7 +73,7 @@ function RecipeForm() {
                         </Form.Group>
                         <Row>
                             <Col xs="auto" className="text-end">
-                                <Button variant="primary" type="submit">Añadir receta</Button>
+                                <Button variant="primary" type="submit">Editar receta</Button>
                             </Col>
                         </Row>
                     </Col>

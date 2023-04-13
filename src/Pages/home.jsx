@@ -1,4 +1,4 @@
-import RecipeForm from "../Component/Addrecipe";
+import RecipeForm from "./AddRecipe";
 
 function Home() {
     return (
@@ -8,6 +8,7 @@ function Home() {
           <RecipeForm />
         </div>
     )
+
   }
   
   export default Home
