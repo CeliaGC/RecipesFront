@@ -10,6 +10,7 @@ import image20 from '../assets/image20.jpg';
 import image19 from '../assets/image19.jpg';
 import { ButtonGroup, Button } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
+import RecipeForm from "../Component/Addrecipe";
 
 const CarouselComponent = () => {
   return (
@@ -130,8 +131,12 @@ const Home = () => {
       <Buttons />
       <ImageContainers />
       <MyComponent />
+      <RecipeForm />
     </div>
   );
 };
 
 export default Home;
+
+
+

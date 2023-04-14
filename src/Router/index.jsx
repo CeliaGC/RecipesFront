@@ -1,12 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
-import Home from "../Pages/Home";
 import NotFound from "../Pages/NotFound";
 import Menu from "../Pages/Menu";
+import Home from "../Pages/Home";
 import ViewMenu from "../Pages/ViewMenu";
-
-
-
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -23,20 +20,13 @@ export const router = createBrowserRouter([
                     {
                         path: '/Menu',
                         element: <Menu/>,
-                        
                     },
                     {
                         path: '/ViewMenu',
                         element: <ViewMenu/>,
-                        
                     },
-                    
-                   
-                    
-                    
                 ]
             },
-
         ]
     },
 ]);
