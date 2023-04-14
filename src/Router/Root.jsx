@@ -8,12 +8,12 @@ function Root() {
   return (
     <>
     <Navbar></Navbar>
+   
       <main className="container">
         {navigation.state === "loading" && (
           <div className="alert alert-info my-S">Loading...</div>
         )}
         <Outlet />
-       
 
       </main>
       

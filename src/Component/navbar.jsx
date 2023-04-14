@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import logo from "../assets/logo.png";
 
-const NavbarComponent = () => {
+const NavbarLog = () => {
   return (
     <Navbar style={{ backgroundColor: "#F2AA85" }} >
       
@@ -13,6 +13,7 @@ const NavbarComponent = () => {
           width="70"
           height="70"
           className="d-inline-block"
+          style={{ marginLeft: "0.5rem" }}
         />
         <span className="ml-">CookSmart</span>
       </Navbar.Brand>
@@ -42,4 +43,4 @@ const NavbarComponent = () => {
   );
 };
 
-export default NavbarComponent;
+export default NavbarLog;
