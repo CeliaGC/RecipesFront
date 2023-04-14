@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Root from "./Root";
+import LayoutPublic from "../Layout/LayoutPublic";
 import NotFound from "../Pages/NotFound";
 import Menu from "../Pages/Menu";
 import Home from "../Pages/Home";
@@ -13,7 +13,7 @@ import MyRecipe from "../Pages/MyRecipe";
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <Root/>,
+        element: <LayoutPublic/>,
         errorElement: <NotFound />,
         children: [
             {

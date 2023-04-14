@@ -1,9 +1,9 @@
-import Root from './Router/Root';
+import LayoutPublic from "../src/Layout/LayoutPublic"
 
 function App() {
   return (
     <div className='App'>
-         <Root></Root>
+         <LayoutPublic/>
 
       </div>
   )
