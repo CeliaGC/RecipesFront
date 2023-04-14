@@ -35,7 +35,7 @@
   background-color: rgba(139, 137, 97, 1);
 }
 
-.parrafo {
+.paragraph {
   font-size: 1.0rem;
   line-height: 2rem;
   text-align: center;
@@ -47,7 +47,7 @@
     font-size: 1.2rem;
   }
 
-  .parrafo {
+  .paragraph {
     font-size: 1rem;
     line-height: 1.5rem;
   }
@@ -59,7 +59,7 @@
     font-size: 1rem;
   }
 
-  .parrafo {
+  .paragraph {
     font-size: 0.8rem;
     line-height: 1.2rem;
   }
@@ -96,20 +96,20 @@
   }
 }
 
-.texto {
+.text {
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
 @media (max-width: 768px) {
-  .texto {
+  .text {
     font-size: 1.2rem;
     line-height: 1.5rem;
   }
 }
 
 @media (max-width: 576px) {
-  .texto {
+  .text {
     font-size: 1rem;
     line-height: 1.2rem;
   }
