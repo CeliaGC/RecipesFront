@@ -10,6 +10,7 @@ import ViewRecipe from "../Pages/ViewRecipe";
 import List from "../Pages/List";
 import MyRecipe from "../Pages/MyRecipe";
 
+import {recipeHandler} from "../Handlers/recipeHandler"
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -34,10 +35,12 @@ export const router = createBrowserRouter([
                     {
                         path: '/EditRecipe',
                         element: <EditRecipe/>,
+                        loader: fetchRecipes,
                     },
                     {
                         path: '/MenuRecipe',
                         element: <MenuRecipe/>,
+                        loader: fetchRecipes,
                     },
                     {
                         path: '/ViewRecipe',
@@ -50,9 +53,20 @@ export const router = createBrowserRouter([
                     {
                         path: '/MyRecipe',
                         element: <MyRecipe/>,
+                        loader: fetchRecipes,
                     },
                 ]
             },
         ]
     },
 ]);
+
+async function fetchRecipes() {
+    const recipes = await recipeHandler.loadRecipes();
+    return { recipes };
+}
+
+// async function fetchRecipe({ params }) {
+//     const recipe = await recipeHandler.loadRecipe(params.id);
+//     return { recipe };
+// }

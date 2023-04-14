@@ -1,0 +1,100 @@
+
+{
+    "recipe": [
+
+        {
+            "name": "sopa",
+            "instructions": "string",
+            "category": 0,
+            "author": "string",
+            "ingredients": [
+              {
+                "ingredient": "agua",
+                "amount": 1,
+                "unit": "gr"
+              }
+            ],
+            "alergens": [
+              {
+                "id": 0,
+                "name": "string",
+                "isChecked": true,
+                "isActive": true
+              }
+            ]
+          },
+          {
+            "name": "caldo",
+            "instructions": "string",
+            "category": 0,
+            "author": "string",
+            "ingredients": [
+              {
+                "ingredient": "zanahoria",
+                "amount": 0.5,
+                "unit": "gr"
+              }
+            ],
+            "alergens": [
+              {
+                "id": 0,
+                "name": "string",
+                "isChecked": true,
+                "isActive": true
+              }
+            ]
+          },
+          {
+            "name": "pasta",
+            "instructions": "string",
+            "category": 0,
+            "author": "string",
+            "ingredients": [
+              {
+                "ingredient": "macarrones",
+                "amount": 50,
+                "unit": "gr"
+              },
+              {
+                "ingredient": "espinacas",
+                "amount": 10,
+                "unit": "gr"
+              }
+            ],
+            "alergens": [
+              {
+                "id": 0,
+                "name": "string",
+                "isChecked": true,
+                "isActive": true
+              }
+            ]
+          },
+          {
+            "name": "sfiuwhFIug",
+            "instructions": "string",
+            "category": 0,
+            "author": "string",
+            "ingredients": [
+              {
+                "ingredient": "str jehfB,Bing",
+                "amount": 0,
+                "unit": "ing"
+              }
+            ],
+            "alergens": [
+              {
+                "id": 0,
+                "name": "string",
+                "isChecked": true,
+                "isActive": true
+              }
+            ]
+          }
+
+
+
+
+    ]
+        
+}
