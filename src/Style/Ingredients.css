@@ -1,0 +1,6 @@
+.form-control:disabled,
+.form-control {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}

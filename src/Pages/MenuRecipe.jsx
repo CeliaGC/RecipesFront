@@ -1,14 +1,14 @@
 import React from 'react';
 import NavbarMenu from "../Component/NavbarMenu";
-import RecipeInfo from "../Component/RecipeInfo";
+import CardRecipe from "../Component/CardRecipe";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function Recipe() {
+function MenuRecipe() {
   return (
     <div >
     <NavbarMenu/>
-    <RecipeInfo/>
+    <CardRecipe/>
 
     
        
@@ -16,4 +16,4 @@ function Recipe() {
   )
 }
 
-export default Recipe
+export default MenuRecipe

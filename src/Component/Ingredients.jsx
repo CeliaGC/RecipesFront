@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Form, FormGroup, FormLabel, FormControl, FormCheck, Button } from "react-bootstrap";
+import '../Style/Ingredients.css';
+import { Container, Row, Col, Form, FormGroup, FormControl, FormCheck, Button } from "react-bootstrap";
 
 const IngredientForm = () => {
   const [ingredients, setIngredients] = useState([
@@ -60,7 +61,6 @@ const IngredientForm = () => {
             </Col>
             <Col md={3}>
               <FormGroup>
-                <FormLabel>Ingrediente</FormLabel>
                 <FormControl
                   type="text"
                   placeholder="Ingrediente"
@@ -71,7 +71,6 @@ const IngredientForm = () => {
             </Col>
             <Col md={3}>
               <FormGroup>
-                <FormLabel>Cantidad</FormLabel>
                 <FormControl
                   type="text"
                   placeholder="Cantidad"
@@ -82,7 +81,7 @@ const IngredientForm = () => {
             </Col>
             <Col md={3}>
               <FormGroup>
-                <FormLabel>Unidad de medida</FormLabel>
+                
                 <FormControl
                   type="text"
                   placeholder="Unidad de medida"

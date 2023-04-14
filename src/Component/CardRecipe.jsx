@@ -1,27 +1,35 @@
 
 import React from 'react';
+import Card from 'react-bootstrap/Card';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const CardRecipe = () => {
   return (
     <div className="container mt-4">
       <div className="row justify-content-center">
+        <h3>Ensaladas</h3> 
         <div className="col-md-6">
-          <div className="card">
-            <div className="card-body">
-              <h3 className="card-title">Receta</h3>
-              <h6 className="card-subtitle mb-2 text-muted">Personas</h6>
-              <h6 className="card-subtitle mb-2 text-muted">Breve descripcion</h6>
-              <div className="d-flex justify-content-between mt-4">
-                <button className="btn btn-primary">Botón 1</button>
-                <button className="btn btn-secondary">Botón 2</button>
-              </div>
-            </div>
-          </div>
+         
+        <Card style={{ width: '18rem' }}>
+          <Card.Body>
+            <Card.Title>Receta</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">4 Personas</Card.Subtitle>
+            <Card.Text>
+              Esto es una ensalada
+            </Card.Text>
+            <Card.Link href="#">Añadir receta</Card.Link>
+            <Card.Link href="#">Favorito</Card.Link>
+          </Card.Body>
+        </Card>
+        
         </div>
+        
       </div>
     </div>
   );
 };
 
 export default CardRecipe;
+
+
+
