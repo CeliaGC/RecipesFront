@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faInstagram, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import "../styles/Footer.css"; // Importa tu archivo de estilos si es necesario
+import "../Styles/Footer.css"; // Importa tu archivo de estilos si es necesario
 
 function Footer() {
   return (
@@ -10,7 +10,7 @@ function Footer() {
       <Container>
         <Row>
           <Col md={6} className="text-center text-md-start">
-            <p>&copy; 2023 Mi empresa</p>
+            <p>&copy; 2023 Cook Smart</p>
           </Col>
           <Col md={6} className="text-center text-md-end">
             <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
