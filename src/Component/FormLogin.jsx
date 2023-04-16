@@ -8,7 +8,6 @@ import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 
 
 
-
 /*export function FormLogin({setUser}) {
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
@@ -53,34 +52,33 @@ import { faUser, faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
 
 
 
-function FormLogin({setUserEmail}) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+function FormLogin({setUser}) {
+  const [UserName, setUserName] = useState('');
+  const [UserPassword, setUserPassword] = useState('');
   const [error, setError] = useState(false);
+
+
 
       const handleSubmit = (event) => {
       event.preventDefault()
   
-      if (email === "" || password === "") {
+      if (UserName === "" || UserPassword === "") {
           setError(true)
           return
       }
   
       setError(false)
   
-      setUserEmail([email])
+      setUser([UserName])
   }
   
 
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
+  const handleUserNameChange = (event) => {
+    setUserName(event.target.value);
   };
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+  const handleUserPasswordChange = (event) => {
+    setUserPassword(event.target.value);
   };
 
   return (
@@ -90,13 +88,13 @@ function FormLogin({setUserEmail}) {
       <Form onSubmit={handleSubmit} className="center-form">
         <h2 style={{marginBottom: '40px'}}>Iniciar sesión</h2>
         <Form.Group className="mb-3" style={{width:'300px'}}>
-        <Form.Label><FontAwesomeIcon icon={faEnvelope} /> Correo electrónico</Form.Label>
-          <Form.Control type="email" placeholder="Introduce tu correo" value={email} onChange={handleEmailChange} required style={{ border: 'none'}}/>
+        <Form.Label><FontAwesomeIcon icon={faEnvelope} /> Nombre de Usurio</Form.Label>
+          <Form.Control type="text" placeholder="Introduce tu nombre de Usuario" value={UserName} onChange={handleUserNameChange} required style={{ border: 'none'}}/>
           <hr className="my-3"/>
         </Form.Group>
         <Form.Group className="mb-3" style={{width:'300px'}}>
           <Form.Label><FontAwesomeIcon icon={faLock} /> Contraseña</Form.Label>
-          <Form.Control type="password" placeholder="Introduce tu contraseña" value={password} onChange={handlePasswordChange} required style={{ border: 'none'}}/>
+          <Form.Control type="password" placeholder="Introduce tu contraseña" value={UserPassword} onChange={handleUserPasswordChange} required style={{ border: 'none'}}/>
           <hr className="my-3"/>
 
         </Form.Group>

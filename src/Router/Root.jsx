@@ -7,15 +7,16 @@ import Home from "../Pages/home";
 
 
 function Root() {
-  const [UserEmail, setUserEmail] = useState([])
-  const [UserName, setUserName] = useState([])
+
+  const [User, setUser] = useState([])
 
   
-  const navigation = useNavigation()
+
   
   function handleLogout() {
-    setUserEmail([]);
-    navigation.navigate("/FormLogin");
+    setUser([]);
+
+
   }
 
   
@@ -28,10 +29,10 @@ function Root() {
         )}
 
         {
-          !UserEmail.length > 0
-            ? <FormLogin setUserEmail={setUserEmail} />
+          !User.length > 0
+            ? <FormLogin setUser={setUser} />
 
-            : <Home UserName={UserName} handleLogout={handleLogout} />
+            : <Home User={User} handleLogout={handleLogout} />
         }
      {/*    <Outlet /> */}
 
