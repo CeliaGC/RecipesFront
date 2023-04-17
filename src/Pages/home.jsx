@@ -1,4 +1,4 @@
-import Footer from "../Component/footer.jsx";
+import Footer from "../Component/Footer.jsx";
 
 function Home() {
     return (
