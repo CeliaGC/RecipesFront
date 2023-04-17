@@ -60,13 +60,17 @@ const AdminCategory = () => {
           <h1>Categorías</h1>
           <Form>
             <Form.Group controlId="formBasicSearch">
-              <Form.Control type="text" placeholder="Buscar por categoría" style={{backgroundColor: "rgba(255, 236, 227, 1)"}}></Form.Control>
+              <Form.Control type="text" placeholder="Buscar por categoría" style={{backgroundColor: "rgba(255, 236, 227, 1)"}}>
+              </Form.Control>
             </Form.Group>
           </Form>
           <hr />
           <Row>{renderCategories}</Row>
           <nav>
-            <ul className="pagination justify-content-center">{renderPageNumbers}</ul>
+          <ul className="pagination justify-content-center" style={{marginBottom: "0.5rem"}}>
+  {renderPageNumbers}
+</ul>
+
           </nav>
           <hr />
           <h3>Añadir categoría</h3>
@@ -77,7 +81,7 @@ const AdminCategory = () => {
 
               </Form.Control>
             </Form.Group>
-            <Button variant="primary" type="submit" style={{backgroundColor: "rgba(252, 163, 117, 1)"}}>
+            <Button variant="primary" type="submit" style={{backgroundColor: "rgba(252, 163, 117, 1)", marginTop: "1rem"}}>
               Añadir
             </Button>
           </Form>

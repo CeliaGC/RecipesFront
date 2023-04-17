@@ -36,16 +36,17 @@
   }
   
   .page-item.active .page-link {
+    margin-right: 0.5rem;
     background-color:rgba(252, 163, 117, 1) ;
     border-color: rgba(252, 163, 117, 1) ;
     }
-  
+    
   .category-card {
     height: 100%;
   }
   
   .pagination {
-    margin-top: 1rem;
+    margin-top: 1rem
   }
   
   .add-category-form {
