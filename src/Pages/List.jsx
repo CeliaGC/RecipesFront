@@ -4,7 +4,9 @@ import Ingredients from "../Component/Ingredients";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function Recipe() {
+
+function RecipeList() {
+ 
   return (
     <div >
     <NavbarMenu/>
@@ -16,4 +18,4 @@ function Recipe() {
   )
 }
 
-export default Recipe
+export default RecipeList

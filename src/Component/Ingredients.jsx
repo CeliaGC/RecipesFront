@@ -1,101 +1,114 @@
-import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import '../Style/Ingredients.css';
-import { Container, Row, Col, Form, FormGroup, FormControl, FormCheck, Button } from "react-bootstrap";
 
-const IngredientForm = () => {
-  const [ingredients, setIngredients] = useState([
-    { id: 1, name: "Ingrediente 1", quantity: "", unit: "", checked: false },
-    { id: 2, name: "Ingrediente 2", quantity: "", unit: "", checked: false },
-    { id: 3, name: "Ingrediente 3", quantity: "", unit: "", checked: false }
-  ]);
+import React, { useState } from 'react';
 
-  const handleQuantityChange = (event, ingredientId) => {
-    const updatedIngredients = ingredients.map((ingredient) => {
-      if (ingredient.id === ingredientId) {
-        return { ...ingredient, quantity: event.target.value };
-      }
-      return ingredient;
-    });
-    setIngredients(updatedIngredients);
+
+const IngredientTable = () => {
+  
+  const [ingredients, setIngredients] = useState([]);
+  const [newIngredient, setNewIngredient] = useState({
+    checked: false,
+    name: '',
+    quantity: '',
+    unit: 'kg' 
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewIngredient({ ...newIngredient, [name]: value });
   };
 
-  const handleUnitChange = (event, ingredientId) => {
-    const updatedIngredients = ingredients.map((ingredient) => {
-      if (ingredient.id === ingredientId) {
-        return { ...ingredient, unit: event.target.value };
-      }
-      return ingredient;
-    });
-    setIngredients(updatedIngredients);
-  };
-
-  const handleCheckboxChange = (event, ingredientId) => {
-    const updatedIngredients = ingredients.map((ingredient) => {
-      if (ingredient.id === ingredientId) {
-        return { ...ingredient, checked: event.target.checked };
-      }
-      return ingredient;
-    });
-    setIngredients(updatedIngredients);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Ingredientes:", ingredients);
+  const handleAddIngredient = () => {
+    if (newIngredient.name !== '' && newIngredient.quantity !== '' && newIngredient.unit !== '') {
+      setIngredients([...ingredients, newIngredient]);
+      setNewIngredient({
+        checked: false,
+        name: '',
+        quantity: '',
+        unit: 'kg' 
+      });
+    }
   };
 
   return (
-    <Container>
-      <Form onSubmit={handleSubmit}>
-        {ingredients.map((ingredient) => (
-          <Row key={ingredient.id}>
-            <Col md={1}>
-              <FormGroup>
-                <FormCheck
+    <div>
+      <table className="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Ingrediente</th>
+            <th>Cantidad</th>
+            <th>Unidad</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+          {ingredients.map((ingredient, index) => (
+            <tr key={index}>
+              <td>
+                <input
                   type="checkbox"
                   checked={ingredient.checked}
-                  onChange={(event) => handleCheckboxChange(event, ingredient.id)}
+                  onChange={() => {
+                    const updatedIngredients = [...ingredients];
+                    updatedIngredients[index].checked = !ingredient.checked;
+                    setIngredients(updatedIngredients);
+                  }}
                 />
-              </FormGroup>
-            </Col>
-            <Col md={3}>
-              <FormGroup>
-                <FormControl
-                  type="text"
-                  placeholder="Ingrediente"
-                  value={ingredient.name}
-                  disabled
-                />
-              </FormGroup>
-            </Col>
-            <Col md={3}>
-              <FormGroup>
-                <FormControl
-                  type="text"
-                  placeholder="Cantidad"
-                  value={ingredient.quantity}
-                  onChange={(event) => handleQuantityChange(event, ingredient.id)}
-                />
-              </FormGroup>
-            </Col>
-            <Col md={3}>
-              <FormGroup>
-                
-                <FormControl
-                  type="text"
-                  placeholder="Unidad de medida"
-                  value={ingredient.unit}
-                  onChange={(event) => handleUnitChange(event, ingredient.id)}
-                />
-              </FormGroup>
-            </Col>
-          </Row>
-        ))}
-        <Button type="submit">Enviar</Button>
-      </Form>
-    </Container>
+              </td>
+              <td>{ingredient.name}</td>
+              <td>{ingredient.quantity}</td>
+              <td>{ingredient.unit}</td>
+            </tr>
+          ))}
+          <tr>
+            <td>
+              <input
+                type="checkbox"
+                checked={newIngredient.checked}
+                onChange={() => setNewIngredient({ ...newIngredient, checked: !newIngredient.checked })}
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                name="name"
+                value={newIngredient.name}
+                onChange={handleInputChange}
+                placeholder="Nombre del ingrediente"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                name="quantity"
+                value={newIngredient.quantity}
+                onChange={handleInputChange}
+                placeholder="Cantidad"
+              />
+            </td>
+            <td>
+              <select
+                name="unit"
+                value={newIngredient.unit}
+                onChange={handleInputChange}
+              >
+                <option value="kg">kg</option>
+                <option value="gr">gr</option>
+                <option value="paquete">paquete</option>
+              </select>
+            </td>
+            <td>
+              <button className="btn btn-primary" onClick={handleAddIngredient}>
+                Agregar
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   );
 };
 
-export default IngredientForm;
+export default IngredientTable;
+
