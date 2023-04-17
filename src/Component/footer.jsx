@@ -7,14 +7,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 const Footer = () => {
   return (
     <footer className="bg-dark text-light py-4">
       <Container>
         <Row>
           <Col md={6}>
-            <h5>ABC Company</h5>
-            <p>123 East, 17th Street, St. Louis 10001</p>
+            <p>ABC Company. 123 East, 17th Street, St. Louis 10001</p>
             <p>(123) 456-7890</p>
             <div className="d-flex">
               <a href="#" className="me-3">
