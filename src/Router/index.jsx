@@ -9,6 +9,9 @@ import MenuRecipe from "../Pages/MenuRecipe";
 import ViewRecipe from "../Pages/ViewRecipe";
 import List from "../Pages/List";
 import MyRecipe from "../Pages/MyRecipe";
+import AdminCategory from "../Pages/AdminCategory";
+import AdminRecipe from "../Pages/AdminRecipe";
+import AdminUser from "../Pages/AdminUser";
 
 import {recipeHandler} from "../Handlers/recipeHandler";
 import { categoryHandler } from "../Handlers/categoryHandler";
@@ -58,6 +61,19 @@ export const router = createBrowserRouter([
                         element: <MyRecipe/>,
                         loader: fetchRecipes,
                     },
+                    {
+                        path: '/AdminCategory',
+                        element: <AdminCategory/>,
+                    },
+                    {
+                        path: '/AdminRecipe',
+                        element: <AdminRecipe/>,
+                    },
+                    {
+                        path: '/AdminUser',
+                        element: <AdminUser/>,
+                    },
+                    
                 ]
             },
         ]
