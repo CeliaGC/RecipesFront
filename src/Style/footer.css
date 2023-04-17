@@ -1,16 +1,64 @@
+footer {
+  background-color: #fff;
+}
 
-.footer {
-    background-color: #f8f9fa;
-    padding: 20px;
-    margin-top: 40px;
-  }
-  
-  .footer a {
-    color: #212529;
-    font-size: 1.5rem;
-    margin-left: 20px;
-  }
-  
-  .footer a:hover {
-    color: #007bff;
-  }
+.text-light {
+  color: #fff;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h5 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fa-facebook {
+  color: #3b5998;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.fa-twitter {
+  color: #3b5998;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.fa-instagram {
+  color: #3b5998;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.fa-youtube {
+  color: #3b5998;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}

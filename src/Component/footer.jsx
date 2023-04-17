@@ -1,34 +1,37 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTwitter, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
+//import Footer from 'react-bootstrap/Footer';
 import "../Style/Footer.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
   return (
     <footer className="bg-dark text-light py-4">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-6">
+      <Container>
+        <Row>
+          <Col md={6}>
             <h5>ABC Company</h5>
             <p>123 East, 17th Street, St. Louis 10001</p>
             <p>(123) 456-7890</p>
             <div className="d-flex">
               <a href="#" className="me-3">
-                <FontAwesomeIcon icon={faFacebook} />
+              <FontAwesomeIcon icon={faFacebook} />
               </a>
               <a href="#" className="me-3">
-                <FontAwesomeIcon icon={faTwitter} />
+              <FontAwesomeIcon icon={faInstagram} />
               </a>
               <a href="#" className="me-3">
-                <FontAwesomeIcon icon={faInstagram} />
+              <FontAwesomeIcon icon={faTwitter} />
               </a>
               <a href="#" className="me-3">
-                <FontAwesomeIcon icon={faYoutube} />
+              <FontAwesomeIcon icon={faYoutube} />
               </a>
             </div>
-          </div>
-          <div className="col-md-2">
+          </Col>
+          <Col md={2}>
             <h5>Links</h5>
             <ul className="list-unstyled">
               <li>
@@ -47,8 +50,8 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
-          <div className="col-md-4">
+          </Col>
+          <Col md={4}>
             <h5>Legal</h5>
             <ul className="list-unstyled">
               <li>
@@ -65,9 +68,9 @@ const Footer = () => {
                 <p>Copyright © 2022 • ABC Company.</p>
               </li>
             </ul>
-          </div>
-        </div>
-      </div>
+          </Col>
+        </Row>
+      </Container>
     </footer>
   );
 };
