@@ -9,6 +9,9 @@ import MenuRecipe from "../Pages/MenuRecipe";
 import ViewRecipe from "../Pages/ViewRecipe";
 import List from "../Pages/List";
 import MyRecipe from "../Pages/MyRecipe";
+import AdminCategory from "../Pages/AdminCategory";
+import AdminRecipe from "../Pages/AdminRecipe";
+import AdminUser from "../Pages/AdminUser";
 
 export const router = createBrowserRouter([
     {
@@ -51,6 +54,19 @@ export const router = createBrowserRouter([
                         path: '/MyRecipe',
                         element: <MyRecipe/>,
                     },
+                    {
+                        path: '/AdminCategory',
+                        element: <AdminCategory/>,
+                    },
+                    {
+                        path: '/AdminRecipe',
+                        element: <AdminRecipe/>,
+                    },
+                    {
+                        path: '/AdminUser',
+                        element: <AdminUser/>,
+                    },
+                    
                 ]
             },
         ]
