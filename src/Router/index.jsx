@@ -10,7 +10,8 @@ import ViewRecipe from "../Pages/ViewRecipe";
 import List from "../Pages/List";
 import MyRecipe from "../Pages/MyRecipe";
 
-import {recipeHandler} from "../Handlers/recipeHandler"
+import {recipeHandler} from "../Handlers/recipeHandler";
+import { categoryHandler } from "../Handlers/categoryHandler";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/Menu',
                         element: <Menu/>,
+                        loader: fetchCategories,
                     },
                     {
                         path: '/ViewMenu',
@@ -43,8 +45,9 @@ export const router = createBrowserRouter([
                         loader: fetchRecipes,
                     },
                     {
-                        path: '/ViewRecipe',
+                        path: '/ViewRecipe/:id',
                         element: <ViewRecipe/>,
+                        loader: fetchRecipe,
                     },
                     {
                         path: '/List',
@@ -65,8 +68,12 @@ async function fetchRecipes() {
     const recipes = await recipeHandler.loadRecipes();
     return { recipes };
 }
-
-// async function fetchRecipe({ params }) {
-//     const recipe = await recipeHandler.loadRecipe(params.id);
-//     return { recipe };
-// }
+async function fetchCategories() {
+    const categories = await categoryHandler.loadCategories();
+    return { categories };
+}
+async function fetchRecipe({ params }) {
+    const recipe = await recipeHandler.loadRecipe(params.id);
+    const categories = await categoryHandler.loadCategories();
+    return { recipe, categories };
+}

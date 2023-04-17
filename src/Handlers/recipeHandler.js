@@ -4,8 +4,8 @@ export const recipeHandler = {
    
     loadRecipes(){
         return recipeService.getRecipes();
+    },
+    loadRecipe(id) {
+        return recipeService.getRecipeById(id);
     }
-    // loadRecipe(id) {
-    //     return recipeService.getRecipeById(id);
-    // }
 }
