@@ -1,35 +1,73 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
-import "../Styles/Footer.css"; // Importa tu archivo de estilos si es necesario
+import { faFacebook, faInstagram, faTwitter, faYoutube, } from "@fortawesome/free-brands-svg-icons";
+//import Foot from 'react-bootstrap/Foot';
+import Footer from 'react-bootstrap/Footer';
+import "../Style/Footer.css";
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer className="footer">
-      <Container>
-        <Row>
-          <Col md={6} className="text-center text-md-start">
-            <p>&copy; 2023 Cook Smart</p>
-          </Col>
-          <Col md={6} className="text-center text-md-end">
-            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="https://www.twitter.com/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faTwitter} />
-            </a>
-            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={faYoutube} />
-            </a>
-          </Col>
-        </Row>
-      </Container>
+    <footer className="bg-dark text-light py-5">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-4">
+            <h4>ABC Company</h4>
+            <p>123 East, 17th Street, St. louis 10001</p>
+            <p>(123) 456-7890</p>
+          </div>
+          <div className="col-md-4">
+            <h4>Social Media</h4>
+            <ul className="list-unstyled d-flex">
+              <li>
+                <a href="#">
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <FontAwesomeIcon icon={faYoutube} />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="col-md-4">
+            <h4>Links</h4>
+            <ul className="list-unstyled">
+              <li>
+                <a href="#">About us</a>
+              </li>
+              <li>
+                <a href="#">Contact us</a>
+              </li>
+              <li>
+                <a href="#">Help</a>
+              </li>
+              <li>
+                <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#">Disclaimer</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr />
+        <p className="text-center">
+          Copyright © 2022 • ABC Company.
+        </p>
+      </div>
     </footer>
   );
-}
+};
 
 export default Footer;
