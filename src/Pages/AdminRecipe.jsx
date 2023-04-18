@@ -75,9 +75,9 @@ const AdminRecipe = () => {
 
           </nav>
           <hr />
-          <h3>Añadir categoría</h3>
+          <h3>Añadir receta</h3>
           <Form>
-            <Form.Group controlId="formBasicCategory">
+            <Form.Group controlId="formBasicReceta">
               <Form.Label>Receta</Form.Label>
               <Form.Control type="text" placeholder="Introduce una receta" style={{backgroundColor: "rgba(255, 236, 227, 1)"}}>
 
