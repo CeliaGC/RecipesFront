@@ -4,12 +4,12 @@ import "../Style/AdminUser.css";
 
 const AdminUser = () => {
   const [users] = useState([
-    { id: 1, username: "user1", role: "Admin" },
-    { id: 2, username: "user2", role: "User" },
-    { id: 3, username: "user3", role: "User" },
-    { id: 4, username: "user4", role: "User" },
-    { id: 5, username: "user5", role: "User" },
-    { id: 6, username: "user6", role: "User" }
+    { id: 1, username: "JuanLu", role: "Admin" },
+    { id: 2, username: "Ainhoa", role: "User" },
+    { id: 3, username: "Anyi", role: "User" },
+    { id: 4, username: "Celia", role: "User" },
+    { id: 5, username: "Jenny", role: "User" },
+    { id: 6, username: "Rose", role: "User" }
   ]);
 
   const [currentPage, setCurrentPage] = useState(1);
