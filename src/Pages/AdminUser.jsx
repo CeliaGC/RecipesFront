@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
+import "../Style/AdminUser.css";
+
 const AdminUser = () => {
   // Array de usuarios de ejemplo
   const initialUsers = [
