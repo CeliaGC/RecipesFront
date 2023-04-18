@@ -4,13 +4,27 @@ import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/RecipeInfo.css";
 
-const RecipeCard = ({ recipe, categories }) => {
-  
-  console.log("esto es recipe", recipe);
-  console.log("esto es categories", categories);
+const RecipeCard = ({ recipe, addToIngredient }) => {
+ 
+  const handleAddToIngredients = () => {
+    addToIngredient(recipe.ingredients);
+  };
+  //   const addToIngredient = async (ingredients) => {
+  //     const addListRecipe = JSON.parse(localStorage.getItem( "addListRecipe")) || []
+  //   console.log("add List array", addListRecipe);
+  //  addListRecipe.push(...ingredients);
+  //   localStorage.setItem( "addListRecipe", JSON.stringify (addListRecipe));
 
-  const categoryName = categories.find(category => category.id == recipe.category)
-    .name;
+  // }
+
+  // const addToIngredient = () => {
+  //   const addListRecipe = JSON.parse(localStorage.getItem("addListRecipe")) || [];
+  //   const ingredients = [...recipe.ingredients];
+  //   addListRecipe.push(ingredients);
+  //   localStorage.setItem("addListRecipe", JSON.stringify(addListRecipe));
+  // }
+
+
 
   return (
     <section>
@@ -25,24 +39,15 @@ const RecipeCard = ({ recipe, categories }) => {
                       <strong>Nombre del Plato</strong>
                       <p>{recipe.name}</p>
                     </div>
-                    <div className="col-md-3">
-                      <strong>Categoría</strong>
-                      <p>{categoryName}</p>
-                    </div>
-                    <div className="col-md-3">
-                      <strong>Número de Personas: 4</strong>
-                    </div>
-                    <div className="col-md-3">
-                      <strong>Autor</strong>
-                      <p>{recipe.author}</p>
-                    </div>
+
+
                   </div>
                   <hr />
                   <strong>Ingredientes</strong>
                   <Table striped bordered hover responsive>
                     <thead>
                       <tr>
-                        <th></th>
+                        
                         <th>Ingrediente</th>
                         <th>Cantidad</th>
                         <th>Unidad</th>
@@ -51,17 +56,20 @@ const RecipeCard = ({ recipe, categories }) => {
                     <tbody>
                       {recipe.ingredients.map(ingredient => (
                         <tr key={ingredient.id}>
-                          <td>
-                            <input type="checkbox" />
-                          </td>
+                         
                           <td>{ingredient.ingredientName}</td>
                           <td>{ingredient.amount}</td>
                           <td>{ingredient.unit}</td>
                         </tr>
                       ))}
+                      
                     </tbody>
+                    <div className="card-footer d-flex justify-content-between">
+                        {/* <button className="btn btn-primary"  onClick={() => addToIngredient(recipe.ingredients)}>Guardar ingredientes</button> */}
+                       <button className="btn btn-primary" onClick={handleAddToIngredients}>Guardar ingredientes</button> 
+                      </div>
                   </Table>
-                
+
                 </Card.Body>
               </Card>
             </div>
@@ -71,8 +79,7 @@ const RecipeCard = ({ recipe, categories }) => {
                   <Card.Body>
                     <Card.Title>Preparación</Card.Title>
                     <Card.Text>{recipe.instructions}</Card.Text>
-                    <Card.Title>Observaciones</Card.Title>
-                    <Card.Text>{recipe.observations}</Card.Text>
+
                     <Card.Title>Materiales</Card.Title>
                     <Card.Text>{recipe.materials}</Card.Text>
                     <Card.Title>Alergenos</Card.Title>
