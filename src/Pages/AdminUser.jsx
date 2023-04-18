@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
 import "../Style/AdminUser.css";
@@ -72,17 +71,3 @@ const AdminUser = () => {
   );
 };
 export default AdminUser;
-=======
-
-
-function NotFound() {
-    return (
-      <div className='App'>
-      
-          <h1>AdminUser</h1>
-        </div>
-    )
-  }
-  
-  export default NotFound
->>>>>>> dev
