@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-//import Footer from 'react-bootstrap/Footer';
-import "../Style/Footer.css";;
+// import FooterBoostrap from 'react-bootstrap/Footer';
+import "../Style/Footer.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-4">
+    <footer className=" bg-dark text-light mt-8 py-4">
       <Container>
         <Row>
           <Col md={6}>
