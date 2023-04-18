@@ -5,10 +5,9 @@ import FormLogin from "../Component/FormLogin";
 import { useState } from 'react';
 import Home from "../Pages/home";
 
-
 function Root() {
 
-  const [User, setUser] = useState([])
+  const [user, setUser] = useState([])
 
   
 
@@ -29,10 +28,10 @@ function Root() {
         )}
 
         {
-          !User.length > 0
+          !user.length > 0
             ? <FormLogin setUser={setUser} />
 
-            : <Home User={User} handleLogout={handleLogout} />
+            : <Home user={user} handleLogout={handleLogout} />
         }
      {/*    <Outlet /> */}
 

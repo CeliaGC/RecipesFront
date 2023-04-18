@@ -5,14 +5,14 @@ import { Button } from "react-bootstrap";
 
 
 
-function Home( { User,handleLogout } ) {
+function Home( { user, handleLogout } ) {
 
   
 
     return (
       <div className='App'style={{ backgroundColor: '#D6C6B4' }}>
           <h1>este es el home</h1>
-          <h1>Hola {User}, gusto en saludarte!</h1>
+          <h1>Hola {user}, gusto en saludarte!</h1>
           <Button variant="primary" type="submit" onClick={handleLogout}>Cerrar sesion</Button>
         </div>
     )

@@ -1,5 +1,6 @@
 import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../Component/Navbar";
+import Footer from "../Component/footer";
 
 
 function Root() {
@@ -12,6 +13,8 @@ function Root() {
           <div className="alert alert-info my-S">Loading...</div>
         )}
         <Outlet />
+        <Footer />
+      
       </main>
     </>
   )
