@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import "../Style/AdminRecipe.css";
 
 const AdminRecipe = () => {
-  const [recipes, setRecipes] = useState([
+  const [recipes] = useState([
     { id: 1, name: "Ensalada César", category: "Ensaladas" },
     { id: 2, name: "Lasaña de Carne", category: "Pastas" },
     { id: 3, name: "Tarta de Limón", category: "Postres" },
