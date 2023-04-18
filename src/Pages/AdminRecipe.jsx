@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Table, Button } from "react-bootstrap";
-import AdminRecipe from "../Component/AdminRecipe";
+import AdminRecipe from "..pages/AdminRecipe";
 
 const AdminRecipe = () => {
   const [recipes, setRecipes] = useState([

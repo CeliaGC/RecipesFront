@@ -1,0 +1,100 @@
+.registration-form-container {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column; /* Agregar esta propiedad */
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  .registration-form-title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+  }
+  
+  form {
+    width: 50%;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    padding: 10px;
+    background-color: #656E4A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #656E4A;
+  }
+  
+  /* Aplicar estos estilos al componente AdminUsers */
+  
+  /* Estilos para el contenedor principal */
+  .Container {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column; /* Agregar esta propiedad */
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  /* Estilos para el contenedor de la tabla y el título */
+  .Col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%; /* Cambiar el ancho a 80% para que se adapte al ancho de la página */
+    padding: 20px;
+    background-color: #F5F5F5; /* Agregar un color de fondo */
+    border-radius: 10px; /* Agregar un borde redondeado */
+    box-shadow: 0px 0px 10px #888888; /* Agregar una sombra */
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos para la tabla */
+  thead {
+    background-color: #656E4A;
+    color: #fff;
+  }
+  
+  th, td {
+    text-align: center;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #F2F2F2;
+  }
+  
+  td:last-child {
+    text-align: right;
+  }
+  
