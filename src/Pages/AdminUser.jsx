@@ -55,9 +55,10 @@ const AdminUser = () => {
                   <td>{user.role}</td>
                   <td>
                     <Button
-                      variant="danger"
+                      variant="dark"
                       onClick={() => handleDeleteUser(user.id)}
-                    >
+                      style={{ backgroundColor: '#656E4A' }}>
+
                       Eliminar
                     </Button>
                   </td>
