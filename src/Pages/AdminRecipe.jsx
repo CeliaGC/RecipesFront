@@ -72,25 +72,13 @@ const AdminRecipe = () => {
           <ul className="pagination justify-content-center" style={{marginBottom: "0.5rem"}}>
   {renderPageNumbers}
 </ul>
-
           </nav>
-          <hr />
-          <h3>Añadir receta</h3>
-          <Form>
-            <Form.Group controlId="formBasicReceta">
-              <Form.Label>Receta</Form.Label>
-              <Form.Control type="text" placeholder="Introduce una receta" style={{backgroundColor: "rgba(255, 236, 227, 1)"}}>
-
-              </Form.Control>
-            </Form.Group>
-            <Button variant="primary" type="submit" style={{backgroundColor: "rgba(252, 163, 117, 1)", marginTop: "1rem"}}>
-              Añadir
-            </Button>
-          </Form>
-        </Col>
+         </Col>
       </Row>
     </Container>
   );
 };
 
 export default AdminRecipe;
+
+
