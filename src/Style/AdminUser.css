@@ -1,0 +1,123 @@
+.user-card .btn-group {
+    display: flex;
+    justify-content: space-between;
+    }
+    .btn-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    }
+    .edit {
+    background-color: rgba(252, 163, 117, 1);
+    }
+    
+    .btn-group > button:first-child {
+    margin-right: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+    .user-card .btn-group {
+    display: flex;
+    justify-content: space-between;
+    }
+    .btn-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    }
+    
+    .btn-group > button:first-child {
+    margin-right: 0.5rem;
+    }
+    }
+    
+    .page-link:hover {
+    background-color: #f5f5f5;
+    }
+    
+    .page-item.active .page-link {
+    margin-right: 0.5rem;
+    background-color:rgba(252, 163, 117, 1) ;
+    border-color: rgba(252, 163, 117, 1) ;
+    }
+    
+    .user-card {
+    height: 100%;
+    }
+    
+    .pagination {
+    margin-top: 1rem
+    }
+    
+    .add-user-form {
+    margin-top: 2rem;
+    }
+    
+    .add-user-form .form-group {
+    margin-bottom: 1rem;
+    }
+    
+    /* Estilos para pantallas pequeñas */
+    @media (max-width: 576px) {
+    .user-card {
+    height: auto;
+    }
+    .btn-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    }
+    
+    .btn-group > button:first-child {
+    margin-right: 0.5rem;
+    }
+    }
+    
+    /* Estilos para pantallas medianas y grandes */
+    @media (min-width: 768px) {
+    .user-card {
+    height: 15rem;
+    }
+    .btn-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    }
+    
+    .btn-group > button:first-child {
+    margin-right: 0.5rem;
+    }
+    }
+    
+    @media (min-width: 992px) {
+    .user-card {
+    height: 100%;
+    }
+    .btn-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    }
+    
+    .btn-group > button:first-child {
+    margin-right: 0.5rem;
+    }
+    }
+
+    .pagination {
+        margin-top: 1rem;
+      }
+      
+      .page-item.active .page-link {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+      
+      .page-link {
+        color: #007bff;
+      }
+      
+      .card {
+        margin-bottom: 1rem;
+      }
+      
