@@ -1,74 +1,83 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Table, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import "../Style/AdminUser.css";
 
 const AdminUser = () => {
-  // Array de usuarios de ejemplo
-  const initialUsers = [
-    {
-      id: 1,
-      name: "Juan",
-      email: "juan@mail.com",
-      role: "admin",
-    },
-    {
-      id: 2,
-      name: "María",
-      email: "maria@mail.com",
-      role: "user",
-    },
-    {
-      id: 3,
-      name: "Pedro",
-      email: "pedro@mail.com",
-      role: "user",
-    },
-  ];
-  // Estado que almacena la lista de usuarios
-  const [users, setUsers] = useState(initialUsers);
-  // Función para eliminar un usuario de la lista
-  const handleDeleteUser = (id) => {
-    const updatedUsers = users.filter((user) => user.id !== id);
-    setUsers(updatedUsers);
-  };
+  const [users] = useState([
+    { id: 1, username: "user1", role: "Admin" },
+    { id: 2, username: "user2", role: "User" },
+    { id: 3, username: "user3", role: "User" },
+    { id: 4, username: "user4", role: "User" },
+    { id: 5, username: "user5", role: "User" },
+    { id: 6, username: "user6", role: "User" }
+  ]);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [usersPerPage] = useState(3);
+
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
+  const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+
+  const renderUsers = currentUsers.map((user) => {
+    return (
+      <Col xs={4} key={user.id}>
+        <Card className="mb-4 user-card">
+          <Card.Header>{user.username}</Card.Header>
+          <Card.Body>
+            <Card.Text>{user.role}</Card.Text>
+            <div className="btn-group">
+              <Button variant="warning" size="sm" style={{backgroundColor: "rgba(252, 163, 117, 1)"}}>
+                Editar
+              </Button>
+              <Button variant="danger" size="sm" style={{backgroundColor: "rgba(220, 197, 167, 1)"}}>
+                Eliminar
+              </Button>
+            </div>
+          </Card.Body>
+        </Card>
+      </Col>
+    );
+  });
+
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(users.length / usersPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  const renderPageNumbers = pageNumbers.map((number) => {
+    return (
+      <li key={number} className={currentPage === number ? "page-item active" : "page-item"}>
+        <Button variant="link" className="page-link" onClick={() => setCurrentPage(number)}>
+          {number}
+        </Button>
+      </li>
+    );
+  });
+
   return (
     <Container>
       <Row>
         <Col>
-          <h1>Administrar usuarios</h1>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Email</th>
-                <th>Rol</th>
-                <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {users.map((user) => (
-                <tr key={user.id}>
-                  <td>{user.id}</td>
-                  <td>{user.name}</td>
-                  <td>{user.email}</td>
-                  <td>{user.role}</td>
-                  <td>
-                    <Button
-                      variant="dark"
-                      onClick={() => handleDeleteUser(user.id)}
-                      style={{ backgroundColor: '#656E4A' }}>
-
-                      Eliminar
-                    </Button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
-        </Col>
+          <h1>Usuarios</h1>
+          <Form>
+            <Form.Group controlId="formBasicSearch">
+              <Form.Control type="text" placeholder="Buscar por usuario" style={{backgroundColor: "rgba(255, 236, 227, 1)"}}>
+              </Form.Control>
+              </Form.Group>
+          </Form>
+          <hr />
+          <Row>{renderUsers}</Row>
+          <nav>
+          <ul className="pagination justify-content-center" style={{marginBottom: "0.5rem"}}>
+  {renderPageNumbers}
+</ul>
+          </nav>
+         </Col>
       </Row>
     </Container>
   );
 };
+
 export default AdminUser;
+
