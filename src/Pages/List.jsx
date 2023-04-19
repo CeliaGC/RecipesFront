@@ -1,14 +1,18 @@
 import React from 'react';
 import NavbarMenu from "../Component/NavbarMenu";
 import Ingredients from "../Component/Ingredients";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-function Recipe() {
+
+function RecipeList() {
+ 
   return (
     <div >
     <NavbarMenu/>
     <Ingredients/>
+   
 
     
        
@@ -16,4 +20,4 @@ function Recipe() {
   )
 }
 
-export default Recipe
+export default RecipeList

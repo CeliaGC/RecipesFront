@@ -6,7 +6,7 @@ const NavbarLog = () => {
   return (
     <Navbar style={{ backgroundColor: "#F2AA85" }} >
       
-      <Navbar.Brand href="#home">
+      <Navbar.Brand href="/Menu">
         <img
           src={logo}
           alt="Logo"

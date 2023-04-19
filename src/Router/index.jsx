@@ -13,6 +13,8 @@ import AdminCategory from "../Pages/AdminCategory";
 import AdminRecipe from "../Pages/AdminRecipe";
 import AdminUser from "../Pages/AdminUser";
 
+import {recipeHandler} from "../Handlers/recipeHandler";
+import { categoryHandler } from "../Handlers/categoryHandler";
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -29,6 +31,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/Menu',
                         element: <Menu/>,
+                        loader: fetchCategories,
                     },
                     {
                         path: '/ViewMenu',
@@ -37,14 +40,17 @@ export const router = createBrowserRouter([
                     {
                         path: '/EditRecipe',
                         element: <EditRecipe/>,
+                        loader: fetchRecipes,
                     },
                     {
                         path: '/MenuRecipe',
                         element: <MenuRecipe/>,
+                        loader: fetchRecipes,
                     },
                     {
-                        path: '/ViewRecipe',
+                        path: '/ViewRecipe/:id',
                         element: <ViewRecipe/>,
+                        loader: fetchRecipe,
                     },
                     {
                         path: '/List',
@@ -53,6 +59,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/MyRecipe',
                         element: <MyRecipe/>,
+                        loader: fetchRecipes,
                     },
                     {
                         path: '/AdminCategory',
@@ -72,3 +79,17 @@ export const router = createBrowserRouter([
         ]
     },
 ]);
+
+async function fetchRecipes() {
+    const recipes = await recipeHandler.loadRecipes();
+    return { recipes };
+}
+async function fetchCategories() {
+    const categories = await categoryHandler.loadCategories();
+    return { categories };
+}
+async function fetchRecipe({ params }) {
+    const recipe = await recipeHandler.loadRecipe(params.id);
+    const categories = await categoryHandler.loadCategories();
+    return { recipe, categories };
+}
