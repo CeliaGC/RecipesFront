@@ -4,28 +4,15 @@ import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/RecipeInfo.css";
 
+// const RecipeCard = ({ recipe, addToIngredient, categories }) => {
+  
 const RecipeCard = ({ recipe, addToIngredient }) => {
- 
+  // const categoryName = categories.find(category => category.id == recipe.category)
+  // .name;
   const handleAddToIngredients = () => {
     addToIngredient(recipe.ingredients);
   };
-  //   const addToIngredient = async (ingredients) => {
-  //     const addListRecipe = JSON.parse(localStorage.getItem( "addListRecipe")) || []
-  //   console.log("add List array", addListRecipe);
-  //  addListRecipe.push(...ingredients);
-  //   localStorage.setItem( "addListRecipe", JSON.stringify (addListRecipe));
-
-  // }
-
-  // const addToIngredient = () => {
-  //   const addListRecipe = JSON.parse(localStorage.getItem("addListRecipe")) || [];
-  //   const ingredients = [...recipe.ingredients];
-  //   addListRecipe.push(ingredients);
-  //   localStorage.setItem("addListRecipe", JSON.stringify(addListRecipe));
-  // }
-
-
-
+ 
   return (
     <section>
       <div className="card">
@@ -39,8 +26,17 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
                       <strong>Nombre del Plato</strong>
                       <p>{recipe.name}</p>
                     </div>
-
-
+                    {/* <div className="col-md-3">
+                      <strong>Categoría</strong>
+                      <p>{categoryName}</p>
+                    </div> */}
+                    <div className="col-md-3">
+                      <strong>Número de Personas: 4</strong>
+                    </div>
+                    <div className="col-md-3">
+                      <strong>Autor</strong>
+                      <p>{recipe.author}</p>
+                    </div>
                   </div>
                   <hr />
                   <strong>Ingredientes</strong>
@@ -65,7 +61,6 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
                       
                     </tbody>
                     <div className="card-footer d-flex justify-content-between">
-                        {/* <button className="btn btn-primary"  onClick={() => addToIngredient(recipe.ingredients)}>Guardar ingredientes</button> */}
                        <button className="btn btn-primary" onClick={handleAddToIngredients}>Guardar ingredientes</button> 
                       </div>
                   </Table>
@@ -79,7 +74,8 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
                   <Card.Body>
                     <Card.Title>Preparación</Card.Title>
                     <Card.Text>{recipe.instructions}</Card.Text>
-
+                    <Card.Title>Observaciones</Card.Title>
+                    <Card.Text>{recipe.observations}</Card.Text>
                     <Card.Title>Materiales</Card.Title>
                     <Card.Text>{recipe.materials}</Card.Text>
                     <Card.Title>Alergenos</Card.Title>

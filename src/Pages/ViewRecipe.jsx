@@ -20,10 +20,9 @@ function Recipe() {
   return (
     <div >
     <NavbarMenu/>
+    {/* <RecipeInfo recipe={recipe} addToIngredient={addToIngredient} categories={categories}/> */}
     <RecipeInfo recipe={recipe} addToIngredient={addToIngredient}/>
 
-    
-       
     </div>
   )
 }
