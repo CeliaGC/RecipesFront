@@ -1,0 +1,54 @@
+.registration-form-container {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    flex-direction: column; /* Agregar esta propiedad */
+    height: 100vh;
+    width: 100vw;
+}
+
+.registration-form-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+form {
+    width: 50%;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    padding: 10px;
+    background-color: #656E4A;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #656E4A;
+}

@@ -12,6 +12,8 @@ import { ButtonGroup, Button } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
 
 
+
+
 const CarouselComponent = () => {
   return (
     <Carousel>
@@ -133,10 +135,7 @@ const Home = () => {
       <MyComponent />
       
     </div>
-  );
-};
+  )
+}
 
 export default Home;
-
-
-
