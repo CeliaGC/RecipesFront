@@ -1,101 +1,167 @@
 import React, { useState } from "react";
+import Table from "react-bootstrap/Table";
+import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
-import '../Style/Ingredients.css';
-import { Container, Row, Col, Form, FormGroup, FormControl, FormCheck, Button } from "react-bootstrap";
 
-const IngredientForm = () => {
-  const [ingredients, setIngredients] = useState([
-    { id: 1, name: "Ingrediente 1", quantity: "", unit: "", checked: false },
-    { id: 2, name: "Ingrediente 2", quantity: "", unit: "", checked: false },
-    { id: 3, name: "Ingrediente 3", quantity: "", unit: "", checked: false }
-  ]);
 
-  const handleQuantityChange = (event, ingredientId) => {
-    const updatedIngredients = ingredients.map((ingredient) => {
-      if (ingredient.id === ingredientId) {
-        return { ...ingredient, quantity: event.target.value };
-      }
-      return ingredient;
+
+function List() {
+  //TOMA LOS VALORES DEL LOCALSTORAGE
+  const [addListRecipe, setListRecipe] = useState(JSON.parse(localStorage.getItem("addListRecipe")) || []);
+//BORRA LOS DATOS DE LA LISTA
+  const removeaddListRecipe = () => {
+    localStorage.removeItem("addListRecipe");
+    setListRecipe([]);
+  };
+  // FUNCION PARA INGRESAR NUEVOS INGREDIENTES A LA TABLA
+  const [newIngredient, setNewIngredient] = useState({
+    ingredientName: "",
+    amount: "",
+    unit: "kg",
+  });
+
+  const handleInputChange = (event) => {
+    setNewIngredient({
+      ...newIngredient,
+      [event.target.name]: event.target.value,
     });
-    setIngredients(updatedIngredients);
   };
 
-  const handleUnitChange = (event, ingredientId) => {
-    const updatedIngredients = ingredients.map((ingredient) => {
-      if (ingredient.id === ingredientId) {
-        return { ...ingredient, unit: event.target.value };
-      }
-      return ingredient;
-    });
-    setIngredients(updatedIngredients);
-  };
-
-  const handleCheckboxChange = (event, ingredientId) => {
-    const updatedIngredients = ingredients.map((ingredient) => {
-      if (ingredient.id === ingredientId) {
-        return { ...ingredient, checked: event.target.checked };
-      }
-      return ingredient;
-    });
-    setIngredients(updatedIngredients);
-  };
-
-  const handleSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log("Ingredientes:", ingredients);
+    const newRecipe = {
+      ...newIngredient,
+      id: addListRecipe.length + 1,
+    };
+    const updatedList = [...addListRecipe, newRecipe];
+    setListRecipe(updatedList);
+    localStorage.setItem("addListRecipe", JSON.stringify(updatedList));
+    setNewIngredient({
+      ingredientName: "",
+      amount: "",
+      unit: "kg",
+    });
+
   };
+  //FUNCION PARA SUMAR AQUELLOS VALORES QUE TENGAN LA MISMA UNIDAD 
+  const calculateTotalAmounts = () => {
+    // Creamos un objeto para almacenar las cantidades totales por unidad
+    const totalAmounts = {};
+
+    // Recorremos la lista de ingredientes
+    for (const ingredient of addListRecipe) {
+      // Comprobamos si la unidad ya existe en el objeto totalAmounts
+      if (totalAmounts[ingredient.unit]) {
+        // Si ya existe, sumamos la cantidad actual del ingrediente a la cantidad total
+        totalAmounts[ingredient.unit] += ingredient.amount;
+      } else {
+        // Si no existe, inicializamos la cantidad total con la cantidad actual del ingrediente
+        totalAmounts[ingredient.unit] = ingredient.amount;
+      }
+    }
+
+    // Devolvemos el objeto con las cantidades totales
+    return totalAmounts;
+  };
+
+  const totalAmounts = calculateTotalAmounts();
+
 
   return (
-    <Container>
-      <Form onSubmit={handleSubmit}>
-        {ingredients.map((ingredient) => (
-          <Row key={ingredient.id}>
-            <Col md={1}>
-              <FormGroup>
-                <FormCheck
-                  type="checkbox"
-                  checked={ingredient.checked}
-                  onChange={(event) => handleCheckboxChange(event, ingredient.id)}
-                />
-              </FormGroup>
-            </Col>
-            <Col md={3}>
-              <FormGroup>
-                <FormControl
-                  type="text"
-                  placeholder="Ingrediente"
-                  value={ingredient.name}
-                  disabled
-                />
-              </FormGroup>
-            </Col>
-            <Col md={3}>
-              <FormGroup>
-                <FormControl
-                  type="text"
-                  placeholder="Cantidad"
-                  value={ingredient.quantity}
-                  onChange={(event) => handleQuantityChange(event, ingredient.id)}
-                />
-              </FormGroup>
-            </Col>
-            <Col md={3}>
-              <FormGroup>
-                
-                <FormControl
-                  type="text"
-                  placeholder="Unidad de medida"
-                  value={ingredient.unit}
-                  onChange={(event) => handleUnitChange(event, ingredient.id)}
-                />
-              </FormGroup>
-            </Col>
-          </Row>
-        ))}
-        <Button type="submit">Enviar</Button>
-      </Form>
-    </Container>
-  );
+    <div>
+      <Card>
+        <Card.Body>
+          <Table striped bordered hover responsive>
+            <thead>
+              <tr>
+                <th>Ingrediente</th>
+                <th>Cantidad</th>
+                <th>Unidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {addListRecipe.map(ingredient => (
+                <tr key={ingredient.id}>
+
+                  <td>{ingredient.ingredientName}</td>
+                  <td>{ingredient.amount}</td>
+                  <td>{ingredient.unit}</td>
+                </tr>
+              ))}
+                {Object.keys(totalAmounts).map((unit) => (
+                <tr key={unit}>
+                  <td>Total {unit}</td>
+                  <td>{totalAmounts[unit]}</td>
+                  <td>{unit}</td>
+                </tr>
+              ))}
+
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colSpan="3">
+                  <form onSubmit={handleFormSubmit}>
+                    <div className="form-row">
+                      <div className="col">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Ingrediente"
+                          name="ingredientName"
+                          value={newIngredient.ingredientName}
+                          onChange={handleInputChange}
+                        />
+                      </div>
+                      <div className="col">
+                        <input
+                          type="text"
+                          className="form-control"
+                          placeholder="Cantidad"
+                          name="amount"
+                          value={newIngredient.amount}
+                          onChange={handleInputChange}
+                        />
+                      </div>
+                      <div className="col">
+                        <select
+                          className="form-control"
+                          name="unit"
+                          value={newIngredient.unit}
+                          onChange={handleInputChange}
+                        >
+                          <option value="kg">kg</option>
+                          <option value="gr">gr</option>
+                          <option value="litros">litros</option>
+                        </select>
+                      </div>
+                      <div className="col-auto">
+                        <button type="submit" className="btn btn-primary">
+                          Añadir nuevo ingrediente
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </td>
+              </tr>
+            </tfoot>
+          </Table>
+        </Card.Body>
+        <div className="card-footer d-flex justify-content-between">
+          <button className="btn btn-primary" onClick={() => removeaddListRecipe()}>Borrar ingredientes</button>
+        </div>
+
+      </Card>
+
+    </div>
+  )
+
 };
 
-export default IngredientForm;
+export default List;
+
+
+
+
+
+
+
