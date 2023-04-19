@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import "../Style/Addrecipe.css";
+
 
 function RecipeForm() {
   const [name, setName] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [preparationTime, setPreparationTime] = useState("");
   const [category, setCategory] = useState("");
-  const [servings, setServings] = useState("");
+ // const [servings, setServings] = useState("");
   const [preparationMethod, setPreparationMethod] = useState("");
   const [allergens, setAllergens] = useState("");
 
@@ -27,9 +27,9 @@ function RecipeForm() {
     setCategory(event.target.value);
   };
 
-  const handleServingsChange = (event) => {
-    setServings(event.target.value);
-  };
+  // const handleServingsChange = (event) => {
+  //   setServings(event.target.value);
+  // };
 
   const handlePreparationMethodChange = (event) => {
     setPreparationMethod(event.target.value);
