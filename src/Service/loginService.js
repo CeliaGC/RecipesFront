@@ -1,19 +1,23 @@
-  import axios from "axios";
+import axios from "axios";
 
-  const apiClient = axios.create({
-    baseURL: 'https://localhost:7286',
-    withCredentials: true,
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json'
-    }
-  }) 
+const apiClient = axios.create({
+  baseURL: 'https://localhost:7286',
+  withCredentials: true,
+  headers: {
+    Accept: 'application/json',
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+    'Content-Type': 'application/json'
+  }
 
-  export const loginService = (data) => {
-    console.log('hola'+ loginService);
+});
 
-    return axios.post(baseUrl + "/User/Login", data);
-   
+export const loginService = async(data) => {
+  console.log('hola', data);
+ let response= await apiClient.post("/User/Login", data);
+ let dataResponse= await response.data
+ console.log(response)
+ return dataResponse;
 };
 
 

@@ -26,35 +26,35 @@ function FormLogin() {
   };
 
   const handleLogin = async (formData) => {
-        
     try {
-        const { data } = await loginService(formData);
-        setUserStorage(data);
-        navigate('/ViewMenu');
+      const response = await loginService(formData);
+      // restante del código
+    } catch (error) {
+      if (error.response) {
+        handleResponseError(error.response);
+      } else {
+        console.log("Error:", error.message);
+      }
     }
-    catch (error) {
-
-        //manejo de errores
-
-        if(error.response.status == 400){
-            swal(error.response.data.error);
-        }
-        if(error.response.status == 422){
-            swal(error.response.data.error);
-        }
-    }        
-};
-
-const handleSubmit = (event) => {
-  event.preventDefault();
-
-  const loginData = {
-    userName: userName,
-    userPassword: userPassword,
   };
 
-  handleLogin(loginData);
-};
+  const handleResponseError = (response) => {
+    if (response.status === 400 || response.status === 422) {
+      swal(response.data.error);
+    }
+  };
+
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const loginData = {
+      userName: userName,
+      userPassword: userPassword,
+    };
+
+    handleLogin(loginData);
+  };
 
   return (
     <div className="registration-form-container">
