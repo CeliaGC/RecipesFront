@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link, useLoaderData } from 'react-router-dom';
+import M7 from "../assets/M7.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function CardMenu() {
@@ -9,12 +10,14 @@ export default function CardMenu() {
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
-      {categories.map((category) => (
-        <Link to={`/MenuRecipe/${category.id}`} key={category.id} className="text-decoration-none">
-          <Card style={{ width: '13rem' }} className="m-2">
+  <div className="row">
+    {categories.map((category) => (
+      <div key={category.id} className="col col-4">
+        <Link to={`/MenuRecipe/${category.id}`} className="text-decoration-none">
+          <Card style={{ width: '13rem' }} className="m-4">
             <Card.Img
               style={{ width: '100%' }} 
-              src="https://images.pexels.com/photos/1126359/pexels-photo-1126359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              src={M7}
             />
             <Card.Body>
               <Card.Text>
@@ -23,7 +26,11 @@ export default function CardMenu() {
             </Card.Body>
           </Card>
         </Link>
-      ))}
-    </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
   );
 }
