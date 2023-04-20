@@ -15,7 +15,7 @@ export const loginService = async(data) => {
   console.log('hola', data);
  let response= await apiClient.post("/User/Login", data);
  let dataResponse= await response.data
- console.log(response)
+ console.log("desde el servicio", dataResponse)
  return dataResponse;
 };
 

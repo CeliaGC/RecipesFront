@@ -28,6 +28,8 @@ function FormLogin() {
   const handleLogin = async (formData) => {
     try {
       const response = await loginService(formData);
+      localStorage.setItem("userData", JSON.stringify(response));
+
       navigate('/ViewMenu');
 
     } catch (error) {
