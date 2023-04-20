@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import CardRecipe from '../Component/CardRecipe';
+import CardRecipe from "../Component/CardRecipe"
 
 const CardRecipe = ({ title, description, image }) => {
   return (
