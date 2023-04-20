@@ -1,8 +1,8 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';
-import CardRecipe from "../Component/CardRecipe"
+import CardRecipe from "../Component/CardRecipe.jsx"
 
-const CardRecipe = ({ title, description, image }) => {
+const CardRecipe = ({ title, description, ingredients, difficulty, preptime, image }) => {
   return (
     <Card>
       <CardMedia
@@ -17,6 +17,15 @@ const CardRecipe = ({ title, description, image }) => {
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {description}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {ingredients}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {preptime}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {difficulty}
         </Typography>
       </CardContent>
     </Card>
