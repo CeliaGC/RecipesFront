@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { Outlet, useNavigation } from "react-router-dom";
-=======
-/* import { Outlet, useNavigation } from "react-router-dom";
->>>>>>> feature/login
 import Navbar from "../Component/Navbar";
 
 
@@ -21,8 +17,4 @@ function Layout() {
   )
 }
 
-<<<<<<< HEAD
 export default Layout
-=======
-export default Layout; */
->>>>>>> feature/login
