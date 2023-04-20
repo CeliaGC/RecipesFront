@@ -28,12 +28,11 @@ function FormLogin() {
   const handleLogin = async (formData) => {
     try {
       const response = await loginService(formData);
-      // restante del código
+      navigate('/ViewMenu');
+
     } catch (error) {
       if (error.response) {
         handleResponseError(error.response);
-      } else {
-        console.log("Error:", error.message);
       }
     }
   };

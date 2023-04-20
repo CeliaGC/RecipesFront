@@ -1,5 +1,5 @@
 import { Outlet, useNavigation } from "react-router-dom";
-import Navb from "../Component/navbar";
+import Navb from "../Component/Navbar";
 import Footer from "../Component/footer";
 
 
@@ -20,4 +20,4 @@ function Root() {
   )
 }
 
-export default Root
+export default Root;

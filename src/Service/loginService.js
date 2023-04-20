@@ -1,12 +1,11 @@
-import axios from "axios";
+  import axios from "axios";
+
 
 const apiClient = axios.create({
   baseURL: 'https://localhost:7286',
-  withCredentials: true,
+  withCredentials: false,
   headers: {
     Accept: 'application/json',
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
     'Content-Type': 'application/json'
   }
 
@@ -19,7 +18,6 @@ export const loginService = async(data) => {
  console.log(response)
  return dataResponse;
 };
-
 
 
 /* 
