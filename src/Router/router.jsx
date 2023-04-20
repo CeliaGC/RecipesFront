@@ -1,28 +1,23 @@
-<<<<<<< HEAD
 import { Outlet, useNavigation } from "react-router-dom";
-=======
-/* import { Outlet, useNavigation } from "react-router-dom";
->>>>>>> feature/login
-import Navbar from "../Component/Navbar";
+import Navb from "../Component/Navbar";
+import Footer from "../Component/footer";
 
 
-function Layout() {
+function Root() {
   const navigation = useNavigation()
   return (
     <>
-      <Navbar/>
+      <Navb/>
       <main className="container">
         {navigation.state === "loading" && (
           <div className="alert alert-info my-S">Loading...</div>
         )}
         <Outlet />
+        <Footer />
+      
       </main>
     </>
   )
 }
 
-<<<<<<< HEAD
-export default Layout
-=======
-export default Layout; */
->>>>>>> feature/login
+export default Root;

@@ -1,35 +1,30 @@
-import React from "react";
-import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
-import {FaUserCircle} from 'react-icons/fa';
-import {HiOutlineSearch} from 'react-icons/hi';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import '../Style/Navbar.css'
+import { BsPerson } from 'react-icons/bs';
 
 const NavbarLog = () => {
   return (
-    <Navbar style={{ backgroundColor: "#F2AA85", height: '100px'}} >
-      
-      <Navbar.Brand href="/Menu" style={{marginLeft:'50px'}}>
-       
-        <span className="ml-">CookSmart</span>
-      </Navbar.Brand>
-
-     
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-    
-        <Nav>
-          <Nav.Link href="#login">
-         
-          </Nav.Link>
-        </Nav>
-        <Button variant="link"><FaUserCircle size={25} style={{ backgroundColor: 'none', color: 'black', size: '2em', marginRight:'-35em' }} /></Button>
-        <Form inline className="d-flex col-xs-6 ">
-          <FormControl
-            type="text"
-            placeholder="Buscar"
-            className="mr-sm-2" style={{backgroundColor: 'transparent',  borderColor:'black'}}  />
-          <Button variant="light" style={{marginRight:'50px',backgroundColor: 'transparent', border: 'none' }}><HiOutlineSearch size={25}/></Button>
-        </Form>
-      </Navbar.Collapse>
+    <Navbar bg="light" expand="lg">
+      <Container fluid>
+        <Navbar.Collapse id="navb" className='ms-auto'>
+        <Button variant="primary " size="lg" href="/FormLogin" style={{ backgroundColor: 'transparent', border: 'none' }}>
+                      < BsPerson style={{ backgroundColor: 'none', color: '#511A29', size: '2em' }} />
+                    </Button>
+          <Form className="d-flex col-xs-6 col-md-4 ms-auto">
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          </Form>
+        </Navbar.Collapse>
+      </Container>
     </Navbar>
   );
 };

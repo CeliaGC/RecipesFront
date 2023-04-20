@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+<<<<<<< HEAD
 import LayoutPublic from "../Layout/LayoutPublic";
 import NotFound from "../Pages/NotFound";
 import Menu from "../Pages/Menu";
@@ -15,6 +16,17 @@ import AdminUser from "../Pages/AdminUser";
 import {recipeHandler} from "../Handlers/recipeHandler";
 import { categoryHandler } from "../Handlers/categoryHandler";
 import AdminIngredientList from "../Pages/AdminIngredientList";
+=======
+import Root from "../Router/Root";
+import Home from "../Pages/home";
+import NotFound from "../Pages/NotFound";
+import Menu from "../Pages/Menu";
+import ViewMenu from "../Pages/ViewMenu";
+import FormLogin from "../Component/FormLogin";
+
+
+
+>>>>>>> feature/login
 
 export const router = createBrowserRouter([
     {
@@ -39,6 +51,7 @@ export const router = createBrowserRouter([
                         element: <ViewMenu/>,
                     },
                     {
+<<<<<<< HEAD
                         path: '/EditRecipe',
                         element: <EditRecipe/>,
                         loader: fetchRecipes,
@@ -79,6 +92,16 @@ export const router = createBrowserRouter([
                     {   path: '/AdminIngredientList',
                         element: <AdminIngredientList/>,
                     }
+=======
+                        path: '/FormLogin',
+                        element: <FormLogin/>,
+                        
+                    },
+                    
+                    
+                   
+                    
+>>>>>>> feature/login
                     
                 ]
             },
