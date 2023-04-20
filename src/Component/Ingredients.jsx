@@ -8,7 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function List() {
   //TOMA LOS VALORES DEL LOCALSTORAGE
   const [addListRecipe, setListRecipe] = useState(JSON.parse(localStorage.getItem("addListRecipe")) || []);
-//BORRA LOS DATOS DE LA LISTA
+  //BORRA LOS DATOS DE LA LISTA
   const removeaddListRecipe = () => {
     localStorage.removeItem("addListRecipe");
     setListRecipe([]);
@@ -68,6 +68,7 @@ function List() {
 
 
   return (
+   
     <div>
       <Card>
         <Card.Body>
@@ -88,7 +89,7 @@ function List() {
                   <td>{ingredient.unit}</td>
                 </tr>
               ))}
-                {Object.keys(totalAmounts).map((unit) => (
+              {Object.keys(totalAmounts).map((unit) => (
                 <tr key={unit}>
                   <td>Total {unit}</td>
                   <td>{totalAmounts[unit]}</td>
@@ -146,13 +147,18 @@ function List() {
             </tfoot>
           </Table>
         </Card.Body>
-        <div className="card-footer d-flex justify-content-between">
+
+        <div className="card-footer d-flex flex-row justify-content-between">
           <button className="btn btn-primary" onClick={() => removeaddListRecipe()}>Borrar ingredientes</button>
+          <button className="btn btn-primary" >Enviar ingredientes</button>
         </div>
 
       </Card>
 
     </div>
+    
+   
+   
   )
 
 };
