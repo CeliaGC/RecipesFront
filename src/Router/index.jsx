@@ -43,14 +43,15 @@ export const router = createBrowserRouter([
                         loader: fetchRecipes,
                     },
                     {
-                        path: '/MenuRecipe',
+                        path: '/MenuRecipe/:category',
                         element: <MenuRecipe/>,
-                        loader: fetchRecipes,
+                        loader: fetchRecipe,
                     },
+                
                     {
                         path: '/ViewRecipe/:id',
                         element: <ViewRecipe/>,
-                        loader: fetchRecipe,
+                        loader: fetchRecipeId,
                     },
                     {
                         path: '/List',
@@ -89,7 +90,12 @@ async function fetchCategories() {
     return { categories };
 }
 async function fetchRecipe({ params }) {
-    const recipe = await recipeHandler.loadRecipe(params.id);
+    const recipesData = await recipeHandler.loadRecipes();
+    const recipes = recipesData.filter(recipe => recipe.category == params.category)
     const categories = await categoryHandler.loadCategories();
-    return { recipe, categories };
+    return { recipes, categories };
+}
+async function fetchRecipeId({ params }) {
+    const recipe = await recipeHandler.loadRecipe(params.id);
+    return { recipe};
 }
