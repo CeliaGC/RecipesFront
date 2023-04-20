@@ -14,9 +14,7 @@ function Navbarmenu() {
             <Nav.Link href='/List'>Lista</Nav.Link>
             <Nav.Link href="https://www.ucam.edu/estudios/grados/gastronomia-presencial">Blog</Nav.Link>
             <Nav.Link href='/ViewMenu'>ViewMenu</Nav.Link>
-            <Nav.Link href='/EditRecipe'>EditRecipe</Nav.Link>
-            <Nav.Link href='/MenuRecipe'>MenuRecipe</Nav.Link>
-            <Nav.Link href='/ViewRecipe'>ViewRecipe</Nav.Link>
+          
             <Nav.Link href='/AdminCategory'>AdminCategory</Nav.Link>
             <Nav.Link href='/AdminRecipe'>AdminRecipe</Nav.Link>
             <Nav.Link href='/AdminUser'>AdminUser</Nav.Link>
