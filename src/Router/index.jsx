@@ -65,6 +65,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/AdminCategory',
                         element: <AdminCategory/>,
+                        loader: fetchCategories,
                     },
                     {
                         path: '/AdminRecipe',
