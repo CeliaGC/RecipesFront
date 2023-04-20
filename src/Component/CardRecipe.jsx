@@ -1,35 +1,30 @@
-
 import React from 'react';
-import Card from 'react-bootstrap/Card';
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Card, CardContent, CardMedia, Typography } from '@mui/material';
+import CardRecipe from '../Component/CardRecipe';
 
-const CardRecipe = () => {
+const CardRecipe = ({ title, description, image }) => {
   return (
-    <div className="container mt-4">
-      <div className="row justify-content-center">
-        <h3>Ensaladas</h3> 
-        <div className="col-md-6">
-         
-        <Card style={{ width: '18rem' }}>
-          <Card.Body>
-            <Card.Title>Receta</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">4 Personas</Card.Subtitle>
-            <Card.Text>
-              Esto es una ensalada
-            </Card.Text>
-            <Card.Link href="#">Añadir receta</Card.Link>
-            <Card.Link href="#">Favorito</Card.Link>
-          </Card.Body>
-        </Card>
-        
-        </div>
-        
-      </div>
-    </div>
+    <Card>
+      <CardMedia
+        component="img"
+        height="140"
+        image={image}
+        alt="recipe"
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {description}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 };
 
 export default CardRecipe;
+
 
 
 
