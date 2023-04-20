@@ -3,7 +3,7 @@ import LayoutPublic from "../Layout/LayoutPublic";
 import NotFound from "../Pages/NotFound";
 import Menu from "../Pages/Menu";
 import Home from "../Pages/Home";
-import ViewMenu from "../Pages/MenuRecipe";
+
 import EditRecipe from "../Pages/EditRecipe";
 import MenuRecipe from "../Pages/MenuRecipe";
 import ViewRecipe from "../Pages/ViewRecipe";
@@ -34,10 +34,7 @@ export const router = createBrowserRouter([
                         element: <Menu/>,
                         loader: fetchCategories,
                     },
-                    {
-                        path: '/ViewMenu',
-                        element: <ViewMenu/>,
-                    },
+                   
                     {
                         path: '/EditRecipe',
                         element: <EditRecipe/>,

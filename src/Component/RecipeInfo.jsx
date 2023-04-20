@@ -16,10 +16,10 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
  
   return (
     <section>
-      <div className="card">
+      <div className="card" >
         <div className="card-body">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-7">
               <Card>
                 <Card.Body>
                   <div className="row">
@@ -38,9 +38,7 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
                       <strong>Autor</strong>
                       <p>{recipe.author}</p>
                     </div>
-                  </div>
-                  <hr />
-                  <strong>Ingredientes</strong>
+                  </div> 
                   <Table striped bordered hover responsive>
                     <thead>
                       <tr>
@@ -61,15 +59,13 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
                       ))}
                       
                     </tbody>
-                    <div className="card-footer d-flex justify-content-between">
-                       <button className="btn btn-primary" onClick={handleAddToIngredients}>Guardar ingredientes</button> 
-                      </div>
+                  
                   </Table>
 
                 </Card.Body>
               </Card>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-5">
               <div className="col-md-6">
                 <Card>
                   <Card.Body>
@@ -90,11 +86,10 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
               </div>
             </div>
             <div className="row mt-auto">
-              <div className="col-md-12">
                 <div className="card-footer d-flex justify-content-between">
-                  <button className="btn btn-primary">Botón</button>
+                <button className="btn btn-secondary" onClick={handleAddToIngredients}>Guardar ingredientes</button>
+                  <button className="btn btn-secondary">Menú</button>
                 </div>
-              </div>
             </div>
           </div>
         </div>
