@@ -12,9 +12,10 @@ import MyRecipe from "../Pages/MyRecipe";
 import AdminCategory from "../Pages/AdminCategory";
 import AdminRecipe from "../Pages/AdminRecipe";
 import AdminUser from "../Pages/AdminUser";
-
 import {recipeHandler} from "../Handlers/recipeHandler";
 import { categoryHandler } from "../Handlers/categoryHandler";
+import AdminIngredientList from "../Pages/AdminIngredientList";
+
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -73,6 +74,9 @@ export const router = createBrowserRouter([
                         path: '/AdminUser',
                         element: <AdminUser/>,
                     },
+                    {   path: '/AdminIngredientList',
+                        element: <AdminIngredientList/>,
+                    }
                     
                 ]
             },
