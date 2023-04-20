@@ -2,12 +2,12 @@ import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../Style/Home.css';
-import C1 from "../assets/C1.jpg";
+import C11 from "../assets/C11.jpg";
 import C12 from "../assets/C12.jpg";
 import C3 from "../assets/C3.jpg";
 import C4 from "../assets/C4.jpg";
 import C5 from "../assets/C5.jpg";
-import C6 from "../assets/C6.jpg";
+import M6 from "../assets/M6.jpg";
 import C9 from "../assets/C9.jpg";
 import C8 from "../assets/C8.jpg";
 import C13 from "../assets/C13.jpg";
@@ -23,7 +23,7 @@ const CarouselImg = () => {
     
     <Carousel >
  <Carousel.Item >
-        <img className="d-block w-100 img-fluid" src={C1} alt="First slide" />
+        <img className="d-block w-100 img-fluid" src={C11} alt="First slide" />
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100 img-fluid" src={C12} alt="Second slide" />
@@ -38,7 +38,7 @@ const CarouselImg = () => {
         <img className="d-block w-100 img-fluid" src={C5} alt="Third slide" />
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100 img-fluid" src={C6} alt="Third slide" />
+        <img className="d-block w-100 img-fluid" src={M6} alt="Third slide" />
       </Carousel.Item>
       <Carousel.Item>
         <img className="d-block w-100 img-fluid" src={C9} alt="Third slide" />
