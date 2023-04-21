@@ -60,7 +60,7 @@ const Buttons = () => {
 
       <div>
         <br />
-        <p className="paragraph">Bienvenidos a nuestra web de recetas de cocina, donde encontrarás una gran variedad de deliciosas recetas para satisfacer tu paladar y el de tus seres queridos. Desde platos principales hasta postres, tenemos algo para todos los gustos.
+        <p className="paragraph">   Bienvenidos a nuestra web de recetas de cocina, donde encontrarás una gran variedad de deliciosas recetas para satisfacer tu paladar y el de tus seres queridos. Desde platos principales hasta postres, tenemos algo para todos los gustos.
 
           Además, no solo los aficionados pueden compartir sus recetas favoritas, sino que también los profesionales de la industria culinaria pueden contribuir con sus creaciones únicas. Nos preocupamos por la salud y el bienestar de nuestros lectores, por lo que toda receta publicada incluye información detallada sobre los ingredientes y los posibles alérgenos que puedan contener.
 
