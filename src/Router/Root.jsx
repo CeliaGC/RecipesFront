@@ -2,7 +2,7 @@ import { Outlet, useNavigation } from "react-router-dom";
 import '../Style/Home.css';
 import FormLogin from "../Component/FormLogin";
 import { useState } from 'react';
-import Home from "../Pages/home";
+import Home from "../Pages/Home";
 
 
 function Root() {
