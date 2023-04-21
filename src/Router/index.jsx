@@ -15,6 +15,9 @@ import AdminUser from "../Pages/AdminUser";
 import {recipeHandler} from "../Handlers/recipeHandler";
 import { categoryHandler } from "../Handlers/categoryHandler";
 import AdminIngredientList from "../Pages/AdminIngredientList";
+import FormLogin from "../Component/FormLogin";
+
+
 
 export const router = createBrowserRouter([
     {
@@ -78,6 +81,11 @@ export const router = createBrowserRouter([
                     },
                     {   path: '/AdminIngredientList',
                         element: <AdminIngredientList/>,
+                    },
+                    {
+                        path: '/FormLogin',
+                        element: <FormLogin/>,
+                        
                     }
                     
                 ]
