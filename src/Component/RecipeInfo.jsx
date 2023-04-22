@@ -88,7 +88,7 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
             <div className="row mt-auto">
                 <div className="card-footer d-flex justify-content-between">
                 <button className="btn btn-secondary" onClick={handleAddToIngredients}>Guardar ingredientes</button>
-                  <button className="btn btn-secondary">Menú</button>
+                <button className="btn btn-secondary">Menú</button>
                 </div>
             </div>
           </div>
