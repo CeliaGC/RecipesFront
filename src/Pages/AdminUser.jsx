@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import "../Style/AdminUser.css";
 
+
+
+
 const AdminUser = () => {
   const [users] = useState([
     { id: 1, username: "JuanLu", role: "Admin" },
@@ -18,6 +21,7 @@ const AdminUser = () => {
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
+  
 
   const renderUsers = currentUsers.map((user) => {
     return (
