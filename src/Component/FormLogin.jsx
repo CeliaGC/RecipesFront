@@ -30,7 +30,7 @@ function FormLogin() {
       const response = await loginService(formData);
       localStorage.setItem("userData", JSON.stringify(response));
 
-      navigate('/ViewMenu');
+      navigate('/Menu');
 
     } catch (error) {
       if (error.response) {

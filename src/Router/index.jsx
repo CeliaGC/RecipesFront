@@ -40,6 +40,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/ViewMenu',
                         element: <ViewMenu/>,
+                        loader: fetchRecipes,
                     },
                     {
                         path: '/EditRecipe',
