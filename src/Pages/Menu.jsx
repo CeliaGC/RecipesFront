@@ -10,8 +10,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function Menu() {
+
+  const isLogged = JSON.parse(localStorage.getItem("userData"));
+  console.log(isLogged);
+    
+
   return (
     <div >
+        {isLogged ? <h1>estoy loggeado</h1> : <h1>no estoy loggeado</h1>}
     <NavbarMenu/>
     <Carousel>
       <Carousel.Item>
