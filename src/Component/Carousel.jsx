@@ -23,11 +23,11 @@ function Carousel() {
           src="src\Img\esencias aromaticas aromaterapia.jpg"
           alt="Second slide"
         />
-
+{/* 
         <Carousel.Caption>
           <h3>Productos artesanales</h3>
           <p id="CarrouselText">Prueba nuestra selección de articulos artesanales: velas de soja, inciensos artesanales, esencias aromáticas... </p>
-        </Carousel.Caption>
+        </Carousel.Caption> */}
       </Carousel.Item>
       <Carousel.Item>
         <img
