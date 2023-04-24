@@ -1,7 +1,10 @@
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import "../Style/AdminUser.css";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../Contexts/UserContext";
+
 
 
 
@@ -15,6 +18,13 @@ const AdminUser = () => {
     { id: 5, username: "Jenny", role: "User" },
     { id: 6, username: "Rose", role: "User" }
   ]);
+  const { userStorage, setUserStorage } = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setUserStorage("");
+    navigate('/');
+  };
 
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(3);
@@ -22,7 +32,7 @@ const AdminUser = () => {
   const indexOfLastUser = currentPage * usersPerPage;
   const indexOfFirstUser = indexOfLastUser - usersPerPage;
   const currentUsers = users.slice(indexOfFirstUser, indexOfLastUser);
-  
+
 
   const renderUsers = currentUsers.map((user) => {
     return (
@@ -32,10 +42,10 @@ const AdminUser = () => {
           <Card.Body>
             <Card.Text>{user.role}</Card.Text>
             <div className="btn-group">
-              <Button variant="warning" size="sm" style={{backgroundColor: "rgba(252, 163, 117, 1)"}}>
+              <Button variant="warning" size="sm" style={{ backgroundColor: "rgba(252, 163, 117, 1)" }}>
                 Editar
               </Button>
-              <Button variant="danger" size="sm" style={{backgroundColor: "rgba(220, 197, 167, 1)"}}>
+              <Button variant="danger" size="sm" style={{ backgroundColor: "rgba(220, 197, 167, 1)" }}>
                 Eliminar
               </Button>
             </div>
@@ -65,20 +75,26 @@ const AdminUser = () => {
       <Row>
         <Col>
           <h1>Usuarios</h1>
+          <Button
+            variant="primary"
+            type="submit"
+            style={{ background: '#F2AA85', border: 'none' }} onClick={handleLogout}>
+            Cerrar sesión
+          </Button>
           <Form>
             <Form.Group controlId="formBasicSearch">
-              <Form.Control type="text" placeholder="Buscar por usuario" style={{backgroundColor: "rgba(255, 236, 227, 1)"}}>
+              <Form.Control type="text" placeholder="Buscar por usuario" style={{ backgroundColor: "rgba(255, 236, 227, 1)" }}>
               </Form.Control>
-              </Form.Group>
+            </Form.Group>
           </Form>
           <hr />
           <Row>{renderUsers}</Row>
           <nav>
-          <ul className="pagination justify-content-center" style={{marginBottom: "0.5rem"}}>
-  {renderPageNumbers}
-</ul>
+            <ul className="pagination justify-content-center" style={{ marginBottom: "0.5rem" }}>
+              {renderPageNumbers}
+            </ul>
           </nav>
-         </Col>
+        </Col>
       </Row>
     </Container>
   );

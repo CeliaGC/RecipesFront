@@ -10,6 +10,7 @@ export const UserProvider = ({ children }) => {
     const userData = localStorage.getItem('userData');
     const parsedUserData = JSON.parse(userData);
     const IdRol = parsedUserData && parsedUserData.item2;
+    
 
     const data = {
         userStorage, setUserStorage, IdRol
