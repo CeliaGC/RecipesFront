@@ -1,10 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-<<<<<<< HEAD
-import Root from "../Router/Root";
-import Home from "../Pages/Home";
-=======
 import LayoutPublic from "../Layout/LayoutPublic";
->>>>>>> feature/styledev
 import NotFound from "../Pages/NotFound";
 import Menu from "../Pages/Menu";
 import Home from "../Pages/Home";
