@@ -74,17 +74,19 @@ const AdminUser = () => {
     <Container>
       <Row>
         <Col>
-          <h1>Usuarios</h1>
+        <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
           <Button
             variant="primary"
             type="submit"
-            style={{ background: '#F2AA85', border: 'none' }} onClick={handleLogout}>
+            style={{ background: '#F2AA85', border: 'none',  marginRight: '20px'}} onClick={handleLogout}>
             Cerrar sesión
           </Button>
+          </div>
           <Form>
             <Form.Group controlId="formBasicSearch">
-              <Form.Control type="text" placeholder="Buscar por usuario" style={{ backgroundColor: "rgba(255, 236, 227, 1)" }}>
+              <Form.Control type="text" placeholder="Buscar por usuario" style={{ backgroundColor: "rgba(255, 236, 227, 1)" , width: "300px" }}>
               </Form.Control>
+              <h1 style={{fontSize: '30px', marginTop: '20px'}}>Lista de usuarios activos</h1>
             </Form.Group>
           </Form>
           <hr />
