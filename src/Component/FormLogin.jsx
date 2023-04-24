@@ -19,7 +19,7 @@ function FormLogin() {
 
   const userData = localStorage.getItem('userData');
   const parsedUserData = JSON.parse(userData);
-  const IdRol = parsedUserData.item2;
+  const IdRol = parsedUserData && parsedUserData.item2;
 
 
 
@@ -36,12 +36,14 @@ function FormLogin() {
       const data = await loginService(formData);
       setUserStorage(data);
 
-      if (IdRol == 1) {
+      if (IdRol && IdRol == 1) {
         navigate('/AdminUser');
-      } else if (IdRol === 2) {
+
+      } if (IdRol && IdRol === 2) {
         navigate('/Menu');
     
-      }
+      } 
+    
     } catch (error) {
       if (error.response) {
         handleResponseError(error.response);
