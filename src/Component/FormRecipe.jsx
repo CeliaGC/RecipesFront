@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Button, Row, Col, Alert } from "react-bootstrap";
 import "../Style/Addrecipe.css";
 
 function RecipeForm() {
@@ -10,6 +10,7 @@ function RecipeForm() {
   const [servings, setServings] = useState("");
   const [preparationMethod, setPreparationMethod] = useState("");
   const [allergens, setAllergens] = useState("");
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -42,10 +43,21 @@ function RecipeForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Enviar datos al servidor
+    console.log("Receta:", { name, ingredients, preparationTime, category, servings, preparationMethod, allergens });
+    setShowSuccessMessage(true);
+  };
+
+  const handleAlertClose = () => {
+    setShowSuccessMessage(false);
   };
 
   return (
     <div className="recipe-form-container">
+      {showSuccessMessage && (
+        <Alert variant="success" onClose={handleAlertClose} dismissible>
+          Su receta se ha añadido correctamente.
+        </Alert>
+      )}
       <Form onSubmit={handleSubmit}>
         <Row>
           <Col>
@@ -82,6 +94,6 @@ function RecipeForm() {
       </Form>
     </div>
   );
-}
+};
 
 export default RecipeForm;

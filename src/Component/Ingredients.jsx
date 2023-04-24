@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../Style/Ingredients.css';
-import { Container, Row, Col, Form, FormGroup, FormControl, FormCheck, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, FormGroup, FormControl, FormCheck, Button, Alert } from "react-bootstrap";
 
 const IngredientForm = () => {
   const [ingredients, setIngredients] = useState([
@@ -9,6 +9,7 @@ const IngredientForm = () => {
     { id: 2, name: "Ingrediente 2", quantity: "", unit: "", checked: false },
     { id: 3, name: "Ingrediente 3", quantity: "", unit: "", checked: false }
   ]);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleQuantityChange = (event, ingredientId) => {
     const updatedIngredients = ingredients.map((ingredient) => {
@@ -43,10 +44,20 @@ const IngredientForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("Ingredientes:", ingredients);
+    setShowSuccessMessage(true);
+  };
+
+  const handleAlertClose = () => {
+    setShowSuccessMessage(false);
   };
 
   return (
     <Container>
+      {showSuccessMessage && (
+        <Alert variant="success" onClose={handleAlertClose} dismissible>
+          Sus ingredientes se han enviado correctamente.
+        </Alert>
+      )}
       <Form onSubmit={handleSubmit}>
         {ingredients.map((ingredient) => (
           <Row key={ingredient.id}>
@@ -93,9 +104,11 @@ const IngredientForm = () => {
           </Row>
         ))}
         <Button type="submit">Enviar</Button>
+        
       </Form>
     </Container>
   );
 };
 
 export default IngredientForm;
+
