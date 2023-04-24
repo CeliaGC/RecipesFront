@@ -1,10 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-<<<<<<< HEAD
-import { Button } from "react-bootstrap";
-import Navb from '../Component/Navbar';
-=======
 import '../Style/Home.css';
 import C1 from "../assets/C1.jpg";
 import C12 from "../assets/C12.jpg";
@@ -18,7 +14,6 @@ import C13 from "../assets/C13.jpg";
 import C7A from "../assets/C7A.jpg";
 import { ButtonGroup, Button } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
->>>>>>> feature/styledev
 
 
 
