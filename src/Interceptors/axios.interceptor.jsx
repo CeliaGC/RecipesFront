@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-const user = JSON.parse(localStorage.getItem('user')) ? JSON.parse(localStorage.getItem('user')) : '.';
+const user = JSON.parse(localStorage.getItem('userData')) ? JSON.parse(localStorage.getItem('userData')) : '.';
 
 const token = user.token;
 

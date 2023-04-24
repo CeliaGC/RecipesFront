@@ -17,6 +17,12 @@ function FormLogin() {
   const [userPassword, setUserPassword] = useState('');
   const navigate = useNavigate();
 
+  const userData = localStorage.getItem('userData');
+  const parsedUserData = JSON.parse(userData);
+  const IdRol = parsedUserData.item2;
+
+
+
   const handleUserNameChange = (event) => {
     setUserName(event.target.value);
   };
@@ -27,11 +33,15 @@ function FormLogin() {
 
   const handleLogin = async (formData) => {
     try {
-      const response = await loginService(formData);
-      localStorage.setItem("userData", JSON.stringify(response));
+      const data = await loginService(formData);
+      setUserStorage(data);
 
-      navigate('/ViewMenu');
-
+      if (IdRol == 1) {
+        navigate('/AdminUser');
+      } else if (IdRol === 2) {
+        navigate('/Menu');
+    
+      }
     } catch (error) {
       if (error.response) {
         handleResponseError(error.response);

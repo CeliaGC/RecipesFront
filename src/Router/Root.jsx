@@ -1,4 +1,4 @@
-import { Outlet, useNavigation } from "react-router-dom";
+/* import { Outlet, useNavigation } from "react-router-dom";
 import '../Style/Home.css';
 import FormLogin from "../Component/FormLogin";
 import { useState } from 'react';
@@ -7,7 +7,7 @@ import Home from "../Pages/Home";
 
 function Root() {
 
- 
+  const navigation = useNavigation()
   
   return (
     <>
@@ -24,4 +24,4 @@ function Root() {
   )
 }
 
-export default Root;
+export default Root; */

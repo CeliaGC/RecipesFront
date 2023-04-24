@@ -1,5 +1,6 @@
-/* import { Outlet, useNavigation } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../Component/Navbar";
+
 
 
 function Layout() {
@@ -17,4 +18,4 @@ function Layout() {
   )
 }
 
-export default Layout; */
+export default Layout
