@@ -2,34 +2,44 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useLoaderData } from 'react-router';
 
-const CardRecipe = () => {
+function CardRecipe()  {
+  const {recipes, categories} = useLoaderData ();
+  
+
+  console.log(recipes);
+  console.log (categories);
+  
   return (
-    <div className="container mt-4">
-      <div className="row justify-content-center">
-        <h3>Ensaladas</h3> 
-        <div className="col-md-6">
-         
-        <Card style={{ width: '18rem' }}>
-          <Card.Body>
-            <Card.Title>Receta</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">4 Personas</Card.Subtitle>
-            <Card.Text>
-              Esto es una ensalada
-            </Card.Text>
-            <Card.Link href="#">Añadir receta</Card.Link>
-            <Card.Link href="#">Favorito</Card.Link>
-          </Card.Body>
-        </Card>
-        
-        </div>
-        
+    <div className="container">
+      <div className="row">
+        {recipes.map((recipe) => {
+           
+          return (
+            <div className="col-md-6 col-lg-4 mb-3">    
+              <Card style={{ width: '18rem' }}>
+                <Card.Body>
+                  <Card.Title>{recipe.name}</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">{recipe.posteBy}</Card.Subtitle>
+                  {/* <Card.Subtitle className="mb-2 text-muted">{recipe.category}</Card.Subtitle> */}
+                  <Card.Subtitle className="mb-2 text-muted">{recipe.author}</Card.Subtitle>
+                  <Card.Text>
+                    {recipe.category.id}
+                  </Card.Text>
+                  <Card.Link href={`/ViewRecipe/${recipe.id}`}>Ver</Card.Link>
+                </Card.Body>
+              </Card>
+            </div>
+          )
+        })}
       </div>
     </div>
-  );
-};
+     
+    )
 
+};
+ 
 export default CardRecipe;
 
-
-
+{/* <h3>{recipe.category}</h3> */}

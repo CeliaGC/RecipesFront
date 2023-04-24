@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
 import "../Style/AdminCategory.css";
+import { useLoaderData } from 'react-router';
 
 const AdminCategory = () => {
-  const [categories] = useState([
-    { id: 1, name: "Verduras" },
-    { id: 2, name: "Legumbres" },
-    { id: 3, name: "Carne" },
-    { id: 4, name: "Pescado" },
-    { id: 5, name: "Pasta" },
-    { id: 6, name: "Arroces" }
-  ]);
+    const { categories } = useLoaderData();
+  // const [categories] = useState([
+    // { id: 1, name: "Verduras" },
+    // { id: 2, name: "Legumbres" },
+    // { id: 3, name: "Carne" },
+    // { id: 4, name: "Pescado" },
+    // { id: 5, name: "Pasta" },
+    // { id: 6, name: "Arroces" }
+  // ]);
   const [currentPage, setCurrentPage] = useState(1);
   const [categoriesPerPage] = useState(3);
 
@@ -20,6 +22,8 @@ const AdminCategory = () => {
 
   const renderCategories = currentCategories.map((category) => {
     return (
+      <div>
+       {categories.map((category) => (
       <Col xs={4} key={category.id}>
         <Card className="mb-4 category-card">
           <Card.Body>
@@ -35,6 +39,8 @@ const AdminCategory = () => {
           </Card.Body>
         </Card>
       </Col>
+      ))}
+      </div>
     );
   });
 

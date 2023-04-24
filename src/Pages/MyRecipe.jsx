@@ -7,11 +7,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function MenuRecipe() {
   return (
     <div >
-    <NavbarMenu/>
-    <CardRecipe/>
+      
+      <NavbarMenu />
+      
+      <CardRecipe />
 
-    
-       
+      <div className="card-footer d-flex justify-content-between">
+        <button className="btn btn-secondary">Añadir receta</button>
+      </div>
+      
+
+
+
     </div>
   )
 }
