@@ -13,8 +13,9 @@ import AdminCategory from "../Pages/AdminCategory";
 import AdminRecipe from "../Pages/AdminRecipe";
 import AdminUser from "../Pages/AdminUser";
 import {recipeHandler} from "../Handlers/recipeHandler";
-import { categoryHandler } from "../Handlers/categoryHandler";
-import AdminIngredientList from "../Pages/AdminIngredientList";
+import {categoryHandler } from "../Handlers/categoryHandler";
+import {orderHandler} from "../Handlers/orderHandler"
+import AdminList from "../Pages/AdminList";
 
 export const router = createBrowserRouter([
     {
@@ -73,8 +74,9 @@ export const router = createBrowserRouter([
                         path: '/AdminUser',
                         element: <AdminUser/>,
                     },
-                    {   path: '/AdminIngredientList',
-                        element: <AdminIngredientList/>,
+                    {   path: '/AdminList',
+                        element: <AdminList/>,
+                        loadre: fetchOrders,
                     }
                     
                 ]
@@ -100,4 +102,9 @@ async function fetchRecipe({ params }) {
 async function fetchRecipeId({ params }) {
     const recipe = await recipeHandler.loadRecipe(params.id);
     return { recipe};
+}
+async function fetchOrders() {
+    const orders = await orderHandler.loadOrders();
+    onsole.log  (orders)
+    return { orders };
 }

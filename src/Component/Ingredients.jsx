@@ -33,6 +33,7 @@ function List() {
       ...newIngredient,
       id: addListRecipe.length + 1,
     };
+   
     const updatedList = [...addListRecipe, newRecipe];
     setListRecipe(updatedList);
     localStorage.setItem("addListRecipe", JSON.stringify(updatedList));

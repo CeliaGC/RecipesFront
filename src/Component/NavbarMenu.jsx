@@ -16,7 +16,7 @@ function Navbarmenu() {
             <Nav.Link href='/AdminCategory'>ACategoria</Nav.Link>
             <Nav.Link href='/AdminRecipe'>AReceta</Nav.Link>
             <Nav.Link href='/AdminUser'>AUsuario</Nav.Link>
-            <Nav.Link href='/AdminUser'>ALista</Nav.Link>
+            <Nav.Link href='/AdminList'>ALista</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
