@@ -76,7 +76,7 @@ export const router = createBrowserRouter([
                     },
                     {   path: '/AdminList',
                         element: <AdminList/>,
-                        loadre: fetchOrders,
+                        loader: fetchOrders,
                     }
                     
                 ]
