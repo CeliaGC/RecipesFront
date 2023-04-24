@@ -1,7 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
-import "../Style/Carousel.css"
+//import "../Style/Carousel.css"
 
-function CarouselFadeExample() {
+function Carousel() {
   return (
     <Carousel fade id="CarouselContainer">
       <Carousel.Item>
@@ -12,8 +12,8 @@ function CarouselFadeExample() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>Sukha</h3>
-          <p id="CarrouselText">Nuestro trabajo es tu calma</p>
+          <h3>CookSmart</h3>
+          <p id="CarrouselText">Las mejores recetas</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -48,4 +48,4 @@ function CarouselFadeExample() {
   );
 }
 
-export default CarouselFadeExample;
+export default Carousel;
