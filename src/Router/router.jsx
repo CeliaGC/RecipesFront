@@ -1,21 +1,23 @@
-import { Outlet, useNavigation } from "react-router-dom";
-import Navbar from "../Component/Navbar";
+/* import { Outlet, useNavigation } from "react-router-dom";
+import Navb from "../Component/Navbar";
+import Footer from "../Component/footer";
 
 
-
-function Layout() {
+function Root() {
   const navigation = useNavigation()
   return (
     <>
-      <Navbar/>
+      <Navb/>
       <main className="container">
         {navigation.state === "loading" && (
           <div className="alert alert-info my-S">Loading...</div>
         )}
         <Outlet />
+        <Footer />
+      
       </main>
     </>
   )
 }
 
-export default Layout
+export default Root; */
