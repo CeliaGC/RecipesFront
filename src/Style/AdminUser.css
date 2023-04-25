@@ -1,4 +1,4 @@
-.category-card .btn-group {
+.user-card .btn-group {
     display: flex;
     justify-content: space-between;
     }
@@ -16,7 +16,7 @@
     }
     
     @media (max-width: 768px) {
-    .category-card .btn-group {
+    .user-card .btn-group {
     display: flex;
     justify-content: space-between;
     }
@@ -41,7 +41,7 @@
     border-color: rgba(252, 163, 117, 1) ;
     }
     
-    .category-card {
+    .user-card {
     height: 100%;
     }
     
@@ -49,17 +49,17 @@
     margin-top: 1rem
     }
     
-    .add-recipe-form {
+    .add-user-form {
     margin-top: 2rem;
     }
     
-    .add-recipe-form .form-group {
+    .add-user-form .form-group {
     margin-bottom: 1rem;
     }
     
     /* Estilos para pantallas pequeñas */
     @media (max-width: 576px) {
-    .category-card {
+    .user-card {
     height: auto;
     }
     .btn-group {
@@ -75,7 +75,7 @@
     
     /* Estilos para pantallas medianas y grandes */
     @media (min-width: 768px) {
-    .category-card {
+    .user-card {
     height: 15rem;
     }
     .btn-group {
@@ -90,7 +90,7 @@
     }
     
     @media (min-width: 992px) {
-    .category-card {
+    .user-card {
     height: 100%;
     }
     .btn-group {
@@ -103,3 +103,5 @@
     margin-right: 0.5rem;
     }
     }
+
+       

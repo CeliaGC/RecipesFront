@@ -1,24 +1,27 @@
-import { Outlet, useNavigation } from "react-router-dom";
-import Navbar from "../Component/Navbar";
-
+/* import { Outlet, useNavigation } from "react-router-dom";
+import '../Style/Home.css';
+import FormLogin from "../Component/FormLogin";
+import { useState } from 'react';
+import Home from "../Pages/Home";
 
 
 function Root() {
+
   const navigation = useNavigation()
+  
   return (
     <>
-    <Navbar></Navbar>
-   
       <main className="container">
         {navigation.state === "loading" && (
           <div className="alert alert-info my-S">Loading...</div>
         )}
-        <Outlet />
+
+      
+      <Outlet />
 
       </main>
-      
     </>
   )
 }
 
-export default Root
+export default Root; */
