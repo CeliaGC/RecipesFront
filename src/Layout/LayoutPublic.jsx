@@ -12,10 +12,10 @@ function Layout() {
         {navigation.state === "loading" && (
           <div className="alert alert-info my-S">Loading...</div>
         )}
-        <Outlet />
+        <Outlet/>
       </main>
     </>
   )
 }
 
-export default Layout
+export default Layout;

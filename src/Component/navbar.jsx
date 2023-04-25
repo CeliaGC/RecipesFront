@@ -11,8 +11,6 @@ const NavbarLog = () => {
        
         <span className="ml-">CookSmart</span>
       </Navbar.Brand>
-
-     
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
     
@@ -22,7 +20,7 @@ const NavbarLog = () => {
           </Nav.Link>
         </Nav>
         <Button variant="link" href="/FormLogin"><FaUserCircle size={25} style={{ backgroundColor: 'none', color: 'black', size: '2em', marginRight:'-35em' }} /></Button>
-        <Form inline className="d-flex col-xs-6 ">
+        <Form inline="true" className="d-flex col-xs-6 ">
           <FormControl
             type="text"
             placeholder="Buscar"
