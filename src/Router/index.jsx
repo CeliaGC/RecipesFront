@@ -105,6 +105,6 @@ async function fetchRecipeId({ params }) {
 }
 async function fetchOrders() {
     const orders = await orderHandler.loadOrders();
-    onsole.log  (orders)
+    console.log  (orders)
     return { orders };
 }

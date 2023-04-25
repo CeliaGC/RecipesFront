@@ -1,5 +1,6 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import {  useLoaderData } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -11,22 +12,29 @@ export default function ListAdmin() {
     <div className="row">
       {orders.map((order) => (
         <div key={order.id} className="col col-4">
-          <Link to={`/MenuRecipe/${order.id}`} className="text-decoration-none">
+            
             <Card style={{ width: '13rem' }} className="m-4">
              
               <Card.Body>
                 <Card.Text>
+                  Uduario
                   {order.idUser}
                 </Card.Text>
                 <Card.Text>
+                  Ingrediente
                   {order.idIngredient}
                 </Card.Text>
                 <Card.Text>
+                  Cantidad
                   {order.amount}
+                </Card.Text>
+                <Card.Text>
+                  Unidad
+                  {order.unit}
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Link>
+          
         </div>
       ))}
     </div>
