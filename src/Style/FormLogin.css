@@ -1,0 +1,15 @@
+
+
+.center-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* establece la altura del formulario para ocupar toda la pantalla */
+  }
+  
+  .my-3 {
+    border: 0;
+    border-top: 2px solid black;
+  }
+  

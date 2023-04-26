@@ -21,7 +21,7 @@ const NavbarLog = () => {
          
           </Nav.Link>
         </Nav>
-        <Button variant="link"><FaUserCircle size={25} style={{ backgroundColor: 'none', color: 'black', size: '2em', marginRight:'-35em' }} /></Button>
+        <Button variant="link" href="/FormLogin"><FaUserCircle size={25} style={{ backgroundColor: 'none', color: 'black', size: '2em', marginRight:'-35em' }} /></Button>
         <Form inline className="d-flex col-xs-6 ">
           <FormControl
             type="text"
