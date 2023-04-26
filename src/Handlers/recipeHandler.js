@@ -34,11 +34,12 @@ export const recipeHandler = {
               "alergens": [
                 {
                   "name": newRecipe.name,
-                  "id": newRecipe.id
+
                 }
               ]
             
         }
+        console.log ("structure",newRecipe)
         return recipeService.submitRecipe(newRecipeStructure);
     },
 }

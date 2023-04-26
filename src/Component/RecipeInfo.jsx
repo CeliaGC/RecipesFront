@@ -13,6 +13,7 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
   const handleAddToIngredients = () => {
     addToIngredient(recipe.ingredients);
   };
+  console.log(recipe.ingredient)
  
   return (
     <section>
@@ -27,10 +28,10 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
                       <strong>Nombre del Plato</strong>
                       <p>{recipe.name}</p>
                     </div>
-                    {/* <div className="col-md-3">
+                    <div className="col-md-3">
                       <strong>Categoría</strong>
-                      <p>{categoryName}</p>
-                    </div> */}
+                      <p>{recipe.categoryName}</p>
+                    </div>
                     <div className="col-md-3">
                       <strong>Número de Personas: 4</strong>
                     </div>

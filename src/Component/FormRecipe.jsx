@@ -43,6 +43,7 @@ function RecipeForm() {
   const handleAlergensChange = (event) => {
     setAlergens(event.target.value);
   };
+ console.log (ingredients)
 
   const handleAdd = () => {
     const newIngredient = {
@@ -56,8 +57,21 @@ function RecipeForm() {
     setUnit('');
   };
   const handleSubmit = (event) => {
+
     event.preventDefault();
-    let newRecipe = {name, instructions, category, author, observations, materials, postedBy, ingredients, alergens};
+    const newIngredient = {
+      ingredient: ingredient,
+      amount: amount,
+      unit: unit
+    };
+    let newRecipe = {name, instructions, category, author, observations, materials, posterName: postedBy,
+       ingredients: [
+         newIngredient,
+       ],
+        alergens: [
+          {name: alergens},
+        ] };
+        console.log("componente",newRecipe)
     recipeHandler.addRecipe(newRecipe);
    
   };
@@ -124,7 +138,7 @@ function RecipeForm() {
           ))}
         </tbody>
       </Table>
-      <Form>
+      
         <Form.Group controlId="ingrediente">
           <Form.Label>Ingrediente</Form.Label>
           <Form.Control type="text" value={ingredient} onChange={e => setIngredient(e.target.value)} />
@@ -140,7 +154,8 @@ function RecipeForm() {
         <Button variant="primary" onClick={handleAdd}>
           Agregar
         </Button>
-      </Form>
+      
+      
       
    
   
