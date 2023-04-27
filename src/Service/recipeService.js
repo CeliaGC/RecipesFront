@@ -21,5 +21,15 @@ const apiClient = axios.create({
       let response = await apiClient.get("/Recipe/GetRecipe?recipeId=" + id);
       let recipe = response.data;
       return recipe;
-  }
+  },
+  
+  async submitRecipe(newRecipe) {
+    console.log("new Recipe", newRecipe);
+    await apiClient.post("/Recipe/Post",newRecipe);
+
+  },
+
+  async deleteRecipe(id) {
+    await apiClient.delete("/Recipe/Delete?id=" + id)
+  },
 }
