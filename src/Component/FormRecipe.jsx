@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Table, Form, Button, Row, Col } from "react-bootstrap";
 import { recipeHandler } from "../Handlers/recipeHandler";
+import { alergenHandler } from "../Handlers/alergenHandler";
 
 
 function RecipeForm() {
@@ -12,7 +13,6 @@ function RecipeForm() {
   const [materials, setMaterials] = useState("");
   const [postedBy, setPostedBy] = useState("");
   const [alergens, setAlergens] = useState("");
-
   const [ingredients, setIngredients] = useState([]);
   const [ingredient, setIngredient] = useState('');
   const [amount, setAmount] = useState('');

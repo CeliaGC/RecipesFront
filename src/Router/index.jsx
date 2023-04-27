@@ -17,7 +17,8 @@ import AdminIngredientList from "../Pages/AdminIngredientList";
 import FormLogin from "../Component/FormLogin";
 import { orderHandler } from "../Handlers/orderHandler"
 import AdminList from "../Pages/AdminList";
-
+import { alergenHandler } from "../Handlers/alergenHandler";
+import FormRecipe from "../Component/FormRecipe";
 
 
 
@@ -91,7 +92,12 @@ export const router = createBrowserRouter([
                         path: '/FormLogin',
                         element: <FormLogin />,
 
-                    }
+                    },
+                    {
+                        path: '/FormRecipe',
+                        element: <FormRecipe />,
+                        loader: fetchalergens,
+                    },
 
                 ]
             },
@@ -121,4 +127,9 @@ async function fetchOrders() {
     const orders = await orderHandler.loadOrders();
     console.log(orders)
     return { orders };
+}
+async function fetchalergens() {
+    const alergens = await alergenHandler.loadAlergens();
+    console.log(alergens)
+    return { alergens };
 }
