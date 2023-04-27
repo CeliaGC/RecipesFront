@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import CardRecipe from "./CardRecipe";
+import CardRecipe from "./";
 
 describe("CardRecipe", () => {
   test("renders recipe cards", () => {
