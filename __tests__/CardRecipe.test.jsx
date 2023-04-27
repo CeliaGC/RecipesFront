@@ -1,52 +1,44 @@
-import { render } from "@testing-library/react";
-import CardRecipe from "./";
+import { render, screen } from '@testing-library/react';
+import CardRecipe from "../src/Component/CardRecipe.jsx";
+import '@testing-library/jest-dom'
+
+vi.mock('react-router-dom', () => ({
+    useLoaderData: vi.fn(() => ({
+        recipe: {
+            title: 'recipe test',
+            description: 'arroces',
+            image: 'https://example.com/recipe.jpg',
+            ingredients: ['Ingredient 1', 'Ingredient 2'],
+            steps: ['Step 1', 'Step 2'],
+        },
+    })),
+}));
 
 describe("CardRecipe", () => {
-  test("renders recipe cards", () => {
-    const recipes = [
-      {
-        id: 1,
-        name: "Recipe 1",
-        posteBy: "Poste by 1",
-        categoryName: "Category 1",
-        author: "Author 1",
-        category: {
-          id: 1,
-          name: "Category 1",
-        },
-      },
-      {
-        id: 2,
-        name: "Recipe 2",
-        posteBy: "Poste by 2",
-        categoryName: "Category 2",
-        author: "Author 2",
-        category: {
-          id: 2,
-          name: "Category 2",
-        },
-      },
-    ];
+  beforeEach(() => {
+    render(<CardRecipe />);
+  });
 
-    const categories = [
-      {
-        id: 1,
-        name: "Category 1",
-      },
-      {
-        id: 2,
-        name: "Category 2",
-      },
-    ];
+  test('should render recipe title', () => {
+    const recipeTitle = screen.getByText(/recipe test/i);
+    expect(recipeTitle).toBeInTheDocument();
+  });
 
-    const { getByText } = render(
-      <CardRecipe recipes={recipes} categories={categories} />
-    );
+  test('should render recipe description', () => {
+    const descriptionElement = screen.getByText(/arroces/i);
+    expect(descriptionElement).toBeInTheDocument();
+  });
 
-    const recipe1 = getByText(/Recipe 1/);
-    expect(recipe1).toBeInTheDocument();
+  test('renders recipe ingredients', () => {
+    const ingredientsElement1 = screen.getByText(/Ingredient 1/i);
+    const ingredientsElement2 = screen.getByText(/Ingredient 2/i);
+    expect(ingredientsElement1).toBeInTheDocument();
+    expect(ingredientsElement2).toBeInTheDocument();
+  });
 
-    const recipe2 = getByText(/Recipe 2/);
-    expect(recipe2).toBeInTheDocument();
+  test('should render recipe image', () => {
+    const imageElement = screen.getByRole('img');
+    expect(imageElement).toBeInTheDocument();
+    expect(imageElement).toHaveStyle("background-image: url(https://example.com/recipe.jpg)");
   });
 });

@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import M7 from "../assets/M7.jpg";
 import "bootstrap/dist/css/bootstrap.min.css";
 
