@@ -22,7 +22,7 @@ function CardRecipe()  {
                 <Card.Body>
                   <Card.Title>{recipe.name}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">{recipe.posteBy}</Card.Subtitle>
-                  {/* <Card.Subtitle className="mb-2 text-muted">{recipe.category}</Card.Subtitle> */}
+                  <Card.Subtitle className="mb-2 text-muted">{recipe.categoryName}</Card.Subtitle>
                   <Card.Subtitle className="mb-2 text-muted">{recipe.author}</Card.Subtitle>
                   <Card.Text>
                     {recipe.category.id}
