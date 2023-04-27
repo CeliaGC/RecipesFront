@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Table, Form, Button, Row, Col } from "react-bootstrap";
 import { recipeHandler } from "../Handlers/recipeHandler";
 import { alergenHandler } from "../Handlers/alergenHandler";
-
+import { useLoaderData } from "react-router-dom";
+import { alergenService } from "../Service/alergenService";
 
 function RecipeForm() {
   const [name, setName] = useState("");
@@ -17,6 +18,14 @@ function RecipeForm() {
   const [ingredient, setIngredient] = useState('');
   const [amount, setAmount] = useState('');
   const [unit, setUnit] = useState('');
+  
+  useEffect(() => {
+    async function fetchData() {
+      const allAlergens = await alergenService.getAlergens();
+      setAlergens(allAlergens);
+    }
+    fetchData();
+  }, []);
 
   const handleNameChange = (event) => {
     setName(event.target.value);
@@ -72,6 +81,7 @@ function RecipeForm() {
    await recipeHandler.addRecipe(newRecipe);
    
   };
+ 
 
   return (
     <div className="recipe-form-container">
@@ -151,15 +161,19 @@ function RecipeForm() {
         <Button variant="primary" onClick={handleAdd}>
           Agregar
         </Button>
-      
-      
-      
-   
-  
-            <Form.Group className="mb-3">
-              <Form.Label>Alérgenos</Form.Label>
-              <Form.Control type="text" placeholder="Alérgenos" value={alergens} onChange={handleAlergensChange} />
-            </Form.Group>
+
+    <Form>
+      <Form.Group className="mb-3">
+        <Form.Label>Alérgenos</Form.Label>
+        <Form.Control as="select" value={selectedAlergen} onChange={handleAlergenChange}>
+          {alergens.map((alergen, index) => (
+            <option key={index} value={alergen.id}>
+              {alergen.name}
+            </option>
+          ))}
+        </Form.Control>
+      </Form.Group>
+    </Form>
 
             <Button variant="primary" type="submit">Añadir receta</Button>
           </Col>
