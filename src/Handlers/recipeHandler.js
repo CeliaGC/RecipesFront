@@ -24,22 +24,11 @@ export const recipeHandler = {
             "observations": newRecipe.observations,
             "materials": newRecipe.materials,
             "posterName": newRecipe.posterName,
-            "ingredients":  [
-                {
-                  "ingredient": newRecipe.ingredient,
-                  "amount": newRecipe.amount,
-                  "unit": newRecipe.unit,
-                }
-              ],
-              "alergens": [
-                {
-                  "name": newRecipe.name,
-
-                }
-              ]
+            "ingredients":  newRecipe.ingredients,
+              "alergens": newRecipe.alergens
             
         }
-        console.log ("structure",newRecipe)
+        console.log ("structure",newRecipeStructure)
         return recipeService.submitRecipe(newRecipeStructure);
     },
 }

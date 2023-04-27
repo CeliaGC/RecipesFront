@@ -55,24 +55,21 @@ function RecipeForm() {
     setIngredient('');
     setAmount('');
     setUnit('');
-  };
-  const handleSubmit = (event) => {
 
+  };
+  const handleSubmit = async(event) => {
+   
     event.preventDefault();
-    const newIngredient = {
-      ingredient: ingredient,
-      amount: amount,
-      unit: unit
-    };
+
     let newRecipe = {name, instructions, category, author, observations, materials, posterName: postedBy,
-       ingredients: [
-         newIngredient,
-       ],
+       ingredients: 
+        ingredients,
+       
         alergens: [
           {name: alergens},
         ] };
         console.log("componente",newRecipe)
-    recipeHandler.addRecipe(newRecipe);
+   await recipeHandler.addRecipe(newRecipe);
    
   };
 
@@ -104,12 +101,12 @@ function RecipeForm() {
             <p>Servicio para 4 personas</p>
             <Form.Group className="mb-3">
               <Form.Label>Observaciones</Form.Label>
-              <Form.Control as="textarea" rows={3} placeholder="Observaciones" value={observations} onChange={handleObservationsChange} required />
+              <Form.Control as="textarea" rows={3} placeholder="Observaciones" value={observations} onChange={handleObservationsChange} />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Materiales</Form.Label>
-              <Form.Control as="textarea" rows={3} placeholder="Materiales" value={materials} onChange={handleMaterialsChange} required />
+              <Form.Control as="textarea" rows={3} placeholder="Materiales" value={materials} onChange={handleMaterialsChange} />
             </Form.Group>
 
             <Form.Group className="mb-3">

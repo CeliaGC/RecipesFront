@@ -25,7 +25,10 @@ const apiClient = axios.create({
   
   async submitRecipe(newRecipe) {
     console.log("new Recipe", newRecipe);
-    await apiClient.post("/Recipe/Post",newRecipe);
+    let response = await apiClient.post("/Recipe/Post",newRecipe);
+    let data = await response.data;
+    // console.log(data);
+    return data;
 
   },
 
