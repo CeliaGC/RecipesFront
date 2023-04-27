@@ -5,7 +5,7 @@ import '@testing-library/jest-dom'
 vi.mock('react-router-dom', () => ({
     useLoaderData: vi.fn(() => ({
         recipe: {
-            title: 'recipe test',
+        title: 'recipe test',
       description: 'arroces',
       image: 'https://example.com/recipe.jpg',
       ingredients: ['Ingredient 1', 'Ingredient 2'],
