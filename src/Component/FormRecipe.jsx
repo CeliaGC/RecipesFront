@@ -80,17 +80,17 @@ function RecipeForm() {
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>Nombre</Form.Label>
-              <Form.Control type="text" placeholder="Nombre" value={name} onChange={handleNameChange} required />
+              <Form.Control type="text"  placeholder="Nombre" value={name} onChange={handleNameChange} required />
             </Form.Group>
             
             <Form.Group className="mb-3">
               <Form.Label>Instructiones</Form.Label>
-              <Form.Control as="textarea" rows={3} placeholder="Usuarios" value={instructions} onChange={handleInstructionsChange} required />
+              <Form.Control as="textarea"  rows={3} placeholder="Para preparar la receta..." value={instructions} onChange={handleInstructionsChange} required />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Categoría</Form.Label>
-              <Form.Control type="text" placeholder="Categoría" value={category} onChange={handleCategoryChange} required />
+              <Form.Control type="text"  placeholder="Categoría" value={category} onChange={handleCategoryChange} required />
             </Form.Group>
 
             <Form.Group className="mb-3">
@@ -101,17 +101,17 @@ function RecipeForm() {
             <p>Servicio para 4 personas</p>
             <Form.Group className="mb-3">
               <Form.Label>Observaciones</Form.Label>
-              <Form.Control as="textarea" rows={3} placeholder="Observaciones" value={observations} onChange={handleObservationsChange} />
+              <Form.Control as="textarea"  rows={3} placeholder="Observaciones" value={observations} onChange={handleObservationsChange} />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Materiales</Form.Label>
-              <Form.Control as="textarea" rows={3} placeholder="Materiales" value={materials} onChange={handleMaterialsChange} />
+              <Form.Control as="textarea"  rows={3} placeholder="Materiales" value={materials} onChange={handleMaterialsChange} />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Usuario</Form.Label>
-              <Form.Control type="text"  placeholder="Usuarios" value={postedBy} onChange={handlePostedByChange} required />
+              <Form.Control type="text"  placeholder="Usuario" value={postedBy} onChange={handlePostedByChange} required />
             </Form.Group>
 
           </Col>
@@ -138,15 +138,15 @@ function RecipeForm() {
       
         <Form.Group controlId="ingrediente">
           <Form.Label>Ingrediente</Form.Label>
-          <Form.Control type="text" value={ingredient} onChange={e => setIngredient(e.target.value)} />
+          <Form.Control type="text" spellCheck="true" autoCapitalize="off" autoComplete="on" value={ingredient} onChange={e => setIngredient(e.target.value)} />
         </Form.Group>
         <Form.Group controlId="cantidad">
           <Form.Label>Cantidad</Form.Label>
-          <Form.Control type="text" value={amount} onChange={e => setAmount(e.target.value)} />
+          <Form.Control type="text" spellCheck="true" autoCapitalize="off" autoComplete="on" value={amount} onChange={e => setAmount(e.target.value)} />
         </Form.Group>
         <Form.Group controlId="unidad">
           <Form.Label>Unidad</Form.Label>
-          <Form.Control type="text" value={unit} onChange={e => setUnit(e.target.value)} />
+          <Form.Control type="text" spellCheck="true" autoCapitalize="off" autoComplete="on" value={unit} onChange={e => setUnit(e.target.value)} />
         </Form.Group>
         <Button variant="primary" onClick={handleAdd}>
           Agregar
@@ -158,7 +158,7 @@ function RecipeForm() {
   
             <Form.Group className="mb-3">
               <Form.Label>Alérgenos</Form.Label>
-              <Form.Control type="text" placeholder="Alérgenos" value={alergens} onChange={handleAlergensChange} />
+              <Form.Control type="text" spellCheck="true" autoCapitalize="off" autoComplete="on" placeholder="Alérgenos" value={alergens} onChange={handleAlergensChange} />
             </Form.Group>
 
             <Button variant="primary" type="submit">Añadir receta</Button>
