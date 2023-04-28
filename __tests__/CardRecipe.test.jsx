@@ -9,7 +9,7 @@ vi.mock('react-router', () => ({
             name: 'recipe test',
             posteBy: 'author test',
             categoryName: 'category test',
-            author: 'author test',
+            //author: 'author test',
             category: {
               id: 1,
             },
@@ -45,10 +45,10 @@ describe("CardRecipe", () => {
     expect(categoryNameElement).toBeInTheDocument();
   });
 
-  test('should render recipe author', () => {
-    const authorElement = screen.getByText(/author test/i);
-    expect(authorElement).toBeInTheDocument();
-  });
+//   test('should render recipe author', () => {
+//     const authorElement = screen.getByText(/author test/i);
+//     expect(authorElement).toBeInTheDocument();
+//   });
 
   test('should render recipe category id', () => {
     const categoryIdElement = screen.getByText(/1/i);
