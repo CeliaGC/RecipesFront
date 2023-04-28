@@ -11,7 +11,9 @@ function RecipeForm() {
   const [observations, setObservations] = useState("");
   const [materials, setMaterials] = useState("");
   const [postedBy, setPostedBy] = useState("");
+
   const [alergens, setAlergens] = useState("");
+  // const [alergens, setAlergens] = useState([]);
 
   const [ingredients, setIngredients] = useState([]);
   const [ingredient, setIngredient] = useState('');
@@ -43,7 +45,14 @@ function RecipeForm() {
   const handleAlergensChange = (event) => {
     setAlergens(event.target.value);
   };
- console.log (ingredients)
+//   const handleAlergensChange = (event) => {
+//     const selectedAlergens = Array.from(event.target.querySelectorAll('input[type="checkbox"]:checked'),
+//     (checkbox) => checkbox.value);
+  
+//   setAlergens(selectedAlergens)
+// };
+
+  console.log(ingredients)
 
   const handleAdd = () => {
     const newIngredient = {
@@ -57,21 +66,25 @@ function RecipeForm() {
     setUnit('');
 
   };
-  const handleSubmit = async(event) => {
-   
+  const handleSubmit = async (event) => {
+
     event.preventDefault();
 
-    let newRecipe = {name, instructions, category, author, observations, materials, posterName: postedBy,
-       ingredients: 
+    let newRecipe = {
+      name, instructions, category, author, observations, materials, posterName: postedBy,
+      ingredients:
         ingredients,
-       
-        alergens: [
-          {name: alergens},
-        ] };
-        console.log("componente",newRecipe)
-   await recipeHandler.addRecipe(newRecipe);
-   
+
+      alergens: [
+        { name: alergens },
+      ]
+    };
+    console.log("componente", newRecipe)
+    await recipeHandler.addRecipe(newRecipe);
+
   };
+
+
 
   return (
     <div className="recipe-form-container">
@@ -80,17 +93,17 @@ function RecipeForm() {
           <Col>
             <Form.Group className="mb-3">
               <Form.Label>Nombre</Form.Label>
-              <Form.Control type="text"  placeholder="Nombre" value={name} onChange={handleNameChange} required />
+              <Form.Control type="text" placeholder="Nombre" value={name} onChange={handleNameChange} required />
             </Form.Group>
-            
+
             <Form.Group className="mb-3">
               <Form.Label>Instructiones</Form.Label>
-              <Form.Control as="textarea"  rows={3} placeholder="Para preparar la receta..." value={instructions} onChange={handleInstructionsChange} required />
+              <Form.Control as="textarea" rows={3} placeholder="Para preparar la receta..." value={instructions} onChange={handleInstructionsChange} required />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Categoría</Form.Label>
-              <Form.Control type="text"  placeholder="Categoría" value={category} onChange={handleCategoryChange} required />
+              <Form.Control type="text" placeholder="Categoría" value={category} onChange={handleCategoryChange} required />
             </Form.Group>
 
             <Form.Group className="mb-3">
@@ -101,65 +114,104 @@ function RecipeForm() {
             <p>Servicio para 4 personas</p>
             <Form.Group className="mb-3">
               <Form.Label>Observaciones</Form.Label>
-              <Form.Control as="textarea"  rows={3} placeholder="Observaciones" value={observations} onChange={handleObservationsChange} />
+              <Form.Control as="textarea" rows={3} placeholder="Observaciones" value={observations} onChange={handleObservationsChange} />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Materiales</Form.Label>
-              <Form.Control as="textarea"  rows={3} placeholder="Materiales" value={materials} onChange={handleMaterialsChange} />
+              <Form.Control as="textarea" rows={3} placeholder="Materiales" value={materials} onChange={handleMaterialsChange} />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Usuario</Form.Label>
-              <Form.Control type="text"  placeholder="Usuario" value={postedBy} onChange={handlePostedByChange} required />
+              <Form.Control type="text" placeholder="Usuario" value={postedBy} onChange={handlePostedByChange} required />
             </Form.Group>
 
           </Col>
           <Col>
 
-        <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Ingrediente</th>
-            <th>Cantidad</th>
-            <th>Unidad</th>
-          </tr>
-        </thead>
-        <tbody>
-          {ingredients.map((ingredient, index) => (
-            <tr key={index}>
-              <td>{ingredient.ingredient}</td>
-              <td>{ingredient.amount}</td>
-              <td>{ingredient.unit}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-      
-        <Form.Group controlId="ingrediente">
-          <Form.Label>Ingrediente</Form.Label>
-          <Form.Control type="text" spellCheck="true" autoCapitalize="off" autoComplete="on" value={ingredient} onChange={e => setIngredient(e.target.value)} />
-        </Form.Group>
-        <Form.Group controlId="cantidad">
-          <Form.Label>Cantidad</Form.Label>
-          <Form.Control type="text" spellCheck="true" autoCapitalize="off" autoComplete="on" value={amount} onChange={e => setAmount(e.target.value)} />
-        </Form.Group>
-        <Form.Group controlId="unidad">
-          <Form.Label>Unidad</Form.Label>
-          <Form.Control type="text" spellCheck="true" autoCapitalize="off" autoComplete="on" value={unit} onChange={e => setUnit(e.target.value)} />
-        </Form.Group>
-        <Button variant="primary" onClick={handleAdd}>
-          Agregar
-        </Button>
-      
-      
-      
-   
-  
+            <Table striped bordered hover>
+              <thead>
+                <tr>
+                  <th>Ingrediente</th>
+                  <th>Cantidad</th>
+                  <th>Unidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ingredients.map((ingredient, index) => (
+                  <tr key={index}>
+                    <td>{ingredient.ingredient}</td>
+                    <td>{ingredient.amount}</td>
+                    <td>{ingredient.unit}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+
+            <Form.Group controlId="ingrediente">
+              <Form.Label>Ingrediente</Form.Label>
+              <Form.Control type="text" value={ingredient} onChange={e => setIngredient(e.target.value)} />
+            </Form.Group>
+            <Form.Group controlId="cantidad">
+              <Form.Label>Cantidad</Form.Label>
+              <Form.Control type="text" value={amount} onChange={e => setAmount(e.target.value)} />
+            </Form.Group>
+            <Form.Group controlId="unidad">
+              <Form.Label>Unidad</Form.Label>
+              <Form.Control as="select" value={unit} onChange={e => setUnit(e.target.value)}>
+                <option value="">Seleccione una unidad</option>
+                <option value="gr">gr</option>
+                <option value="ml">ml</option>
+                <option value="unidad">ud</option>
+                <option value="c/s">cs</option>
+              </Form.Control>
+            </Form.Group>
+            <Button variant="primary" onClick={handleAdd}>
+              Agregar
+            </Button>
+
             <Form.Group className="mb-3">
               <Form.Label>Alérgenos</Form.Label>
-              <Form.Control type="text" spellCheck="true" autoCapitalize="off" autoComplete="on" placeholder="Alérgenos" value={alergens} onChange={handleAlergensChange} />
-            </Form.Group>
+              <Form.Control type="text"  placeholder="Alérgenos" value={alergens} onChange={handleAlergensChange} />
+            </Form.Group> 
+
+{/* <Form.Group controlId="alergenos">
+      <Form.Label>Alérgenos:</Form.Label>
+      <Form.Check 
+        inline
+        label="Gluten"
+        value="gluten"
+        type="checkbox"
+        checked={alergens.includes("gluten")}
+        onChange={handleAlergensChange}
+      />
+      <Form.Check 
+        inline
+        label="Lactosa"
+        value="lactosa"
+        type="checkbox"
+        checked={alergens.includes("lactosa")}
+        onChange={handleAlergensChange}
+      />
+      <Form.Check 
+        inline
+        label="Frutos secos"
+        value="frutos secos"
+        type="checkbox"
+        checked={alergens.includes("frutos secos")}
+        onChange={handleAlergensChange}
+      />
+      <Form.Check 
+        inline
+        label="Mariscos"
+        value="mariscos"
+        type="checkbox"
+        checked={alergens.includes("mariscos")}
+        onChange={handleAlergensChange}
+      />
+      <Form.Text>Alérgenos seleccionados: {alergens.join(', ')}</Form.Text>
+    </Form.Group> */}
 
             <Button variant="primary" type="submit">Añadir receta</Button>
           </Col>
