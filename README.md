@@ -6,10 +6,14 @@ TOOLS:
 
 -Jira:
 https://acalabustos.atlassian.net/jira/software/projects/FIN/boards/2
--Desktop graphic reference. Figma:
+
+-Desktop graphic reference. 
+Figma:
 https://www.figma.com/file/BQIskQl8MPebxlx859YY2Y/PROTOTYPE?node-id=0-1&t=7sx8YryM9i9y5xm0-0
+
 -Git / GitHub:
 https://github.com/Proyecto-Pedagogico-Recetas/Frontend
+
 -Visual Studio Code
 
 TECHNOLOGIES:
