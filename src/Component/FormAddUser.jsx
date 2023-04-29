@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
-import { loginService } from "../Service/loginService";
 import React, { useState, useEffect, useContext } from "react";
 import swal from 'sweetalert';
 import { Link, useNavigate } from "react-router-dom";
@@ -11,16 +10,11 @@ import { UserContext } from "../Contexts/UserContext";
 
 
 
-function FormLogin() {
+function FormAddUser() {
   const { userStorage, setUserStorage } = useContext(UserContext);
   const [userName, setUserName] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const navigate = useNavigate();
-
-  const userData = localStorage.getItem('userData');
-  const parsedUserData = JSON.parse(userData);
-  const IdRol = parsedUserData && parsedUserData.item2;
-
 
 
   const handleUserNameChange = (event) => {
@@ -31,43 +25,8 @@ function FormLogin() {
     setUserPassword(event.target.value);
   };
 
-  const handleLogin = async (formData) => {
-    try {
-      const data = await loginService(formData);
-      setUserStorage(data);
-
-      if (IdRol && IdRol == 1) {
-        navigate('/AdminUser');
-
-      } if (IdRol && IdRol === 2) {
-        navigate('/Menu');
-
-      }
-
-    } catch (error) {
-      if (error.response) {
-        handleResponseError(error.response);
-      }
-    }
-  };
-
-  const handleResponseError = (response) => {
-    if (response.status === 401 || response.status === 422) {
-      swal(error.message);
-    }
-  };
 
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const loginData = {
-      userName: userName,
-      userPassword: userPassword,
-    };
-
-    handleLogin(loginData);
-  };
 
   return (
     <div className="registration-form-container">
@@ -89,4 +48,4 @@ function FormLogin() {
   );
 }
 
-export default FormLogin;
+export default FormAddUser;

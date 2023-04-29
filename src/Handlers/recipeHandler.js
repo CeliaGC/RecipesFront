@@ -4,8 +4,8 @@ export const recipeHandler = {
    
     loadRecipes(){
         return recipeService.getRecipes();
-    },
-    loadRecipe(id) {
+    }
+/*     loadRecipe(id) {
         return recipeService.getRecipeById(id);
     },
     deleteRecipe(id){
@@ -40,6 +40,6 @@ export const recipeHandler = {
             
         }
         return recipeService.submitRecipe(newRecipeStructure);
-    },
+    }, */
 }
 
