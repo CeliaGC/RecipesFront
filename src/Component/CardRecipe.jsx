@@ -7,8 +7,8 @@ function CardRecipe()  {
   const {recipes, categories} = useLoaderData ();
   
 
-  console.log(recipes);
-  console.log (categories);
+  // console.log(recipes);
+  // console.log (categories);
   
   return (
     <div className="container">
