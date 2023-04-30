@@ -43,6 +43,7 @@ function RecipeForm() {
   const handleAlergensChange = (event) => {
     setAlergens(event.target.value);
   };
+ console.log (ingredients)
 
   const handleAdd = () => {
     const newIngredient = {
@@ -54,11 +55,21 @@ function RecipeForm() {
     setIngredient('');
     setAmount('');
     setUnit('');
+
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async(event) => {
+   
     event.preventDefault();
-    let newRecipe = {name, instructions, category, author, observations, materials, postedBy, ingredients, alergens};
-    recipeHandler.addRecipe(newRecipe);
+
+    let newRecipe = {name, instructions, category, author, observations, materials, posterName: postedBy,
+       ingredients: 
+        ingredients,
+       
+        alergens: [
+          {name: alergens},
+        ] };
+        console.log("componente",newRecipe)
+   await recipeHandler.addRecipe(newRecipe);
    
   };
 
@@ -90,12 +101,12 @@ function RecipeForm() {
             <p>Servicio para 4 personas</p>
             <Form.Group className="mb-3">
               <Form.Label>Observaciones</Form.Label>
-              <Form.Control as="textarea" rows={3} placeholder="Observaciones" value={observations} onChange={handleObservationsChange} required />
+              <Form.Control as="textarea" rows={3} placeholder="Observaciones" value={observations} onChange={handleObservationsChange} />
             </Form.Group>
 
             <Form.Group className="mb-3">
               <Form.Label>Materiales</Form.Label>
-              <Form.Control as="textarea" rows={3} placeholder="Materiales" value={materials} onChange={handleMaterialsChange} required />
+              <Form.Control as="textarea" rows={3} placeholder="Materiales" value={materials} onChange={handleMaterialsChange} />
             </Form.Group>
 
             <Form.Group className="mb-3">
@@ -124,7 +135,7 @@ function RecipeForm() {
           ))}
         </tbody>
       </Table>
-      <Form>
+      
         <Form.Group controlId="ingrediente">
           <Form.Label>Ingrediente</Form.Label>
           <Form.Control type="text" value={ingredient} onChange={e => setIngredient(e.target.value)} />
@@ -140,7 +151,8 @@ function RecipeForm() {
         <Button variant="primary" onClick={handleAdd}>
           Agregar
         </Button>
-      </Form>
+      
+      
       
    
   

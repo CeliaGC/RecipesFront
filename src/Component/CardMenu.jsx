@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { Link, useLoaderData } from 'react-router-dom';
-import M7 from "../assets/M7.jpg";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function CardMenu() {
@@ -17,7 +17,7 @@ export default function CardMenu() {
           <Card style={{ width: '13rem' }} className="m-4">
             <Card.Img
               style={{ width: '100%' }} 
-              src={M7}
+              src={category.image}
             />
             <Card.Body>
               <Card.Text>
