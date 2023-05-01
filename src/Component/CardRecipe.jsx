@@ -40,7 +40,3 @@ function CardRecipe()  {
 };
  
 export default CardRecipe;
-
-
-
-
