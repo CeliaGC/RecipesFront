@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function CardMenu() {
   const { categories } = useLoaderData();
-
+  
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">

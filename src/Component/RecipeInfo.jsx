@@ -17,7 +17,7 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
  
   return (
     <section>
-      <div className="card" >
+      <div className="card-info" >
         <div className="card-body">
           <div className="row">
             <div className="col-md-7">

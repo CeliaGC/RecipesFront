@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
@@ -69,27 +68,11 @@ const Footer = () => {
                 <p>Copyright © 2022 • ABC Company.</p>
               </li>
             </ul>
-=======
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-
-function Footer() {
-  return (
-    <footer className="bg-light py-3">
-      <Container>
-        <Row>
-          <Col lg={12} className="text-center text-muted">
-            <p>© 2023 My Awesome Website. Todos los derechos reservados.</p>
->>>>>>> feature/login
           </Col>
         </Row>
       </Container>
     </footer>
   );
-<<<<<<< HEAD
 };
-=======
-}
->>>>>>> feature/login
 
 export default Footer;

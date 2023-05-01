@@ -11,6 +11,7 @@ function CardRecipe()  {
   console.log(recipes);
   console.log (categories);
   
+  
   return (
     <div className="container">
       <div className="row">
@@ -21,8 +22,8 @@ function CardRecipe()  {
               <Card style={{ width: '18rem' }}>
                 <Card.Body>
                   <Card.Title>{recipe.name}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">{recipe.posteBy}</Card.Subtitle>
-                  <Card.Subtitle className="mb-2 text-muted">{recipe.categoryName}</Card.Subtitle>
+                  <Card.Subtitle className="mb-2 text-muted">{recipe.posterName}</Card.Subtitle>
+                  <Card.Subtitle className="mb-2 text-muted">{recipe.category}</Card.Subtitle>
                   <Card.Subtitle className="mb-2 text-muted">{recipe.author}</Card.Subtitle>
                   <Card.Text>
                     {recipe.category.id}
@@ -41,5 +42,3 @@ function CardRecipe()  {
 };
  
 export default CardRecipe;
-
-{/* <h3>{recipe.category}</h3> */}
