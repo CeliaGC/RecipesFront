@@ -66,7 +66,7 @@ function List() {
 
 
   return (
-<div>
+<div >
   <Card>
     <Card.Body>
       <div>
