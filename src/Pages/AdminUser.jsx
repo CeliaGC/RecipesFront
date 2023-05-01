@@ -1,4 +1,4 @@
-import { Container, Row, Col, Navbar, Nav, Card } from 'react-bootstrap';
+import { Container, Row, Col, Navbar, Nav, Card, NavDropdown} from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import {AiFillHome} from 'react-icons/ai';
@@ -37,6 +37,10 @@ function AdminUser() {
               <Nav.Link href="/UserList" style={{ color: "white", marginBottom: "1rem" }}>
                 <BsPersonFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Usuarios
               </Nav.Link>
+              <NavDropdown title={<BsPersonFill size={25} />} alignright="true" as="div" eventkey={0} className="d-inline-block">
+          <NavDropdown.Item href="/perfil">Perfil</NavDropdown.Item>
+          <NavDropdown.Item href="/logout">Cerrar sesión</NavDropdown.Item>
+        </NavDropdown>
               <Nav.Link href="/Register" style={{ color: "white", marginBottom: "1rem" }}>
                 <BsPersonFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Registro
               </Nav.Link>
