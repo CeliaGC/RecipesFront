@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
 import Card from "react-bootstrap/Card";
-import { groupBy, mapValues, sumBy } from 'lodash-es';
-
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
 
 function List() {
-  //TOMA LOS VALORES DEL LOCALSTORAGE
+  
   const [addListRecipe, setListRecipe] = useState(JSON.parse(localStorage.getItem("addListRecipe")) || []);
-  //BORRA LOS DATOS DE LA LISTA
+
   const removAddListRecipe = () => {
     localStorage.clear();
     setListRecipe([]);
   };
-  // FUNCION PARA INGRESAR NUEVOS INGREDIENTES A LA TABLA
+ 
   const [newIngredient, setNewIngredient] = useState({
     ingredientName: "",
     amount: "",
@@ -49,21 +47,21 @@ function List() {
     setTotalAmounts(newTotalAmounts);
     
   };
-  //FUNCION PARA SUMAR AQUELLOS VALORES QUE TENGAN LA MISMA UNIDAD 
+  
   const calculateTotalAmounts = (list) => {
     if (!list) {
       return null;
     }
-    // Agrupamos los ingredientes por nombre y unidad de medida
-    const groupedIngredients = groupBy(list, ingredient => `${ingredient.ingredientName}-${ingredient.unit}`);
-
-    // Sumamos las cantidades de los ingredientes agrupados
-    const totalAmounts = mapValues(groupedIngredients, ingredients => sumBy(ingredients, 'amount'));
-
-    // Devolvemos el objeto con las cantidades totales
-    return totalAmounts;
+    const totalAmounts = {};
+  list.forEach((ingredient) => {
+    const key = `${ingredient.ingredientName}-${ingredient.unit}`;
+    if (!totalAmounts[key]) {
+      totalAmounts[key] = 0;
+    }
+    totalAmounts[key] += parseFloat(ingredient.amount);
+  });
+  return totalAmounts;
   };
-
   const [totalAmounts, setTotalAmounts] = useState(calculateTotalAmounts(addListRecipe));
 
 

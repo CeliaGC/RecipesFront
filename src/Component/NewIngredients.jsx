@@ -1,11 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Form, Button } from 'react-bootstrap';
 
-function IngredientesForm() {
+function IngredientesForm({ addToIngredient }) {
   const [ingredientes, setIngredientes] = useState([]);
   const [ingrediente, setIngrediente] = useState('');
   const [cantidad, setCantidad] = useState('');
   const [unidad, setUnidad] = useState('');
+  const unidades = ['g', 'kg', 'ml', 'L', 'ud', 'cs'];
+  const localStorageKey = 'ingredientes';
+
+  useEffect(() => {
+    const ingredientesGuardados = JSON.parse(localStorage.getItem(localStorageKey));
+    if (ingredientesGuardados) {
+      setIngredientes(ingredientesGuardados);
+    }
+  }, []);
 
   const handleAgregar = () => {
     const nuevoIngrediente = {
@@ -18,27 +27,13 @@ function IngredientesForm() {
     setCantidad('');
     setUnidad('');
   };
+  
+  useEffect(() => {
+    localStorage.setItem(localStorageKey, JSON.stringify(ingredientes));
+  }, [ingredientes]);
 
   return (
     <div>
-        <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>Ingrediente</th>
-            <th>Cantidad</th>
-            <th>Unidad</th>
-          </tr>
-        </thead>
-        <tbody>
-          {ingredientes.map((ingrediente, index) => (
-            <tr key={index}>
-              <td>{ingrediente.ingrediente}</td>
-              <td>{ingrediente.cantidad}</td>
-              <td>{ingrediente.unidad}</td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
       <Form>
         <Form.Group controlId="ingrediente">
           <Form.Label>Ingrediente</Form.Label>
@@ -50,13 +45,19 @@ function IngredientesForm() {
         </Form.Group>
         <Form.Group controlId="unidad">
           <Form.Label>Unidad</Form.Label>
-          <Form.Control type="text" value={unidad} onChange={e => setUnidad(e.target.value)} />
+          <Form.Select value={unidad} onChange={e => setUnidad(e.target.value)}>
+            <option value="">-- Seleccionar --</option>
+            {unidades.map((unidad, index) => (
+              <option key={index} value={unidad}>
+                {unidad}
+              </option>
+            ))}
+          </Form.Select>
         </Form.Group>
         <Button variant="primary" onClick={handleAgregar}>
           Agregar
         </Button>
       </Form>
-      
     </div>
   );
 }
