@@ -3,7 +3,10 @@ import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import {FaUserCircle} from 'react-icons/fa';
 import {HiOutlineSearch} from 'react-icons/hi';
 
+
 const NavbarLog = () => {
+  
+
   return (
     <Navbar style={{ backgroundColor: "#F2AA85", height: '100px'}} >
       

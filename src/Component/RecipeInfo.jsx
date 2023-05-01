@@ -5,11 +5,10 @@ import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/RecipeInfo.css";
 
-// const RecipeCard = ({ recipe, addToIngredient, categories }) => {
+
   
 const RecipeCard = ({ recipe, addToIngredient }) => {
-  // const categoryName = categories.find(category => category.id == recipe.category)
-  // .name;
+ 
   const handleAddToIngredients = () => {
     addToIngredient(recipe.ingredients);
   };
@@ -17,7 +16,7 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
  
   return (
     <section>
-      <div className="card" >
+      <div className="card-info" >
         <div className="card-body">
           <div className="row">
             <div className="col-md-7">
@@ -89,7 +88,7 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
             <div className="row mt-auto">
                 <div className="card-footer d-flex justify-content-between">
                 <button className="btn btn-secondary" onClick={handleAddToIngredients}>Guardar ingredientes</button>
-                <button className="btn btn-secondary">Menú</button>
+                <button className="btn btn-secondary" href='/Menu'>Menú</button>
                 </div>
             </div>
           </div>
