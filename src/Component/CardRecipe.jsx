@@ -5,12 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useLoaderData } from 'react-router';
 
 function CardRecipe()  {
-  const {recipes, categories} = useLoaderData ();
+  const {recipes} = useLoaderData ();
   
 
-  console.log(recipes);
-  console.log (categories);
-  
   
   return (
     <div className="container">

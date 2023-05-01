@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
                         loader: fetchRecipes,
                     },
                     {
-                        path: '/MenuRecipe/:categoryId',
+                        path: '/MenuRecipe/:category',
                         element: <MenuRecipe />,
                         loader: fetchRecipe,
                     },

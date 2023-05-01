@@ -36,7 +36,7 @@ export default function CardMenu() {
         <div className="row">
           {filteredCategories.map((category) => (
             <div key={category.id} className="col col-4">
-              <Link to={`/MenuRecipe/${category.id}`} className="text-decoration-none">
+              <Link to={`/MenuRecipe/${category.name}`} className="text-decoration-none">
                 <Card style={{ width: '13rem' }} className="m-4">
                   <Card.Img
                     style={{ width: '100%' }}
