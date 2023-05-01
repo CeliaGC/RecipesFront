@@ -21,6 +21,7 @@ import { usersHandler } from "../Handlers/userHandler";
 import UserList from "../Pages/UserList";
 import AdminRecipeView from "../Pages/AdminRecipeView";
 import Register from "../Component/Register";
+import NavbarPrueba from "../Component/NavbarPrueba";
 
 
 export const router = createBrowserRouter([
@@ -110,6 +111,10 @@ export const router = createBrowserRouter([
                         path: '/Register',
                         element: <Register />,
                     },
+                    {
+                        path: '/NavbarPrueba',
+                        element: <NavbarPrueba />,
+                    }
                    
 
                 ]

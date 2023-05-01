@@ -13,8 +13,8 @@ const apiClient = axios.create({
   export const userService = {
 
     async submitUser(newUser) {
-      console.log("new Recipe", newRecipe);
-      await apiClient.post("/User/InsertUser",newUser);
+      console.log("new User", newUser);
+      await apiClient.post("/User/InsertUser", newUser);
   
     },
     async getUsers() {

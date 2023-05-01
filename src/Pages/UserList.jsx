@@ -32,7 +32,7 @@ function User() {
               <Nav.Link  href='/' style={{ color: "white", marginBottom: "1rem" }}>
                   <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Home
                 </Nav.Link>
-                <Nav.Link href='/User' style={{ color: "white", marginBottom: "1rem" }}>
+                <Nav.Link href='/UserList' style={{ color: "white", marginBottom: "1rem" }}>
                   <BsPersonFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Usuarios
                 </Nav.Link>
                 <Nav.Link href='AdminRecipeView' style={{ color: "white", marginBottom: "1rem" }}>
@@ -49,7 +49,7 @@ function User() {
             <Table striped bordered hover style={{ background: "#A4A694", textAlign: "center", borderRadius:'15px'}}>
               <thead>
                 <tr style={{ color: "#334122" }}>
-                  <th>Id</th>
+                  <th>Id Rol</th>
                   <th>Usuario</th>
                   <th>Email</th>
                   <th>Teléfono</th>
@@ -59,7 +59,7 @@ function User() {
               <tbody>
                 {users.map((user) => (
                   <tr key={user.id}>
-                    <td style={{ color: "#334122" }}>{user.id}</td>
+                    <td style={{ color: "#334122" }}>{user.idRol}</td>
                     <td style={{ color: "#334122" }}>{user.userName}</td>
                     <td>{user.userEmail}</td>
                     <td>{user.userPhone}</td>

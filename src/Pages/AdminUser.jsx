@@ -1,5 +1,3 @@
-
-import { useLoaderData } from "react-router-dom";
 import { Container, Row, Col, Navbar, Nav, Card } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 import React from "react";
@@ -10,13 +8,9 @@ import { MdFoodBank } from "react-icons/md";
 import { MdBorderColor } from "react-icons/md";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../Style/AdminUser.css";
-import M14 from "../assets/M14.jpg";
-import M15 from "../assets/M15.jpg";
-import M16 from "../assets/M16.jpg";
 import M17 from "../assets/M17.jpg";
-import M18 from "../assets/M18.jpg";
-import M19 from "../assets/M19.jpg";
-import M20 from "../assets/M20.jpg";
+
+
 import { UserContext } from "../Contexts/UserContext";
 
 
@@ -42,6 +36,9 @@ function AdminUser() {
                 </Nav.Link>
               <Nav.Link href="/UserList" style={{ color: "white", marginBottom: "1rem" }}>
                 <BsPersonFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Usuarios
+              </Nav.Link>
+              <Nav.Link href="/Register" style={{ color: "white", marginBottom: "1rem" }}>
+                <BsPersonFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Registro
               </Nav.Link>
               <Nav.Link  href='/AdminRecipeView' style={{ color: "white", marginBottom: "1rem" }}>
                 <MdFoodBank className="my-icon mr-2"  style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Recetas
