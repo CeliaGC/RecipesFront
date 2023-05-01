@@ -64,24 +64,37 @@ CRUD admin: can see and edit the ingredient’s list. Can make changes with the 
 Search Bar: You can search by categories.
 
 COMPONET TESTING 
+
 We need to install:
+
 •	npm install --save-dev vitest
+
 •	npm install --save-dev jsdom 
+
 •	npm install --save-dev @testing-library/jest-dom
+
 •	npm instal --save-dev @testing-library/react
 
+
 We need to import:
+
 •	import -------- from "../pages/---------l";
+
 •	import { render, screen } from "@testing-library/react";
+
 •	import '@testing-library/jest-dom';
 
+
 In the CardRecipe.test.jsx file; in the RecipeInfo.test.jsx  we tested:
-In the first test we check …………………………………….
-In the second test we check ………………………………….
+
+.In the first test we check …………………………………….
+.In the second test we check ………………………………….
+
 correctly:
+
 ![Test](https://user-images.githubusercontent.com/117833121/235528417-bc316fae-a454-42de-b6fa-94ae59ac491c.JPG)
 
-If in terminal we execute the: npm run test command, our tests should pass.
+-If in terminal we execute the: npm run test command, our tests should pass.
 
 Our Team:
 
