@@ -1,13 +1,14 @@
-COOKSMART
+COOKSMART:
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+We are a page of cooking recipes, described by teachers so that our students and users can learn their recipes. We indicate ingredients with their quantities, allergens and method of preparation. All separated by categories. At the same time, the ingredients of the recipes selected by the teachers for their elaboration are all collected in a total list of ingredients that the administrator receives. the administrator receives these individual lists plus the total list of all these lists and can edit this last list. This one is designed for the purchase of ingredients, so you can edit it if there are ingredients that you may have in stock.
 
 TOOLS:
 
 -Jira:
 https://acalabustos.atlassian.net/jira/software/projects/FIN/boards/2
 
--Desktop graphic reference. 
+-Desktop graphic reference.
+
 Figma:
 https://www.figma.com/file/BQIskQl8MPebxlx859YY2Y/PROTOTYPE?node-id=0-1&t=7sx8YryM9i9y5xm0-0
 
@@ -74,13 +75,11 @@ We need to import:
 •	import { render, screen } from "@testing-library/react";
 •	import '@testing-library/jest-dom';
 
-In the --------.test.jsx file, we tested:
-In the first test we check ……………………………………..
-Correctly:
-test('………………………’)
-In the second test we check …………………………………………….
+In the CardRecipe.test.jsx file; in the RecipeInfo.test.jsx  we tested:
+In the first test we check …………………………………….
+In the second test we check ………………………………….
 correctly:
-test('………………………’)
+![Test](https://user-images.githubusercontent.com/117833121/235528417-bc316fae-a454-42de-b6fa-94ae59ac491c.JPG)
 
 If in terminal we execute the: npm run test command, our tests should pass.
 
