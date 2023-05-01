@@ -15,12 +15,7 @@ function Menu() {
     <div >
         {isLogged ? <h1>estoy loggeado</h1> : <h1>no estoy loggeado</h1>}
     <NavbarMenu/>
-  
-    <h3>Menu</h3>
-    <CardMenu/>
-
-    
-       
+    <CardMenu/>  
     </div>
   )
 }
