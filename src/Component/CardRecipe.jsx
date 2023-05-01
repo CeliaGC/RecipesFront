@@ -1,18 +1,36 @@
-
-import React from 'react';
+import React, { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useLoaderData } from 'react-router';
 
 function CardRecipe()  {
   const {recipes} = useLoaderData ();
+  const [searchTerm, setSearchTerm] = useState("");
   
+  
+  const handleSearchTermChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+  const filteredRecipes = recipes.filter((recipe) => {
+    return recipe.name.toLowerCase().includes(searchTerm.toLowerCase());
+  });
 
   
   return (
     <div className="container">
+      <div className="d-flex justify-content-end">
+        <div className="col-4">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Buscar..."
+            value={searchTerm}
+            onChange={handleSearchTermChange}
+          />
+        </div>
+      </div>
       <div className="row">
-        {recipes.map((recipe) => {
+        {filteredRecipes.map((recipe) => {
            
           return (
             <div className="col-md-6 col-lg-4 mb-3">    

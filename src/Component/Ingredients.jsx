@@ -68,100 +68,113 @@ function List() {
 
 
   return (
-
-    <div>
-      <Card>
-        <Card.Body>
-          <Table striped bordered hover responsive>
-            <thead>
-              <tr>
-                <th>Ingrediente</th>
-                <th>Cantidad</th>
-                <th>Unidad</th>
+<div>
+  <Card>
+    <Card.Body>
+      <div>
+        <h4>Tabla de ingredientes</h4>
+        <Table striped bordered hover responsive>
+          <thead>
+            <tr>
+              <th>Ingrediente</th>
+              <th>Cantidad</th>
+              <th>Unidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            {addListRecipe.map((ingredient) => (
+              <tr key={ingredient.id}>
+                <td>{ingredient.ingredientName}</td>
+                <td>{ingredient.amount}</td>
+                <td>{ingredient.unit}</td>
               </tr>
-            </thead>
-            <tbody>
-              {addListRecipe.map((ingredient) => (
-                <tr key={ingredient.id}>
-                  <td>{ingredient.ingredientName}</td>
-                  <td>{ingredient.amount}</td>
-                  <td>{ingredient.unit}</td>
-                </tr>
-              ))}
-
-              {Object.entries(totalAmounts).map(([key, value], index) => {
-                const [name, unit] = key.split("-");
-
-                return (
-                  <tr key={index}>
-                    <td>{name}</td>
-                    <td>{value}</td>
-                    <td>{unit}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colSpan="3">
-                  <form onSubmit={handleFormSubmit}>
-                    <div className="form-row">
-                      <div className="col">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Ingrediente"
-                          name="ingredientName"
-                          value={newIngredient.ingredientName}
-                          onChange={handleInputChange}
-                        />
-                      </div>
-                      <div className="col">
-                        <input
-                          type="text"
-                          className="form-control"
-                          placeholder="Cantidad"
-                          name="amount"
-                          value={newIngredient.amount}
-                          onChange={handleInputChange}
-                        />
-                      </div>
-                      <div className="col">
-                        <select
-                          className="form-control"
-                          name="unit"
-                          value={newIngredient.unit}
-                          onChange={handleInputChange}
-                        >
-                          <option value="gr">gr</option>
-                          <option value="ml">ml</option>
-                          <option value="unidad">und</option>
-                          <option value="cantidad suficiente">C/S</option>
-                        </select>
-                      </div>
-                      <div className="col-auto">
-                        <button type="submit" className="btn btn-primary">
-                          Añadir nuevo ingrediente
-                        </button>
-                      </div>
+            ))}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colSpan="3">
+                <form onSubmit={handleFormSubmit}>
+                  <div className="form-row">
+                    <div className="col">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Ingrediente"
+                        name="ingredientName"
+                        value={newIngredient.ingredientName}
+                        onChange={handleInputChange}
+                      />
                     </div>
-                  </form>
-                </td>
-              </tr>
-            </tfoot>
-          </Table>
+                    <div className="col">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="Cantidad"
+                        name="amount"
+                        value={newIngredient.amount}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                    <div className="col">
+                      <select
+                        className="form-control"
+                        name="unit"
+                        value={newIngredient.unit}
+                        onChange={handleInputChange}
+                      >
+                        <option value="gr">gr</option>
+                        <option value="ml">ml</option>
+                        <option value="unidad">und</option>
+                        <option value="cantidad suficiente">C/S</option>
+                      </select>
+                    </div>
+                    <div className="col-auto">
+                      <button type="submit" className="btn btn-primary">
+                        Añadir nuevo ingrediente
+                      </button>
+                      
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+          </tfoot>
+        </Table>
+      </div>
+      <div>
+        <h4>Tabla de totales</h4>
+        <Table striped bordered hover responsive>
+          <thead>
+            <tr>
+              <th>Ingrediente</th>
+              <th>Cantidad</th>
+              <th>Unidad</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(totalAmounts).map(([key, value], index) => {
+              const [name, unit] = key.split("-");
 
-        </Card.Body>
+              return (
+                <tr key={index}>
+                  <td>{name}</td>
+                  <td>{value}</td>
+                  <td>{unit}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      </div>
+    </Card.Body>
 
-        <div className="card-footer d-flex flex-row justify-content-between">
-          <button className="btn btn-primary" onClick={() => removAddListRecipe()}>Borrar ingredientes</button>
-          <button className="btn btn-primary" >Enviar ingredientes</button>
-        </div>
-
-      </Card>
-
+    <div className="card-footer d-flex flex-row justify-content-between">
+    <button className="btn btn-primary" onClick={() => removAddListRecipe()}>Borrar ingredientes</button>
+      <button className="btn btn-primary" >Enviar ingredientes</button>
     </div>
 
+  </Card>
+</div>
 
 
   )
