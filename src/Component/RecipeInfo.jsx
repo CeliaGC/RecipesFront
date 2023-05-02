@@ -4,6 +4,7 @@ import Table from "react-bootstrap/Table";
 import Card from "react-bootstrap/Card";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/RecipeInfo.css";
+import { Alert } from "react-bootstrap";
 
 
   
@@ -11,8 +12,12 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
  
   const handleAddToIngredients = () => {
     addToIngredient(recipe.ingredients);
-  };
+     //// mensaje de confirmación ingredientes guardados
+     alert("ingrediente añadido.");
+    };
   console.log(recipe.ingredient)
+  
+   
  
   return (
     <section>

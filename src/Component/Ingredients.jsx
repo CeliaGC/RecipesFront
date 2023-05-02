@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
 import Card from "react-bootstrap/Card";
-import { groupBy, mapValues, sumBy } from 'lodash-es';
-
+import { Alert } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
 
 function List() {
   //TOMA LOS VALORES DEL LOCALSTORAGE
@@ -47,7 +44,6 @@ function List() {
 
     const newTotalAmounts = calculateTotalAmounts(updatedList);
     setTotalAmounts(newTotalAmounts);
-    
   };
   //FUNCION PARA SUMAR AQUELLOS VALORES QUE TENGAN LA MISMA UNIDAD 
   const calculateTotalAmounts = (list) => {
@@ -66,27 +62,43 @@ function List() {
 
   const [totalAmounts, setTotalAmounts] = useState(calculateTotalAmounts(addListRecipe));
 
+  const [ingredients, setIngredients] = useState("");
+  const removeAddListRecipe = () => {
+    setIngredients("");
+    // mensaje de confirmación borrados
+    alert("Los ingredientes han sido borrados.");
+  };
+
+  const handleSendIngredients = () => {
+    // mensaje de confirmación enviados
+    alert("Los ingredientes han sido enviados.");
+  };
+
+  const handleAddNewIngredient = () => {
+    // mensaje de confirmación añadidos
+    alert("Ingrediente añadido.");
+  };
 
   return (
-<div>
-  <Card>
-    <Card.Body>
-      <div>
-        <h4>Tabla de ingredientes</h4>
-        <Table striped bordered hover responsive>
-          <thead>
-            <tr>
-              <th>Ingrediente</th>
-              <th>Cantidad</th>
-              <th>Unidad</th>
-            </tr>
-          </thead>
-          <tbody>
-            {addListRecipe.map((ingredient) => (
-              <tr key={ingredient.id}>
-                <td>{ingredient.ingredientName}</td>
-                <td>{ingredient.amount}</td>
-                <td>{ingredient.unit}</td>
+    <div>
+      <Card>
+        <Card.Body>
+          <div>
+            <h4>Tabla de ingredientes</h4>
+            <Table striped bordered hover responsive>
+              <thead>
+                <tr>
+                  <th>Ingrediente</th>
+                  <th>Cantidad</th>
+                  <th>Unidad</th>
+                </tr>
+              </thead>
+              <tbody>
+                {addListRecipe.map((ingredient) => (
+                  <tr key={ingredient.id}>
+                    <td>{ingredient.ingredientName}</td>
+                    <td>{ingredient.amount}</td>
+                    <td>{ingredient.unit}</td>
               </tr>
             ))}
           </tbody>
@@ -129,7 +141,7 @@ function List() {
                       </select>
                     </div>
                     <div className="col-auto">
-                      <button type="submit" className="btn btn-primary">
+                      <button type="submit" onClick={handleAddNewIngredient} className="btn btn-primary">
                         Añadir nuevo ingrediente
                       </button>
                       
@@ -169,6 +181,11 @@ function List() {
     </Card.Body>
 
     <div className="card-footer d-flex flex-row justify-content-between">
+    {ingredients ? (
+        <Alert variant="success">Los ingredientes son: {ingredients}</Alert>
+      ) : (
+        <Alert variant="danger">No hay ingredientes.</Alert>
+      )}
     <button className="btn btn-primary" onClick={() => removAddListRecipe()}>Borrar ingredientes</button>
       <button className="btn btn-primary" >Enviar ingredientes</button>
     </div>
