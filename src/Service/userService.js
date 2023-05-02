@@ -23,8 +23,13 @@ const apiClient = axios.create({
       return users;
   
   },
+  async getUserById(id) {
+    let response = await apiClient.get("/User/GetUserById?id=" + id);
+    let user = response.data;
+    return user;
+},
   async deleteUser(id) {
-    await apiClient.delete("/User/Delete?id=" + id)
+    await apiClient.delete("/User/Delete?id=" + id);
   }
 
 }

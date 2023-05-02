@@ -21,6 +21,10 @@ export const usersHandler = {
     loadUsers() {
         return userService.getUsers();
     },
+    loadUser(id) {
+        return userService.getUserById(id);
+        console.log("este si es" + userService.getUserById(id ))
+    },
 
     deleteUser(id) {
         return userService.deleteUser(id);

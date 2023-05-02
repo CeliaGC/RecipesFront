@@ -9,6 +9,7 @@ import { MdBorderColor } from "react-icons/md";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../Style/AdminUser.css";
 import M17 from "../assets/M17.jpg";
+import NavbarPrueba from '../Component/NavbarPrueba';
 
 
 import { UserContext } from "../Contexts/UserContext";
@@ -29,35 +30,10 @@ function AdminUser() {
     <Container fluid>
       <Row>
         <Col xs={12} sm={2}>
-          <Navbar expand="lg" style={{ backgroundColor: "#8B8961", flexDirection: "column", borderRadius: '15px', textAlign: 'center', marginTop:'20px'}}>
-            <Nav className="flex-column">
-            <Nav.Link  href='/' style={{ color: "white", marginBottom: "1rem" }}>
-                  <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Home
-                </Nav.Link>
-              <Nav.Link href="/UserList" style={{ color: "white", marginBottom: "1rem" }}>
-                <BsPersonFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Usuarios
-              </Nav.Link>
-              <NavDropdown title={<BsPersonFill size={25} />} alignright="true" as="div" eventkey={0} className="d-inline-block">
-          <NavDropdown.Item href="/perfil">Perfil</NavDropdown.Item>
-          <NavDropdown.Item href="/logout">Cerrar sesión</NavDropdown.Item>
-        </NavDropdown>
-              <Nav.Link href="/Register" style={{ color: "white", marginBottom: "1rem" }}>
-                <BsPersonFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Registro
-              </Nav.Link>
-              <Nav.Link  href='/AdminRecipeView' style={{ color: "white", marginBottom: "1rem" }}>
-                <MdFoodBank className="my-icon mr-2"  style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Recetas
-              </Nav.Link>
-              <Nav.Link  href= '/List' style={{ color: "white", marginBottom: "1rem" }}>
-                <MdBorderColor className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Lista de Pedidos
-              </Nav.Link>
-              <Nav.Link href= '/' style={{ color: "white", marginBottom: "1rem" }}>
-                <MdBorderColor className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} onClick={handleLogout} /> Cerrar sesión
-              </Nav.Link>
-            </Nav>
-          </Navbar>
+         <NavbarPrueba/> 
         </Col>
         <Col xs={12} sm={10}>
-          <div style={{ marginTop: "10px", marginLeft: "auto", marginRight: "auto" }}>
+          <div style={{ marginTop: "70px", marginLeft: "auto", marginRight: "auto" }}>
             <Card style={{ marginTop: '-50px' }}>
 
               <Card.Body>

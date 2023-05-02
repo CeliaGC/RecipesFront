@@ -1,10 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { AiOutlineTags, AiOutlineHeart, AiOutlineLogout } from "react-icons/ai";
-import { BsFillPersonFill } from "react-icons/bs";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
 import MediaQuery from "react-responsive";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../Contexts/UserContext";
 import { useNavigate } from "react-router-dom";

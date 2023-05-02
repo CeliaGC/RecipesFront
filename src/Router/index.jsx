@@ -22,6 +22,7 @@ import UserList from "../Pages/UserList";
 import AdminRecipeView from "../Pages/AdminRecipeView";
 import Register from "../Component/Register";
 import NavbarPrueba from "../Component/NavbarPrueba";
+import Perfil from "../Component/Perfil";
 
 
 export const router = createBrowserRouter([
@@ -114,6 +115,11 @@ export const router = createBrowserRouter([
                     {
                         path: '/NavbarPrueba',
                         element: <NavbarPrueba />,
+                    },
+                    {
+                        path: '/Perfil/:id',
+                        element: <Perfil/>,
+                        loader: fetchUser,
                     }
                    
 
@@ -148,4 +154,10 @@ async function fetchOrders() {
 async function fetchUsers() {
     const users= await usersHandler.loadUsers();
     return { users };
+}
+async function fetchUser({ params }) {
+    const user= await usersHandler.loadUser(params.id);
+    console.log("holii" + user)
+    return { user };
+
 }
