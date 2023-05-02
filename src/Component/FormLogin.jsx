@@ -41,9 +41,9 @@ function FormLogin() {
 
       } if (IdRol && IdRol === 2) {
         navigate('/Menu');
-    
-      } 
-    
+
+      }
+
     } catch (error) {
       if (error.response) {
         handleResponseError(error.response);
@@ -52,8 +52,8 @@ function FormLogin() {
   };
 
   const handleResponseError = (response) => {
-    if (response.status === 400 || response.status === 422) {
-      swal(response.data.error);
+    if (response.status === 401 || response.status === 422) {
+      swal(error.message);
     }
   };
 
@@ -74,41 +74,16 @@ function FormLogin() {
       <div className="registration-form-title"></div>
       <Form onSubmit={handleSubmit} className="center-form">
         <h2 style={{ marginBottom: '40px' }}>Iniciar sesión</h2>
-        <Form.Group className="mb-3" style={{ width: '300px' }}>
-          <Form.Label>
-            <FontAwesomeIcon icon={faEnvelope} /> Nombre de Usurio
-          </Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Introduce tu nombre de Usuario"
-            value={userName}
-            onChange={handleUserNameChange}
-            required
-            style={{ border: 'none' }}
-          />
-          <hr className="my-3" />
-        </Form.Group>
-        <Form.Group className="mb-3" style={{ width: '300px' }}>
-          <Form.Label>
-            <FontAwesomeIcon icon={faLock} /> Contraseña
-          </Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Introduce tu contraseña"
-            value={userPassword}
-            onChange={handleUserPasswordChange}
-            required
-            style={{ border: 'none' }}
-          />
-          <hr className="my-3" />
-        </Form.Group>
-        <Button
-          variant="primary"
-          type="submit"
-          style={{ background: '#F2AA85', border: 'none' }}
-        >
-          Iniciar sesión
-        </Button>
+        <Form.Group className="mb-3" style={{ width: '300px' }}><Form.Label>
+          <FontAwesomeIcon icon={faEnvelope} /> Nombre de Usuario</Form.Label>
+          <Form.Control type="text" placeholder="Introduce tu nombre de Usuario" value={userName} onChange={handleUserNameChange} required style={{ border: 'none' }} /><hr className="my-3" />
+        </Form.Group><Form.Group className="mb-3" style={{ width: '300px' }}><Form.Label>
+          <FontAwesomeIcon icon={faLock} /> Contraseña</Form.Label>
+          <Form.Control type="password" placeholder="Introduce tu contraseña" value={userPassword} onChange={handleUserPasswordChange} required style={{ border: 'none' }} />
+          <hr className="my-3" /></Form.Group>
+          <div className="center-button" style={{}}>
+      <Button variant="primary" type="submit" style={{ background: '#F2AA85', border: 'none' }}>Iniciar sesión</Button>
+    </div>
       </Form>
     </div>
   );

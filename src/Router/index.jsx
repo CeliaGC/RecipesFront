@@ -17,8 +17,12 @@ import AdminIngredientList from "../Pages/AdminIngredientList";
 import FormLogin from "../Component/FormLogin";
 import { orderHandler } from "../Handlers/orderHandler"
 import AdminList from "../Pages/AdminList";
-
-
+import { usersHandler } from "../Handlers/userHandler";
+import UserList from "../Pages/UserList";
+import AdminRecipeView from "../Pages/AdminRecipeView";
+import Register from "../Component/Register";
+import NavbarPrueba from "../Component/NavbarPrueba";
+import Perfil from "../Component/Perfil";
 
 
 export const router = createBrowserRouter([
@@ -77,6 +81,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/AdminUser',
                         element: <AdminUser />,
+                      
                     },
                     {
                         path: '/AdminList',
@@ -91,7 +96,32 @@ export const router = createBrowserRouter([
                         path: '/FormLogin',
                         element: <FormLogin />,
 
+                    },
+                    {
+                        path: '/UserList',
+                        element: <UserList/>,
+                        loader: fetchUsers,
+
+
+                    },
+                    {
+                        path: '/AdminRecipeView',
+                        element: <AdminRecipeView />,
+                    },
+                    {
+                        path: '/Register',
+                        element: <Register />,
+                    },
+                    {
+                        path: '/NavbarPrueba',
+                        element: <NavbarPrueba />,
+                    },
+                    {
+                        path: '/Perfil/:id',
+                        element: <Perfil/>,
+                        loader: fetchUser,
                     }
+                   
 
                 ]
             },
@@ -111,14 +141,23 @@ async function fetchRecipe({ params }) {
     const recipesData = await recipeHandler.loadRecipes();
     const recipes = recipesData.filter(recipe => recipe.category == params.category)
     const categories = await categoryHandler.loadCategories();
-    return { recipes, categories };
+    return { recipes, categories }; 
 }
 async function fetchRecipeId({ params }) {
-    const recipe = await recipeHandler.loadRecipe(params.id);
+    const recipe = await recipeHandler.loadRecipes(params.id);
     return { recipe };
 }
 async function fetchOrders() {
     const orders = await orderHandler.loadOrders();
-    console.log(orders)
     return { orders };
+}
+async function fetchUsers() {
+    const users= await usersHandler.loadUsers();
+    return { users };
+}
+async function fetchUser({ params }) {
+    const user= await usersHandler.loadUser(params.id);
+    console.log("holii" + user)
+    return { user };
+
 }

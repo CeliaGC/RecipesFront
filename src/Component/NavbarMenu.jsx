@@ -4,7 +4,7 @@ import "../Style/NavbarMenu.css";
 
 function Navbarmenu() {
     return (
-      <Navbar expand="lg" className="navbarmenu">
+      <Navbar expand="lg" className="navbarmenu" >
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navbarmenu-nav" gap={30}>
