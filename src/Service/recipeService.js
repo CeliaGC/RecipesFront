@@ -17,7 +17,7 @@ const apiClient = axios.create({
       return recipes;
   
   },
-/*     async getRecipeById(id) {
+    async getRecipeById(id) {
       let response = await apiClient.get("/Recipe/GetRecipe?recipeId=" + id);
       let recipe = response.data;
       return recipe;
@@ -27,12 +27,12 @@ const apiClient = axios.create({
     console.log("new Recipe", newRecipe);
     let response = await apiClient.post("/Recipe/Post",newRecipe);
     let data = await response.data;
-    // console.log(data);
+    console.log(data);
     return data;
 
   },
 
   async deleteRecipe(id) {
     await apiClient.delete("/Recipe/Delete?id=" + id)
-  },*/
+  }
 } 

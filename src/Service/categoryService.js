@@ -15,10 +15,10 @@ const apiClient = axios.create({
       let allCategories = response.data;
       return allCategories;
   
+  },
+    async getRecipeById(id) {
+      let response = await apiClient.get("/Product/GetProductById/" + id);
+      let recipe = response.data;
+      return recipe;
   }
-//     async getRecipeById(id) {
-//       let response = await apiClient.get("/Product/GetProductById/" + id);
-//       let recipe = response.data;
-//       return recipe;
-//   }
 }
