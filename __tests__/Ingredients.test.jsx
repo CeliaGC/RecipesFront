@@ -12,13 +12,7 @@ vi.mock('react-router-dom', () => ({
   }));
   
 describe('IngredientForm', () => {
-//   test('renders the form with the correct number of inputs', () => {
-//     render(<IngredientForm />);
-//     const inputs = screen.getAllByRole('textbox');
-//     expect(inputs.length).toEqual(3);
-//   });
-
-  test('updates ingredient quantity when input changes', () => {
+ test('updates ingredient quantity when input changes', () => {
     render(<IngredientForm />);
     const quantityInput = screen.getAllByPlaceholderText('Cantidad')[0];
     fireEvent.change(quantityInput, { target: { value: '100' } });
@@ -38,16 +32,5 @@ describe('IngredientForm', () => {
     fireEvent.click(checkbox);
     expect(checkbox.checked).toBe(true);
   });
-
-//   test('displays ingredients data when form is submitted', () => {
-//     render(<IngredientForm />);
-//     const submitButton = screen.getByRole('button', { name: 'Enviar' });
-//     fireEvent.click(submitButton);
-  
-//     // Verificar que los elementos de la lista de ingredientes están presentes
-//     expect(screen.getByText('Id')).toBeInTheDocument();
-//     expect(screen.getByText('name')).toBeInTheDocument();
-//     expect(screen.getByText('quantity')).toBeInTheDocument();
-//   });
   
 });
