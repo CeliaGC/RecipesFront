@@ -63,6 +63,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/List',
                         element: <List />,
+                        loader: fetchOrders,
                     },
                     {
                         path: '/MyRecipe',
