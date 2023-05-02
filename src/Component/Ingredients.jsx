@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
 import Card from "react-bootstrap/Card";
+// import orderHandler from "../Handlers/orderHandler";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -64,6 +65,17 @@ function List() {
   };
   const [totalAmounts, setTotalAmounts] = useState(calculateTotalAmounts(addListRecipe));
 
+  // const handleSubmit = async (event) => {
+
+  //   event.preventDefault();
+
+  //   let newOrder = {
+  //     idUser, idIngredient, amount, unit,
+  //   };
+  //   console.log("componente", newOrder)
+  //   await orderHandler.addOrder(newOrder);
+
+  // };
 
   return (
 <div >

@@ -15,7 +15,14 @@ const apiClient = axios.create({
       let allOrders = response.data;
       return allOrders;
   
-  }
+  },
+   async submitOrder(newOrder) {
+    console.log("new Order", newOrder);
+    let response = await apiClient.post("/Order/InsertOrder",newOrder);
+    let data = await response.data;
+    return data;
+
+  },
 
 }
 
