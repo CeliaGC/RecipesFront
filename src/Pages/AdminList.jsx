@@ -2,6 +2,7 @@ import React from 'react';
 import {  useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../Style/AdminList.css'
 
 export default function ListAdmin() {
   const {orders} = useLoaderData();
@@ -41,7 +42,7 @@ export default function ListAdmin() {
         </div>
       ))}
      <div className="col col-12 d-flex justify-content-center">
-          <button onClick={handleSendEmail}>Enviar correo electrónico</button>
+     <button className="btnSendEmail" onClick={handleSendEmail}>Enviar correo electrónico</button>
         </div>
       </div>
     </div>
