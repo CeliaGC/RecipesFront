@@ -11,9 +11,7 @@ function RecipeForm() {
   const [observations, setObservations] = useState("");
   const [materials, setMaterials] = useState("");
   const [postedBy, setPostedBy] = useState("");
-
-  const [alergens, setAlergens] = useState("");
-  // const [alergens, setAlergens] = useState([]);
+  const [selectAlergens, setSelectAlergens] = useState([]);
 
   const [ingredients, setIngredients] = useState([]);
   const [ingredient, setIngredient] = useState('');
@@ -41,50 +39,39 @@ function RecipeForm() {
   const handlePostedByChange = (event) => {
     setPostedBy(event.target.value);
   };
-
   const handleAlergensChange = (event) => {
-    setAlergens(event.target.value);
+    const selectAlergensArray = Array.from(
+      event.target.selectedOptions,
+      (option) => option.value
+    );
+    setSelectAlergens(selectAlergensArray);
   };
-//   const handleAlergensChange = (event) => {
-//     const selectedAlergens = Array.from(event.target.querySelectorAll('input[type="checkbox"]:checked'),
-//     (checkbox) => checkbox.value);
   
-//   setAlergens(selectedAlergens)
-// };
-
-  console.log(ingredients)
-
   const handleAdd = () => {
     const newIngredient = {
       ingredient: ingredient,
       amount: amount,
-      unit: unit
+      unit: unit 
     };
     setIngredients([...ingredients, newIngredient]);
     setIngredient('');
     setAmount('');
     setUnit('');
-
   };
+
   const handleSubmit = async (event) => {
-
     event.preventDefault();
-
     let newRecipe = {
       name, instructions, category, author, observations, materials, posterName: postedBy,
       ingredients:
         ingredients,
-
       alergens: [
         { name: alergens },
       ]
     };
-    console.log("componente", newRecipe)
     await recipeHandler.addRecipe(newRecipe);
 
   };
-
-
 
   return (
     <div className="recipe-form-container">
@@ -170,49 +157,41 @@ function RecipeForm() {
             <Button variant="primary" onClick={handleAdd}>
               Agregar
             </Button>
-
             <Form.Group className="mb-3">
               <Form.Label>Alérgenos</Form.Label>
-              <Form.Control type="text"  placeholder="Alérgenos" value={alergens} onChange={handleAlergensChange} />
-            </Form.Group> 
-
-{/* <Form.Group controlId="alergenos">
-      <Form.Label>Alérgenos:</Form.Label>
-      <Form.Check 
-        inline
-        label="Gluten"
-        value="gluten"
-        type="checkbox"
-        checked={alergens.includes("gluten")}
-        onChange={handleAlergensChange}
-      />
-      <Form.Check 
-        inline
-        label="Lactosa"
-        value="lactosa"
-        type="checkbox"
-        checked={alergens.includes("lactosa")}
-        onChange={handleAlergensChange}
-      />
-      <Form.Check 
-        inline
-        label="Frutos secos"
-        value="frutos secos"
-        type="checkbox"
-        checked={alergens.includes("frutos secos")}
-        onChange={handleAlergensChange}
-      />
-      <Form.Check 
-        inline
-        label="Mariscos"
-        value="mariscos"
-        type="checkbox"
-        checked={alergens.includes("mariscos")}
-        onChange={handleAlergensChange}
-      />
-      <Form.Text>Alérgenos seleccionados: {alergens.join(', ')}</Form.Text>
-    </Form.Group> */}
-
+              {selectAlergens.length > 0 && (
+                <div className="selected">
+                  <label>Opciones seleccionadas:</label>
+                  {selectAlergens.map((option) => (
+                    <span key={option} className="selected">
+                      {option}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <Form.Select
+                multiple
+                value={selectAlergens}
+                onChange={handleAlergensChange}
+              >
+                <option value="Cereales con gluten">Cereales con gluten</option>
+                <option value="Crustaceos y derivados">Crustaceos y derivados</option>
+                <option value="Huevos y derivados">Huevos y derivados</option>
+                <option value="Cacahuetes y derivados">Cacahuetes y derivados</option>
+                <option value="Leche y derivados">Leche y derivados</option>
+                <option value="Frutos de cascara y derivados">Frutos de cascara y derivados</option>
+                <option value="Apio">Apio</option>
+                <option value="Soja y derivados">Soja y derivados</option>
+                <option value="Mostaza y derivados">Mostaza y derivados</option>
+                <option value="Sésamo y derivados">Sésamo y derivados</option>
+                <option value="Pescado y derivados">Pescado y derivados</option>
+                <option value="Dióxido de Azufre">Dióxido de Azufre</option>
+                <option value="Altramuces y derivados">Altramuces y derivados</option>
+                <option value="Moluscos y derivados">Moluscos y derivados</option>
+                <option value="Ninguno conocido">Ninguno conocido</option>
+              </Form.Select>
+             
+            </Form.Group>
             <Button variant="primary" type="submit">Añadir receta</Button>
           </Col>
         </Row>
