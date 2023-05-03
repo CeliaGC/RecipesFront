@@ -157,12 +157,7 @@ async function fetchUsers() {
     const users= await usersHandler.loadUsers();
     return { users };
 }
-async function fetchUser({ params }) {
-    const user= await usersHandler.loadUser(params.id);
-    console.log("holii" + user)
-    return { user };
 
-}
 async function fetchUserProfile(){
     const userData = JSON.parse(localStorage.getItem('userData')).item5;
      const user= await usersHandler.loadUser(userData);

@@ -14,7 +14,7 @@ const NavbarLog = () => {
       <div >
       <Navbar.Toggle aria-controls="navbarScroll" />
       <Navbar.Collapse id="navbarScroll">
-    <Button variant="link" href="/NavbarPrueba"><FaUserCircle size={25} style={{ backgroundColor: 'none', color: 'black', size: '2em', marginRight:'-35em' }} /></Button>
+    <Button variant="link" href='/FormLogin'><FaUserCircle size={25} style={{ backgroundColor: 'none', color: 'black', size: '2em', marginRight:'-35em' }} /></Button>
         <Form className="d-flex">
         <FormControl
             type="text"
