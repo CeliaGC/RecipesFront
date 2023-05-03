@@ -6,18 +6,18 @@ import { useLoaderData } from "react-router-dom";
 const Perfil = () => {
 
     const { user } = useLoaderData();
-    console.log("Hola" + user);
+    console.log(user);
 
 
   return (
     <Container>
       <Row>
-        <Col key={user.id} className="my-3" style={{ width: '18rem', marginLeft:'20em'}} md={3}>
+        <Col key={user[0].id} className="my-3" style={{ width: '18rem', marginLeft:'20em'}} md={3}>
         </Col>
         <Col md={9}>
-          <h2>{user.userName}</h2>
-          <p>{user.userEmail}</p>
-          <p>{user.userPhone}</p>
+          <h2>{user[0].userName}</h2>
+          <p>{user[0].userEmail}</p>
+          <p>{user[0].userPhone}</p>
         </Col>
       </Row>
     </Container>

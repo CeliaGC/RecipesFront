@@ -34,7 +34,7 @@ function CardRecipe()  {
            
           return (
             <div className="col-md-6 col-lg-4 mb-3">    
-              <Card style={{ width: '18rem' }}>
+              <Card key={recipe.id} style={{ width: '18rem' }}>
                 <Card.Body>
                   <Card.Title>{recipe.name}</Card.Title>
                   <Card.Subtitle className="mb-2 text-muted">{recipe.posterName}</Card.Subtitle>

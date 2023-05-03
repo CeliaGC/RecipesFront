@@ -79,10 +79,10 @@ function List() {
 
   return (
 <div >
-  <Card>
+  <Card style={{border:'none'}}>
     <Card.Body>
       <div>
-        <h4>Tabla de ingredientes</h4>
+        <h4 style={{marginBottom:'30px', textAlign:'center'}}>Tabla de ingredientes</h4>
         <Table striped bordered hover responsive>
           <thead>
             <tr>
@@ -152,7 +152,7 @@ function List() {
         </Table>
       </div>
       <div>
-        <h4>Tabla de totales</h4>
+        <h4 style={{marginBottom:'30px', textAlign:'center'}}>Tabla de totales</h4>
         <Table striped bordered hover responsive>
           <thead>
             <tr>

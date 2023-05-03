@@ -1,15 +1,13 @@
 import React from "react";
 import { FaUserCircle } from 'react-icons/fa';
 import { HiOutlineSearch } from 'react-icons/hi';
-import { Button, Form, FormControl, Nav, Navbar, NavDropdown, Container} from 'react-bootstrap';
+import { Button, Form, FormControl, Nav, Navbar, NavDropdown, Container, Row ,Col} from 'react-bootstrap';
 import Logo2 from "../assets/Logo2.png";
 
 
 const NavbarLog = () => {
 
   return (
-
-   
     <Navbar expand="lg"  style={{ backgroundColor: "#F2AA85", height: '100px'}}>
     <Container fluid>
       <Navbar.Brand href="/Menu" style={{marginLeft:'50px'}}><img src={Logo2} style={{width: '6rem'}} /></Navbar.Brand>
@@ -30,5 +28,4 @@ const NavbarLog = () => {
   </Navbar>
 );
 }
-
 export default NavbarLog;

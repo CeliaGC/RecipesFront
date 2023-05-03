@@ -21,8 +21,9 @@ import { usersHandler } from "../Handlers/userHandler";
 import UserList from "../Pages/UserList";
 import AdminRecipeView from "../Pages/AdminRecipeView";
 import Register from "../Component/Register";
-import NavbarPrueba from "../Component/NavbarPrueba";
+import NavbarPrueba from "../Component/NavbarView";
 import Perfil from "../Component/Perfil";
+import LoginModal from "../Component/LoginModal";
 
 
 export const router = createBrowserRouter([
@@ -77,6 +78,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/AdminRecipe',
                         element: <AdminRecipe />,
+                        loader: fetchRecipes,
                     },
                     {
                         path: '/AdminUser',
@@ -117,9 +119,9 @@ export const router = createBrowserRouter([
                         element: <NavbarPrueba />,
                     },
                     {
-                        path: '/Perfil/:id',
+                        path: '/Perfil',
                         element: <Perfil/>,
-                        loader: fetchUser,
+                        loader: fetchUserProfile,
                     }
                    
 
@@ -159,5 +161,12 @@ async function fetchUser({ params }) {
     const user= await usersHandler.loadUser(params.id);
     console.log("holii" + user)
     return { user };
+
+}
+async function fetchUserProfile(){
+    const userData = JSON.parse(localStorage.getItem('userData')).item5;
+     const user= await usersHandler.loadUser(userData);
+    return { user };
+
 
 }

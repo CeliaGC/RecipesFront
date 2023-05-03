@@ -9,7 +9,7 @@ import { MdBorderColor } from "react-icons/md";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../Style/AdminUser.css";
 import M17 from "../assets/M17.jpg";
-import NavbarPrueba from '../Component/NavbarPrueba';
+import NavbarPrueba from '../Component/NavbarView';
 
 
 import { UserContext } from "../Contexts/UserContext";
@@ -34,7 +34,7 @@ function AdminUser() {
         </Col>
         <Col xs={12} sm={10}>
           <div style={{ marginTop: "70px", marginLeft: "auto", marginRight: "auto" }}>
-            <Card style={{ marginTop: '-50px' }}>
+            <Card style={{ marginTop: '-50px', border:'none' }}>
 
               <Card.Body>
                 <Card.Title>Bienvenid@ a tu espacio personal</Card.Title>

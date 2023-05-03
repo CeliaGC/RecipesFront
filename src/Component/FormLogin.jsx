@@ -45,15 +45,15 @@ function FormLogin() {
       }
 
     } catch (error) {
-      if (error.response) {
-        handleResponseError(error.response);
-      }
+ 
+  handleResponseError(error.response); 
+      
     }
   };
 
   const handleResponseError = (response) => {
-    if (response.status === 401 || response.status === 422) {
-      swal(error.message);
+    if (response.status === 401 || response.status === 422 || response.status === 400) {
+      swal(response.data);
     }
   };
 
@@ -81,8 +81,8 @@ function FormLogin() {
           <FontAwesomeIcon icon={faLock} /> Contraseña</Form.Label>
           <Form.Control type="password" placeholder="Introduce tu contraseña" value={userPassword} onChange={handleUserPasswordChange} required style={{ border: 'none' }} />
           <hr className="my-3" /></Form.Group>
-          <div className="center-button" style={{}}>
-      <Button variant="primary" type="submit" style={{ background: '#F2AA85', border: 'none' }}>Iniciar sesión</Button>
+          <div className="center-button" style={{alignItems:'center'}}>
+      <Button variant="primary" type="submit" style={{ background: '#F2AA85', border: 'none' , alignItems:'center'}}>Iniciar sesión</Button> 
     </div>
       </Form>
     </div>
