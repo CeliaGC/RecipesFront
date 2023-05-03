@@ -40,7 +40,7 @@ function FormLogin() {
         navigate('/AdminUser');
 
       } if (IdRol && IdRol === 2) {
-        navigate('/Menu');
+        navigate('/TeacherUser');
 
       }
 

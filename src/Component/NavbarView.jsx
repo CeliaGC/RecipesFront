@@ -17,7 +17,7 @@ import { BsFillPersonPlusFill } from 'react-icons/bs';
 import {TbChefHat} from 'react-icons/tb';
 
 
-function NavbarPrueba() {
+function NavbarView() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const { userStorage, setUserStorage } = useContext(UserContext);
     const navigate = useNavigate();
@@ -99,4 +99,4 @@ function NavbarPrueba() {
     );
 }
 
-export default NavbarPrueba;
+export default NavbarView;
