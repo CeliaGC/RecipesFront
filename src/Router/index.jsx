@@ -146,8 +146,9 @@ async function fetchRecipe({ params }) {
     const categories = await categoryHandler.loadCategories();
     return { recipes, categories }; 
 }
+
 async function fetchRecipeId({ params }) {
-    const recipe = await recipeHandler.loadRecipes(params.id);
+    const recipe = await recipeHandler.loadRecipe(params.id);
     return { recipe };
 }
 async function fetchOrders() {

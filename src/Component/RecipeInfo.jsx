@@ -12,7 +12,7 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
   const handleAddToIngredients = () => {
     addToIngredient(recipe.ingredients);
   };
-  console.log(recipe.ingredient)
+  console.log("componente", recipe.ingredient)
  
   return (
     <section>

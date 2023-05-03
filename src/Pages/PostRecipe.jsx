@@ -8,15 +8,9 @@ function MenuRecipe() {
   return (
     <div >
     <NavbarMenu/>
-    {/* <h3>Editar receta</h3>
-    <FormRecipe/> */}
     <h3>Añadir nueva receta</h3>
     <FormRecipe/> 
    
-   
-
-    
-       
     </div>
   )
 }
