@@ -3,7 +3,7 @@ import LayoutPublic from "../Layout/LayoutPublic";
 import NotFound from "../Pages/NotFound";
 import Menu from "../Pages/Menu";
 import Home from "../Pages/Home";
-import EditRecipe from "../Pages/EditRecipe";
+import PostRecipe from "../Pages/PostRecipe";
 import MenuRecipe from "../Pages/MenuRecipe";
 import ViewRecipe from "../Pages/ViewRecipe";
 import List from "../Pages/List";
@@ -46,8 +46,8 @@ export const router = createBrowserRouter([
                     },
 
                     {
-                        path: '/EditRecipe',
-                        element: <EditRecipe />,
+                        path: '/PostRecipe',
+                        element: <PostRecipe />,
                         loader: fetchRecipes,
                     },
                     {
@@ -64,6 +64,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/List',
                         element: <List />,
+                        loader: fetchOrders,
                     },
                     {
                         path: '/MyRecipe',

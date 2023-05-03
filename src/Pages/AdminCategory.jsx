@@ -15,7 +15,7 @@ const AdminCategory = () => {
   // ]);
   const [currentPage, setCurrentPage] = useState(1);
   const [categoriesPerPage] = useState(3);
-
+   
   const indexOfLastCategory = currentPage * categoriesPerPage;
   const indexOfFirstCategory = indexOfLastCategory - categoriesPerPage;
   const currentCategories = categories.slice(indexOfFirstCategory, indexOfLastCategory);
@@ -43,12 +43,12 @@ const AdminCategory = () => {
       </div>
     );
   });
-
+   
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(categories.length / categoriesPerPage); i++) {
     pageNumbers.push(i);
   }
-
+       
   const renderPageNumbers = pageNumbers.map((number) => {
     return (
       <li key={number} className={currentPage === number ? "page-item active" : "page-item"}>
@@ -58,7 +58,7 @@ const AdminCategory = () => {
       </li>
     );
   });
-
+      
   return (
     <Container>
       <Row>

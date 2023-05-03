@@ -10,16 +10,23 @@ export const orderHandler = {
             return;
         }
         let newOrderStructure = {
+
+                  "orderItems": [
+                    {
+                    
+                      "idUser": newOrder.idUser,
+                      "username": newOrder.userName,
+                      "idIngredient": newOrder.idIngredient,
+                      "ingredientName": newOrder.ingredientName,
+                      "amount": newOrder.amount,
+                      "unit": newOrder.unit,
+                    }
+                  ] 
         
-                "idUser": newOrder.idUser ,
-                "idIngredient": newOrder.idIngredient,
-                "amount": newOrder.amount,
-                "unit": newOrder.unit
-                
         }
         console.log ("structure",newOrderStructure)
         return orderService.submitOrder(newOrderStructure);
-    },
+    }
 }
 
 

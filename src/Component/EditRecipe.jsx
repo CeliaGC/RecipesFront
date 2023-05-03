@@ -71,6 +71,15 @@ function EditRecipe() {
                             <Form.Label>Alérgenos</Form.Label>
                             <Form.Control type="text" placeholder="Alérgenos" value={allergens} onChange={handleAllergensChange} />
                         </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Alérgenos</Form.Label>
+                            <Form.Select value={selectedOption} onChange={handleOptionChange}>
+                                <option value="">Selecciona una opción</option>
+                                <option value="option1">Opción 1</option>
+                                <option value="option2">Opción 2</option>
+                                <option value="option3">Opción 3</option>
+                            </Form.Select>
+                        </Form.Group>
                         <Row>
                             <Col xs="auto" className="text-end">
                                 <Button variant="primary" type="submit">Editar receta</Button>
