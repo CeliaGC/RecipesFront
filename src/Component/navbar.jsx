@@ -1,31 +1,22 @@
 import React from "react";
-import { FaUserCircle } from 'react-icons/fa';
-import { HiOutlineSearch } from 'react-icons/hi';
 import { Button, Form, FormControl, Nav, Navbar, NavDropdown, Container, Row ,Col} from 'react-bootstrap';
-import Logo2 from "../assets/Logo2.png";
 
 
 const NavbarLog = () => {
 
   return (
-    <Navbar expand="lg"  style={{ backgroundColor: "#F2AA85", height: '100px'}}>
-    <Container fluid>
-      <Navbar.Brand href="/Menu" style={{marginLeft:'50px'}}><img src={Logo2} style={{width: '6rem'}} /></Navbar.Brand>
-      <div >
-      <Navbar.Toggle aria-controls="navbarScroll" />
-      <Navbar.Collapse id="navbarScroll">
-    <Button variant="link" href='/FormLogin'><FaUserCircle size={25} style={{ backgroundColor: 'none', color: 'black', size: '2em', marginRight:'-35em' }} /></Button>
-        <Form className="d-flex">
-        <FormControl
-            type="text"
-            placeholder="Buscar"
-            className="mr-sm-2" style={{backgroundColor: 'transparent',  borderColor:'black'}}  />
-          <Button variant="light" style={{marginRight:'50px',backgroundColor: 'transparent', border: 'none' }}><HiOutlineSearch size={25}/></Button>
-        </Form>
-      </Navbar.Collapse>
-      </div>
+    <Navbar expand="lg" variant="light" style={{ marginBottom: '-20px', backgroundColor: "#F2AA85" }} >
+    <Container className="d-flex flex-column flex-md-row">
+        <Nav className="w-100 justify-content-around flex-row">
+            <Nav.Link href='/' style={{ color: "black", marginBottom: "1rem" }}>CookSmart</Nav.Link>
+            <Nav.Link href='/FormLogin' style={{ color: "black", marginBottom: "1rem", marginLeft: '20px' }}>
+                Iniciar sesión</Nav.Link>
+            <Nav.Link href='/' style={{ color: "black", marginBottom: "1rem" }}>Acceso a blog
+                
+            </Nav.Link>
+        </Nav>
     </Container>
-  </Navbar>
+</Navbar>
 );
 }
 export default NavbarLog;
