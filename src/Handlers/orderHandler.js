@@ -11,7 +11,7 @@ export const orderHandler = {
         }
         let newOrderStructure = {
 
-                  "items": [
+                  "orderItems": [
                     {
                     
                       "idUser": newOrder.idUser,

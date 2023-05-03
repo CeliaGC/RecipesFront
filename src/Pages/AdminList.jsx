@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {  useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
@@ -19,10 +20,12 @@ export default function ListAdmin() {
                 <Card.Text>
                   Uduario
                   {order.idUser}
+                  {order.UserName}
                 </Card.Text>
                 <Card.Text>
                   Ingrediente
                   {order.idIngredient}
+                  {order.IngredientName}
                 </Card.Text>
                 <Card.Text>
                   Cantidad
@@ -33,6 +36,7 @@ export default function ListAdmin() {
                   {order.unit}
                 </Card.Text>
               </Card.Body>
+              
             </Card>
           
         </div>
