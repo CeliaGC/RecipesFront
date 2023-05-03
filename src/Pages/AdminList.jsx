@@ -2,11 +2,15 @@ import React from 'react';
 import {  useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '../Style/AdminList.css'
 
 export default function ListAdmin() {
   const {orders} = useLoaderData();
   console.log  (orders)
+  const handleSendEmail = () => {
+    window.location.href = 'mailto:cooksmart56@gmail.com';
+  };
+
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
     <div className="row">
@@ -37,9 +41,11 @@ export default function ListAdmin() {
           
         </div>
       ))}
+     <div className="col col-12 d-flex justify-content-center">
+     <button className="btnSendEmail" onClick={handleSendEmail}>Enviar correo electrónico</button>
+        </div>
+      </div>
     </div>
-  </div>
-  
   );
 }
 

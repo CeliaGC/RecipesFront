@@ -1,0 +1,21 @@
+@media screen and (max-width: 768px) {
+    /* Estilos para pantallas móviles */
+    .row {
+      flex-wrap: wrap;
+    }
+    .col {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+  
+  button {
+    background-color: #F2AA85;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
