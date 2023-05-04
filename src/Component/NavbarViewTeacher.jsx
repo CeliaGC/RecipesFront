@@ -63,9 +63,6 @@ function NavbarViewTeacher() {
                             <Nav.Link href='/TeacherMenu' style={{ color: "white", marginBottom: "1rem" }}>
                                 <MdFoodBank className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",  fontSize: '22px' }} />
                             </Nav.Link>
-                            <Nav.Link href='/MyRecipe' style={{ color: "white", marginBottom: "1rem" }}>
-                                <TbChefHat className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",  fontSize: '22px' }} />
-                            </Nav.Link>
                             <Nav.Link href='/AddRecipeTeacher' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdOutlineRestaurantMenu className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",fontSize: '20px' }} /><AiOutlinePlus className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", fontSize: '10px'}} />
                     </Nav.Link>

@@ -16,8 +16,8 @@ const AdminRecipe = () => {
       </Col>
       
       <Col>
-      <CardRecipe/>
-      <FormRecipe/>
+      <h2 style={{marginTop:'60px', marginLeft: '260px'}}>Lista de receta</h2>
+      <CardRecipe style= {{marginLeft:'30px'}}/>
       </Col>
       </Row>
       

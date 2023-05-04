@@ -77,7 +77,7 @@ function RecipeForm() {
       <Form onSubmit={handleSubmit}>
         <Row>
           <Col>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" style={{marginTop:'40px'}}>
               <Form.Label>Nombre</Form.Label>
               <Form.Control type="text" placeholder="Nombre" value={name} onChange={handleNameChange} required />
             </Form.Group>
