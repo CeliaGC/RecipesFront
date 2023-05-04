@@ -7,7 +7,7 @@ import "../Style/Register.css"
 import { usersHandler } from "../Handlers/userHandler";
 import { Form, Row, Col,Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
-import NavbarMenuRecipe from "../Component/NavbarMenuRecipe";
+import NavbarView from "../Component/NavbarView";
 
 
 function Register() {
@@ -50,8 +50,12 @@ function Register() {
   };
 
   return (
-    <div>
-    <NavbarMenuRecipe/>
+    <div >
+     <Row>
+      <Col xs={12} sm={2} style={{marginTop: '80px'}}>
+         <NavbarView/> 
+        </Col>
+        <Col xs={12} sm={10}>
 <Form onSubmit={handleSubmit} className="center-form">
 <h2 style={{marginBottom: '40px'}}>Registro de usuario</h2>
     <Row>
@@ -85,10 +89,14 @@ function Register() {
       </Col>
     </Row>
     <Form.Group controlId="formTerms">
-      <Form.Check type="checkbox" style={{color:'grey'}} label="I agree to the terms and conditions" />
+      <Form.Check className="custom-checkbox" type="checkbox" style={{color:'grey'}} label="I agree to the terms and conditions" />
     </Form.Group>
-    <button type="submit" className="btn btn-primary">Register</button>
+    <div className="d-flex justify-content-center">
+    <button type="submit" className="btn btn-primary" style={{marginTop:'40px'}}>Añadir usuario</button>
+  </div>
   </Form>
+  </Col>
+  </Row>
 </div>
   );
 }
