@@ -30,7 +30,7 @@ Requirements, Installation and Getting started:
 2) npm install
 5) npm run dev
 
-# CONTENT:
+ CONTENT:
 
  USER PAGES:
 -Modal user, user login.
