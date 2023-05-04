@@ -57,14 +57,12 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
                           <td>{ingredient.unit}</td>
                         </tr>
                       ))}
-                      
                     </tbody>
-                  
                   </Table>
-
                 </Card.Body>
               </Card>
             </div>
+            
             <div className="col-md-5">
               <div className="col-md-6">
                 <Card>

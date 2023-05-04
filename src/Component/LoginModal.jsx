@@ -15,11 +15,9 @@ const LoginModal =(props) => {
   const [userName, setUserName] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const navigate = useNavigate();
-
   const userData = localStorage.getItem('userData');
   const parsedUserData = JSON.parse(userData);
   const IdRol = parsedUserData && parsedUserData.item2;
-
 
 
   const handleUserNameChange = (event) => {
@@ -78,7 +76,6 @@ const LoginModal =(props) => {
           <Form.Group  controlId="formBasicUsername">
           <FontAwesomeIcon icon={faEnvelope} /><Form.Control type="text" placeholder="Introduzca su nombre de usuario"  value={userName} onChange={handleUserNameChange} required />
           </Form.Group>
-
           <Form.Group controlId="formBasicPassword">
             <Form.Control type="password" placeholder="*******" value={userPassword} onChange={handleUserPasswordChange} required/>
             <Form.Text className="text-muted">

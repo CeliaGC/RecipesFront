@@ -2,8 +2,6 @@ import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../Component/Navbar";
 
 
-
-
 function Layout() {
   const navigation = useNavigation()
   return (

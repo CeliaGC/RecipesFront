@@ -33,7 +33,6 @@ function NavbarView() {
     return (
         <div>
             <MediaQuery minWidth={768}>
-                {/* barra lateral en pantallas grandes */}
                 <div className="sidebar" style={{ position: "relative", width: "9vw", overflow: "hidden", backgroundColor: "#8B8961", borderRadius: '15px', width: '150px', height: '500px', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: '50px', maxHeight: '80vh', overflowY: 'auto' }}>
                     <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Home
@@ -66,11 +65,9 @@ function NavbarView() {
             </MediaQuery>
 
           <MediaQuery maxWidth={767}>
-                {/* sub-navbar en pantallas pequeñas */}
                 <Navbar expand="lg" variant="light" style={{ marginTop: '20px', marginBottom: '-20px', backgroundColor: "#8B8961", borderRadius: '15px' }} >
                     <Container className="d-flex flex-column flex-md-row">
                         <Nav className="w-100 justify-content-around flex-row">
-
                             <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem" }}>
                                 <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} />
                             </Nav.Link>
