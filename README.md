@@ -78,7 +78,7 @@ correctly:
 
 ![Test](https://user-images.githubusercontent.com/117833121/235528417-bc316fae-a454-42de-b6fa-94ae59ac491c.JPG)
 
--If in terminal we execute the: npm run test command, our tests should pass.
+-Our tests should pass, if we executed the comand npm run test.
 
 Our Team:
 
