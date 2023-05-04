@@ -1,6 +1,5 @@
 import React from 'react';
 import NavbarViewTeacher from "../Component/NavbarViewTeacher";
-import List from "../Pages/List";
 import { Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,7 +13,7 @@ function TeacherList() {
          <NavbarViewTeacher/> 
         </Col>
         <Col>
-    <List/>
+        <Ingredients />
     </Col> 
     </Row> 
     </div>
