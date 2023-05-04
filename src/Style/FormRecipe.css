@@ -1,0 +1,54 @@
+.recipe-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  #formRecipe {
+    width: 90%;
+    border: 1px solid black;
+    border-radius: .625rem;
+    margin: 0 ;
+  }
+  #formRow {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .col {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  th {
+    width:1.875rem;
+  }
+  button {
+    width:9.375rem;
+  }
+  @media (min-width: 768px) {
+    .col {
+      width: 50%;
+      margin-bottom: 0;
+    }
+    #col-1 {
+      height: auto;
+      margin: 0;
+    }
+    #serviceAmount {
+      position: static;
+      margin-top: 1rem;
+    }
+  }
+   @media (max-width: 360px) {
+   #formRow {
+     flex-direction: row;
+    }
+    }
+  @media (min-width: 992px) {
+    .col {
+      width: 33.33%;
+    }
+    #formRow {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
