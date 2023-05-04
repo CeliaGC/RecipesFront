@@ -1,6 +1,28 @@
+.FormLoginBox{
+  display: flex;
+  justify-content: center;
+  
+}
+.center-form{
+  margin: 0;
+}
+ .ContainerLogin{
+  width: 100vw;
+ }
+ .registration-form-container{
+  
+  width: 500px !important;
+  height: auto;
+   
+ }
 
-  .my-3 {
-    border: 0;
-    border-top: 2px solid black;
+
+
+
+.center-form {
+    
+    align-items: center;
+    justify-content: center;
+   
   }
   

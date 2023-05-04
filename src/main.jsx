@@ -4,6 +4,8 @@ import { router } from './Router'
 import { UserProvider } from './Contexts/UserContext'
  import { RouterProvider } from 'react-router-dom' 
 import { AxiosInterceptor } from './Interceptors/axios.interceptor';
+import "../src/App.css";
+
 
 AxiosInterceptor();
 
