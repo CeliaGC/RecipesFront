@@ -27,6 +27,7 @@ import TeacherUser from "../Pages/TeacherUser";
 import TeacherMenu from "../Pages/TeacherMenu";
 import AddRecipeTeacher from "../Pages/AddRecipeTeacher";
 import TeacherList from "../Pages/TeacherList";
+import AddRecipeUser from "../Pages/AddRecipeUser";
 
 
 export const router = createBrowserRouter([
@@ -144,8 +145,11 @@ export const router = createBrowserRouter([
                         path: '/TeacherList',
                         element: <TeacherList/>,
                         loader: fetchOrders,
+                    },
+                    {
+                        path: '/AddRecipeUser',
+                        element: <AddRecipeUser/>,
                     }
-                    
         
                    
 

@@ -57,7 +57,7 @@ function Register() {
         </Col>
         <Col xs={12} sm={10}>
 <Form onSubmit={handleSubmit} className="center-form">
-<h2 style={{marginTop:'120px'}}>Registro de usuario</h2>
+<h2 style={{marginTop:'120px', marginLeft:'70px'}}>Registro de usuario</h2>
     <Row style={{marginTop: '50px'}}>
       <Col >
         <Form.Group controlId="formUserName" >

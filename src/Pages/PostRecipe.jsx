@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function MenuRecipe() {
   return (
     <div >
-    <h3 style={{marginTop:'60px'}}>Añadir nueva receta</h3>
+    <h3 style={{marginTop:'60px', marginLeft: '250px'}}>Añadir nueva receta</h3>
     <FormRecipe/> 
     </div>
   )
