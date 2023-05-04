@@ -31,6 +31,7 @@ import AMyRecipeView from "../Pages/AMyRecipeView";
 import AddRecipeUser from "../Pages/AddRecipeUser";
 import PerfilAdmin from "../Pages/PerfilAdmin";
 import PerfilTeacher from "../Pages/PerfilTeacher";
+import AdminListView from "../Pages/AdminListView";
 
 
 
@@ -175,7 +176,12 @@ export const router = createBrowserRouter([
                         element: <PerfilTeacher/>,
                         loader: fetchUserProfile,
                     },
-                  
+                    {
+                        path: '/AdminListView',
+                        element: <AdminListView/>,
+                        loader: fetchOrders,
+                    },
+                    
         
                    
 

@@ -55,7 +55,7 @@ function NavbarView() {
                     <Nav.Link href='/AddRecipeUser' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdOutlineRestaurantMenu className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",fontSize: '20px' }} /><AiOutlinePlus className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", fontSize: '10px'}} /> Añadir recetas
                     </Nav.Link>
-                    <Nav.Link href='/AdminList' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                    <Nav.Link href='/AdminListView' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdBorderColor className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Lista de Pedidos
                     </Nav.Link>
                     <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
@@ -89,7 +89,7 @@ function NavbarView() {
                     <Nav.Link href='/AddRecipeUser' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdOutlineRestaurantMenu className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",fontSize: '20px' }} /><AiOutlinePlus className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", fontSize: '10px'}} />
                     </Nav.Link>
-                            <Nav.Link href='/AdminList' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                            <Nav.Link href='/AdminListView' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <TbChefHat className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} />
                     </Nav.Link>
                             <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem" }}>
