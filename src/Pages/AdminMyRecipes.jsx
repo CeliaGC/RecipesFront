@@ -46,8 +46,8 @@ const AdminMyRecipes = () => {
     <Container>
       <Row>
         <Col>
-          <h1>Mis recetas</h1>
-          <Row>{renderRecipes}</Row> 
+        <h3 style={{marginTop:'60px', marginLeft: '390px'}}>Mis recetas</h3>
+          <Row style={{marginTop:'50px'}}>{renderRecipes}</Row> 
         </Col>
       </Row>
     </Container>
