@@ -63,32 +63,57 @@ CRUD user: can see, add, edit and delete recipes.
 CRUD admin: can see and edit the ingredient’s list. Can make changes with the users.
 Search Bar: You can search by categories.
 
-COMPONET TESTING 
+COMPONET TESTING: 
 
-We need to install:
+-CardRecipeTest:  Es   un   archivo   de   pruebas   unitarias   para   el
+componente CardRecipe. Se utiliza la biblioteca @testing-library/react
+y   @testing-library/jest-dom   para   integración   con   Jest.   El   archivo
+importa   las   herramientas   necesarias,   el   componente   CardRecipe   y
+vi.mock   para   simular   los   datos   que   recibe   la   componente.   En   el
+bloque describe se agrupan todas las pruebas que se van a realizar y
+se   usa   beforeEach   para   renderizar   la   componente   antes   de   cada
+prueba.   Las   pruebas   comprueban   que   el   nombre   de   la   receta,   el
+autor,   la   categoría   y   el   enlace   para   ver   la   receta   se   rendericen
+correctamente, utilizando screen.getByText y expect.
+RecipeInfoTest:   Es   un   archivo   de   prueba   unitaria   para   el
+componente   RecipeInfo   que   se   importa   desde
+"../src/Component/RecipeInfo.jsx". Se utiliza la biblioteca de pruebas
+@testing-library/react   y   @testing-library/jest-dom   para   realizar   las
+pruebas. El archivo contiene cuatro pruebas que comprueban si los
+distintos elementos de la receta se muestran correctamente, como el
+título, la descripción, los ingredientes y la imagen. Para cada prueba,
+se utiliza la función screen.getByText para obtener el elemento que
+contiene   el   texto   deseado   y   la   función   expect   para   comprobar   que
+este elemento está presente en el DOM. También se utiliza vi.mock
+para   crear   un   mock   de   useLoaderData   de   react-router-dom   que
+devuelve   datos   ficticios   de   una   receta   que   se   utilizarán   en   las
+pruebas.
 
-•	npm install --save-dev vitest
+-RegisterTest: Este código es un conjunto de pruebas unitarias para
+la   aplicación   web   que   permite   a   los   usuarios   registrarse.   Se   está
+utilizando   la   biblioteca   de   pruebas   @testing-library/react   para
+renderizar y probar el componente Register.
+La primera prueba comprueba si todos los campos del formulario se
+están renderizando correctamente en la pantalla. Se utiliza el método
+getByLabelText para obtener los campos de entrada correspondientes
+a cada etiqueta del formulario y luego se verifica que estén presentes
+en la pantalla con el método toBeInTheDocument.
+La   segunda   prueba   verifica   si   se   pueden   introducir   valores   en   los
+campos   del   formulario.   Se   utiliza   el   método   fireEvent.change   para
+simular la entrada de datos del usuario en cada campo de entrada.
+Luego se utiliza el método toHaveValue para verificar si los valores de
+entrada del usuario se han actualizado correctamente en la pantalla.
+En   general,   estas   pruebas   unitarias   son   importantes   para   asegurar
+que el formulario de registro de usuario funciona correctamente y que
+cualquier cambio futuro en el código no afecte su funcionamiento.
+Test Backend
 
-•	npm install --save-dev jsdom 
+-RecipeItemTest:Este archivo de prueba es para verificar si el método ValidateRecipe
+de la clase RecipeItemService funciona correctamente.
+Primero, se crean tres objetos RecipeItem (recipeA, recipeB y recipeC)
+con   diferentes   valores   de   propiedad.   Luego,   se   llama   al   método
+ValidateRecipe de la clase RecipeItemService para cada uno de estos
 
-•	npm install --save-dev @testing-library/jest-dom
-
-•	npm instal --save-dev @testing-library/react
-
-
-We need to import:
-
-•	import -------- from "../pages/---------l";
-
-•	import { render, screen } from "@testing-library/react";
-
-•	import '@testing-library/jest-dom';
-
-
-In the CardRecipe.test.jsx file; in the RecipeInfo.test.jsx  we tested:
-
-.In the first test we check …………………………………….
-.In the second test we check ………………………………….
 
 correctly:
 
