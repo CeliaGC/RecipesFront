@@ -14,6 +14,7 @@ export default function ListAdmin() {
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
     <div className="row">
+      <div>
       {orders.map((order) => (
         <div key={order.id} className="col col-4">
             El profe ha pedido esto:
@@ -49,6 +50,7 @@ export default function ListAdmin() {
           
         </div>
       ))}
+      </div>
      <div className="col col-12 d-flex justify-content-center">
      <button className="btnSendEmail" onClick={handleSendEmail}>Enviar correo electrónico</button>
         </div>
