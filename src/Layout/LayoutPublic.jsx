@@ -3,6 +3,7 @@ import Navbar from "../Component/Navbar";
 
 
 
+
 function Layout() {
   const navigation = useNavigation()
   return (
@@ -13,6 +14,7 @@ function Layout() {
           <div className="alert alert-info my-S">Loading...</div>
         )}
         <Outlet/>
+        
       </main>
     </>
   )

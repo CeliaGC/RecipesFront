@@ -27,6 +27,7 @@ import TeacherUser from "../Pages/TeacherUser";
 import TeacherMenu from "../Pages/TeacherMenu";
 import AddRecipeTeacher from "../Pages/AddRecipeTeacher";
 import TeacherList from "../Pages/TeacherList";
+import AdminMyRecipes from "../Pages/AdminMyRecipes";
 
 
 export const router = createBrowserRouter([
@@ -82,6 +83,11 @@ export const router = createBrowserRouter([
                     {
                         path: '/AdminRecipe',
                         element: <AdminRecipe />,
+                        loader: fetchRecipes,
+                    },
+                    {
+                        path: '/AdminMyRecipes',
+                        element: <AdminMyRecipes />,
                         loader: fetchRecipes,
                     },
                     {

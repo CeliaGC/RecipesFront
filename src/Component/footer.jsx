@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-// import FooterBoostrap from 'react-bootstrap/Footer';
 import "../Style/Footer.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons';
@@ -10,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Footer = () => {
   return (
-    <footer className=" bg-dark text-light mt-8 py-4">
+    <footer className="footerBox mt-8 py-4" style={{ backgroundColor: '#F2AA85' }}>
       <Container>
         <Row>
           <Col md={6}>
@@ -35,17 +34,17 @@ const Footer = () => {
             <h5>Links</h5>
             <ul className="list-unstyled">
               <li>
-                <Link to="/about-us" className="text-light">
+                <Link to="/about-us" >
                   About us
                 </Link>
               </li>
               <li>
-                <Link to="/contact-us" className="text-light">
+                <Link to="/contact-us" >
                   Contact us
                 </Link>
               </li>
               <li>
-                <Link to="/help" className="text-light">
+                <Link to="/help" >
                   Help
                 </Link>
               </li>
@@ -55,12 +54,12 @@ const Footer = () => {
             <h5>Legal</h5>
             <ul className="list-unstyled">
               <li>
-                <Link to="/privacy-policy" className="text-light">
+                <Link to="/privacy-policy" >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/disclaimer" className="text-light">
+                <Link to="/disclaimer" >
                   Disclaimer
                 </Link>
               </li>
