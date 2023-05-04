@@ -8,11 +8,10 @@ import { MdFoodBank } from "react-icons/md";
 import { MdBorderColor } from "react-icons/md";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../Style/AdminUser.css";
-import M17 from "../assets/M17.jpg";
-import NavbarView from '../Component/NavbarView';
-
-
+import C2 from "../assets/C2.jpg";
+import NavbarViewTeacher from '../Component/NavbarViewTeacher';
 import { UserContext } from "../Contexts/UserContext";
+
 
 
 function TeacherUser() {
@@ -30,7 +29,7 @@ function TeacherUser() {
     <Container fluid>
       <Row>
         <Col xs={12} sm={2}>
-         <NavbarPrueba/> 
+         <NavbarViewTeacher/> 
         </Col>
         <Col xs={12} sm={10}>
           <div style={{ marginTop: "70px", marginLeft: "auto", marginRight: "auto" }}>
@@ -41,7 +40,7 @@ function TeacherUser() {
                 <Card.Text>
                   Aquí podrás supervisar y gestionar todas las operaciones de los usuarios, así como controlar los pedidos de ingredientes y mantener actualizadas las recetas,  para que sólo te preocupes en crear una experiencia culinaria única para tus comensales!.
                 </Card.Text>
-                <Card.Img variant="top" src={M17} />
+                <Card.Img variant="top" src={C2} />
               </Card.Body>
             </Card>
           </div>

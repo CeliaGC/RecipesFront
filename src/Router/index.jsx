@@ -23,7 +23,10 @@ import AdminRecipeView from "../Pages/AdminRecipeView";
 import Register from "../Component/Register";
 import NavbarPrueba from "../Component/NavbarView";
 import Perfil from "../Component/Perfil";
-import LoginModal from "../Component/LoginModal";
+import TeacherUser from "../Pages/TeacherUser";
+import TeacherMenu from "../Pages/TeacherMenu";
+import AddRecipeTeacher from "../Pages/AddRecipeTeacher";
+import TeacherList from "../Pages/TeacherList";
 
 
 export const router = createBrowserRouter([
@@ -123,7 +126,27 @@ export const router = createBrowserRouter([
                         path: '/Perfil',
                         element: <Perfil/>,
                         loader: fetchUserProfile,
+                    },
+                    {
+                        path: '/TeacherUser',
+                        element: <TeacherUser/>,
+                    },
+                    {
+                        path: '/TeacherMenu',
+                        element: <TeacherMenu/>,
+                        loader: fetchCategories,
+                    },
+                    {
+                        path: '/AddRecipeTeacher',
+                        element: <AddRecipeTeacher/>,
+                    },
+                    {
+                        path: '/TeacherList',
+                        element: <TeacherList/>,
+                        loader: fetchOrders,
                     }
+                    
+        
                    
 
                 ]
