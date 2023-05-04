@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import Register from '../src/Component/Register';
+import Register from '../src/Component/Register.jsx';
 
 describe('Register', () => {
   test('should render all form fields', () => {
