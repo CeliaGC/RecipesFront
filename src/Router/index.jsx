@@ -3,7 +3,7 @@ import LayoutPublic from "../Layout/LayoutPublic";
 import NotFound from "../Pages/NotFound";
 import Menu from "../Pages/Menu";
 import Home from "../Pages/Home";
-import EditRecipe from "../Pages/EditRecipe";
+import PostRecipe from "../Pages/PostRecipe";
 import MenuRecipe from "../Pages/MenuRecipe";
 import ViewRecipe from "../Pages/ViewRecipe";
 import List from "../Pages/List";
@@ -21,8 +21,12 @@ import { usersHandler } from "../Handlers/userHandler";
 import UserList from "../Pages/UserList";
 import AdminRecipeView from "../Pages/AdminRecipeView";
 import Register from "../Component/Register";
-import NavbarPrueba from "../Component/NavbarPrueba";
+import NavbarPrueba from "../Component/NavbarView";
 import Perfil from "../Component/Perfil";
+import TeacherUser from "../Pages/TeacherUser";
+import TeacherMenu from "../Pages/TeacherMenu";
+import AddRecipeTeacher from "../Pages/AddRecipeTeacher";
+import TeacherList from "../Pages/TeacherList";
 
 
 export const router = createBrowserRouter([
@@ -45,8 +49,8 @@ export const router = createBrowserRouter([
                     },
 
                     {
-                        path: '/EditRecipe',
-                        element: <EditRecipe />,
+                        path: '/PostRecipe',
+                        element: <PostRecipe />,
                         loader: fetchRecipes,
                     },
                     {
@@ -63,6 +67,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/List',
                         element: <List />,
+                        loader: fetchOrders,
                     },
                     {
                         path: '/MyRecipe',
@@ -77,6 +82,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/AdminRecipe',
                         element: <AdminRecipe />,
+                        loader: fetchRecipes,
                     },
                     {
                         path: '/AdminUser',
@@ -117,10 +123,30 @@ export const router = createBrowserRouter([
                         element: <NavbarPrueba />,
                     },
                     {
-                        path: '/Perfil/:id',
+                        path: '/Perfil',
                         element: <Perfil/>,
-                        loader: fetchUser,
+                        loader: fetchUserProfile,
+                    },
+                    {
+                        path: '/TeacherUser',
+                        element: <TeacherUser/>,
+                    },
+                    {
+                        path: '/TeacherMenu',
+                        element: <TeacherMenu/>,
+                        loader: fetchCategories,
+                    },
+                    {
+                        path: '/AddRecipeTeacher',
+                        element: <AddRecipeTeacher/>,
+                    },
+                    {
+                        path: '/TeacherList',
+                        element: <TeacherList/>,
+                        loader: fetchOrders,
                     }
+                    
+        
                    
 
                 ]
@@ -143,8 +169,9 @@ async function fetchRecipe({ params }) {
     const categories = await categoryHandler.loadCategories();
     return { recipes, categories }; 
 }
+
 async function fetchRecipeId({ params }) {
-    const recipe = await recipeHandler.loadRecipes(params.id);
+    const recipe = await recipeHandler.loadRecipe(params.id);
     return { recipe };
 }
 async function fetchOrders() {
@@ -155,9 +182,11 @@ async function fetchUsers() {
     const users= await usersHandler.loadUsers();
     return { users };
 }
-async function fetchUser({ params }) {
-    const user= await usersHandler.loadUser(params.id);
-    console.log("holii" + user)
+
+async function fetchUserProfile(){
+    const userData = JSON.parse(localStorage.getItem('userData')).item5;
+     const user= await usersHandler.loadUser(userData);
     return { user };
+
 
 }

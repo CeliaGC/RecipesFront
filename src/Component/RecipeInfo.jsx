@@ -12,12 +12,8 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
  
   const handleAddToIngredients = () => {
     addToIngredient(recipe.ingredients);
-     //// mensaje de confirmación ingredientes guardados
-     alert("ingrediente añadido.");
-    };
-  console.log(recipe.ingredient)
-  
-   
+  };
+  console.log("componente", recipe.ingredient)
  
   return (
     <section>

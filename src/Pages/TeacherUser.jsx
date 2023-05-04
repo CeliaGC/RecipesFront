@@ -8,14 +8,13 @@ import { MdFoodBank } from "react-icons/md";
 import { MdBorderColor } from "react-icons/md";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../Style/AdminUser.css";
-import C8 from "../assets/C8.jpg";
-import NavbarPrueba from '../Component/NavbarView';
-
-
+import C2 from "../assets/C2.jpg";
+import NavbarViewTeacher from '../Component/NavbarViewTeacher';
 import { UserContext } from "../Contexts/UserContext";
 
 
-function AdminUser() {
+
+function TeacherUser() {
 
   const { userStorage, setUserStorage } = useContext(UserContext);
   const navigate = useNavigate();
@@ -30,7 +29,7 @@ function AdminUser() {
     <Container fluid>
       <Row>
         <Col xs={12} sm={2}>
-         <NavbarPrueba/> 
+         <NavbarViewTeacher/> 
         </Col>
         <Col xs={12} sm={10}>
           <div style={{ marginTop: "70px", marginLeft: "auto", marginRight: "auto" }}>
@@ -41,7 +40,7 @@ function AdminUser() {
                 <Card.Text>
                   Aquí podrás supervisar y gestionar todas las operaciones de los usuarios, así como controlar los pedidos de ingredientes y mantener actualizadas las recetas,  para que sólo te preocupes en crear una experiencia culinaria única para tus comensales!.
                 </Card.Text>
-                <Card.Img variant="top" src={C8} />
+                <Card.Img variant="top" src={C2} />
               </Card.Body>
             </Card>
           </div>
@@ -51,4 +50,4 @@ function AdminUser() {
   );
 };
 
-export default AdminUser;
+export default TeacherUser;

@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import Table from "react-bootstrap/Table";
 import Card from "react-bootstrap/Card";
-import { Alert } from "react-bootstrap";
-// import orderHandler from "../Handlers/orderHandler";
+import { orderHandler } from "../Handlers/orderHandler";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function List() {
   
   const [addListRecipe, setListRecipe] = useState(JSON.parse(localStorage.getItem("addListRecipe")) || []);
+ 
+  const [order, setOrders] = useState([]);
+  const [ingredientName, setIngredientName] = useState('');
+  const [amount, setAmount] = useState('');
+  const [unit, setUnit] = useState('');
 
   const removAddListRecipe = () => {
     localStorage.clear();
@@ -80,24 +84,36 @@ function List() {
   };
 
 
-  // const handleSubmit = async (event) => {
+  const handleAdd = () => {
+    const order = {
+      ingredient: ingredientName,
+      amount: amount,
+      unit: unit
+    };
+    setOrders([...order]);
+    setIngredientName('');
+    setAmount('');
+    setUnit('');
 
-  //   event.preventDefault();
+  };
+  const handleSubmit = async (event) => {
 
-  //   let newOrder = {
-  //     idUser, idIngredient, amount, unit,
-  //   };
-  //   console.log("componente", newOrder)
-  //   await orderHandler.addOrder(newOrder);
+    event.preventDefault();
 
-  // };
+    let order = {
+       ingredientName, amount, unit,
+    };
+    console.log("componente", order)
+    await orderHandler.addOrder(order);
+
+  };
 
   return (
 <div >
-  <Card>
+  <Card style={{border:'none'}}>
     <Card.Body>
       <div>
-        <h4>Tabla de ingredientes</h4>
+        <h4 style={{marginBottom:'30px', textAlign:'center'}}>Tabla de ingredientes</h4>
         <Table striped bordered hover responsive>
           <thead>
             <tr>
@@ -167,7 +183,7 @@ function List() {
         </Table>
       </div>
       <div>
-        <h4>Tabla de totales</h4>
+        <h4 style={{marginBottom:'30px', textAlign:'center'}}>Tabla de totales</h4>
         <Table striped bordered hover responsive>
           <thead>
             <tr>
@@ -176,14 +192,14 @@ function List() {
               <th>Unidad</th>
             </tr>
           </thead>
-          <tbody>
-            {Object.entries(totalAmounts).map(([key, value], index) => {
-              const [name, unit] = key.split("-");
+          <tbody onSubmit={handleAdd} >
+            {Object.entries(totalAmounts).map(([key, amount], index) => {
+              const [ingredientName, unit] = key.split("-");
 
               return (
                 <tr key={index}>
-                  <td>{name}</td>
-                  <td>{value}</td>
+                  <td>{ingredientName}</td>
+                  <td>{amount}</td>
                   <td>{unit}</td>
                 </tr>
               );
@@ -200,7 +216,7 @@ function List() {
         <Alert variant="danger">No hay ingredientes.</Alert>
       )}
     <button className="btn btn-primary" onClick={() => removAddListRecipe()}>Borrar ingredientes</button>
-      <button className="btn btn-primary" >Enviar ingredientes</button>
+      <button className="btn btn-primary" onClick={handleSubmit}  >Enviar ingredientes</button>
     </div>
 
   </Card>

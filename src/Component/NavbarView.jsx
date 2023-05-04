@@ -11,9 +11,13 @@ import { BsPersonFill } from 'react-icons/bs';
 import { MdFoodBank } from "react-icons/md";
 import { MdBorderColor } from "react-icons/md";
 import { HiOutlineLogout } from "react-icons/hi";
+import { PersonCircle } from 'react-bootstrap-icons';
+import { PeopleFill } from 'react-bootstrap-icons';
+import { BsFillPersonPlusFill } from 'react-icons/bs';
+import {TbChefHat} from 'react-icons/tb';
 
 
-function NavbarPrueba() {
+function NavbarView() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const { userStorage, setUserStorage } = useContext(UserContext);
     const navigate = useNavigate();
@@ -28,19 +32,24 @@ function NavbarPrueba() {
         <div>
             <MediaQuery minWidth={768}>
                 {/* barra lateral en pantallas grandes */}
-                <div className="sidebar"  style={{ position: "relative", width: "9vw", overflow: "hidden", backgroundColor: "#8B8961", borderRadius: '15px', width: '150px', height: '350px', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: '50px', maxHeight: '80vh', overflowY: 'auto' }}>
+                <div className="sidebar" style={{ position: "relative", width: "9vw", overflow: "hidden", backgroundColor: "#8B8961", borderRadius: '15px', width: '150px', height: '450px', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: '50px', maxHeight: '80vh', overflowY: 'auto' }}>
                     <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
-                        <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Home
+                        <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Home
+                    </Nav.Link>
+                    <Nav.Link href= '/Perfil' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                        <PersonCircle className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Mi perfil
                     </Nav.Link>
                     <Nav.Link href='/UserList' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
-                        <BsPersonFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} /> Mi perfil
+                        <PeopleFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Usuarios
                     </Nav.Link>
-                    <NavDropdown title={<div style={{ display: 'flex', alignItems: 'center' }}><BsPersonFill size={25} /><span style={{ marginLeft: '5px' }}>Usuarios</span></div>}  menuAlign="right" as="div" eventkey={0} className="d-inline-block" style={{ color: "white", marginBottom: "1rem", marginLeft: '20px', backgroundColor: '#8B8961' }} noCaret>
-                        <NavDropdown.Item href="/Register" style={{ color: "#8B8961", marginBottom: "10px", size: "20px" }}>Registro</NavDropdown.Item>
-                        <NavDropdown.Item href="/UserList" style={{ color: "#8B8961", marginBottom: "10px", size: "20px" }}>Lista de Usuarios</NavDropdown.Item>
-                    </NavDropdown>
-                    <Nav.Link href='AdminRecipeView' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                    <Nav.Link href='/Register' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                        <BsFillPersonPlusFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Añadir Usuarios
+                    </Nav.Link>
+                    <Nav.Link href='AdminRecipe' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdFoodBank className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Recetas
+                    </Nav.Link>
+                    <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                        <TbChefHat className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Mis recetas
                     </Nav.Link>
                     <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdBorderColor className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Lista de Pedidos
@@ -51,7 +60,7 @@ function NavbarPrueba() {
                 </div>
             </MediaQuery>
 
-            <MediaQuery maxWidth={767}>
+          <MediaQuery maxWidth={767}>
                 {/* sub-navbar en pantallas pequeñas */}
                 <Navbar expand="lg" variant="light" style={{ marginTop: '20px', marginBottom: '-20px', backgroundColor: "#8B8961", borderRadius: '15px' }} >
                     <Container className="d-flex flex-column flex-md-row">
@@ -60,12 +69,22 @@ function NavbarPrueba() {
                             <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem" }}>
                                 <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} />
                             </Nav.Link>
+                            <Nav.Link href='/Perfil/:id' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                                <PersonCircle className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} />
+                            </Nav.Link>
                             <Nav.Link href='/UserList' style={{ color: "white", marginBottom: "1rem" }}>
                                 <BsPersonFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} />
                             </Nav.Link>
-                            <Nav.Link href='AdminRecipeView' style={{ color: "white", marginBottom: "1rem" }}>
+                            <Nav.Link href='/Register' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                        <BsFillPersonPlusFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} />
+                    </Nav.Link>
+                    
+                            <Nav.Link href='AdminRecipe' style={{ color: "white", marginBottom: "1rem" }}>
                                 <MdFoodBank className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} />
                             </Nav.Link>
+                            <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                        <TbChefHat className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} />
+                    </Nav.Link>
                             <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem" }}>
                                 <MdBorderColor className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} />
                             </Nav.Link>
@@ -80,4 +99,4 @@ function NavbarPrueba() {
     );
 }
 
-export default NavbarPrueba;
+export default NavbarView;
