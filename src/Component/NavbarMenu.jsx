@@ -13,7 +13,6 @@ function Navbarmenu() {
             <Nav.Link href='/MyRecipe'>Mis recetas</Nav.Link>
             <Nav.Link href='/List'>Lista</Nav.Link>
             <Nav.Link href='/PostRecipe'>Añadir receta</Nav.Link>
-            
             <Nav.Link href='/AdminCategory'>ACategoria</Nav.Link>
             <Nav.Link href='/AdminRecipe'>AReceta</Nav.Link>
             <Nav.Link href='/AdminUser'>AUsuario</Nav.Link>

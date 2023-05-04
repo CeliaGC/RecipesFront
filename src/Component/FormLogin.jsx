@@ -16,7 +16,6 @@ function FormLogin() {
   const [userName, setUserName] = useState('');
   const [userPassword, setUserPassword] = useState('');
   const navigate = useNavigate();
-
   const userData = localStorage.getItem('userData');
   const parsedUserData = JSON.parse(userData);
   const IdRol = parsedUserData && parsedUserData.item2;
@@ -45,9 +44,7 @@ function FormLogin() {
       }
 
     } catch (error) {
- 
   handleResponseError(error.response); 
-      
     }
   };
 

@@ -98,7 +98,7 @@ function RecipeForm() {
               <Form.Label>Usuario</Form.Label>
               <Form.Control type="text" placeholder="Usuario" value={postedBy} onChange={handlePostedByChange} required />
             </Form.Group>
-</Col>
+          </Col>
           <Col>
             <Table striped bordered hover>
               <thead>

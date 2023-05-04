@@ -12,7 +12,6 @@ function Navbarmenu() {
             <Nav.Link href='/UserList'>Usuarios</Nav.Link>
             <Nav.Link href='/AdminRecipeView'>Recetas</Nav.Link>
             <Nav.Link href='/List'>Lista de Pedidos</Nav.Link>
-
           </Nav>
         </Navbar.Collapse>
       </Navbar>

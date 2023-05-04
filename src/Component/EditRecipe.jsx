@@ -36,7 +36,6 @@ function EditRecipe() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Enviar datos al servidor
     };
 
     return (

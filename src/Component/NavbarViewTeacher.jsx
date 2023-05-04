@@ -29,7 +29,6 @@ function NavbarViewTeacher() {
     return (
         <div>
             <MediaQuery minWidth={768}>
-                {/* barra lateral en pantallas grandes */}
                 <div className="sidebar" style={{ position: "relative", width: "9vw", overflow: "hidden", backgroundColor: "#8B8961", borderRadius: '15px', width: '170px', height: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: '50px', maxHeight: '80vh', overflowY: 'auto' }}>
                     <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", fontSize: '20px'}} /> Home
@@ -53,7 +52,6 @@ function NavbarViewTeacher() {
             </MediaQuery>
 
           <MediaQuery maxWidth={767}>
-                {/* sub-navbar en pantallas pequeñas */}
                 <Navbar expand="lg" variant="light" style={{ marginTop: '20px', marginBottom: '-20px', backgroundColor: "#8B8961", borderRadius: '15px' }} >
                     <Container className="d-flex flex-column flex-md-row">
                         <Nav className="w-100 justify-content-around flex-row">
@@ -62,14 +60,14 @@ function NavbarViewTeacher() {
                                 <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",  fontSize: '20px' }} />
                             </Nav.Link>
                             <Nav.Link href= '/PerfilTeacher' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
-                        <PersonCircle className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Mi perfil
-                    </Nav.Link>
+                              <PersonCircle className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Mi perfil
+                             </Nav.Link>
                             <Nav.Link href='/TeacherMenu' style={{ color: "white", marginBottom: "1rem" }}>
                                 <MdFoodBank className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",  fontSize: '22px' }} />
                             </Nav.Link>
                             <Nav.Link href='/AddRecipeTeacher' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
-                        <MdOutlineRestaurantMenu className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",fontSize: '20px' }} /><AiOutlinePlus className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", fontSize: '10px'}} />
-                    </Nav.Link>
+                                 <MdOutlineRestaurantMenu className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",fontSize: '20px' }} /><AiOutlinePlus className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", fontSize: '10px'}} />
+                            </Nav.Link>
                             <Nav.Link href='/TeacherList' style={{ color: "white", marginBottom: "1rem" }}>
                                 <MdBorderColor className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",  fontSize: '20px'}} />
                             </Nav.Link>

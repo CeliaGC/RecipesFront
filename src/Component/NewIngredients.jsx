@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Form, Button } from 'react-bootstrap';
+import {Form, Button } from 'react-bootstrap';
 
 function IngredientesForm({ addToIngredient }) {
   const [ingredientes, setIngredientes] = useState([]);

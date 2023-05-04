@@ -1,14 +1,11 @@
 import React from 'react';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { useLoaderData } from "react-router-dom";
 
 
 const Perfil = () => {
 
     const { user } = useLoaderData();
-  
-    
-
 
   return (
     <Container>
