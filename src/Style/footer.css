@@ -1,52 +1,80 @@
-/*Estilos para el footer*/
-footer {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.footerBox{
+  position:sticky;
 }
-
+#footer{
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  height: 6.25rem;
+  position:absolute;
+  left: 0%;
+  margin-top: 3.125rem;
+  width: 100vw;
+}
+#footerRow {
+  height: 100px;
+}
+#footerContainer {
+  margin-top:0rem ;
+  height: 6.25rem;
+  padding-bottom: 1.875rem;
+}
 footer a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
 }
-
 footer a:hover {
-  color: #ccc;
+  color: #000000;
 }
-
 footer ul li {
   margin-bottom: 1rem;
 }
-
 footer h5 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }
-
 footer p {
   margin-bottom: 1rem;
 }
-
-footer .fa-facebook-square,
-footer .fa-twitter-square,
-footer .fa-instagram-square,
-footer .fa-youtube-square {
-  font-size: 2rem;
-  color: #334122;
-  margin-right: 1rem;
-}
-
-footer .fa-facebook-square:hover,
-footer .fa-twitter-square:hover,
-footer .fa-instagram-square:hover,
-footer .fa-youtube-square:hover {
-  color: #334122;
-}
-
-footer .list-unstyled li a {
-  font-size: 1rem;
+.list-unstyled{
+  font-size: .625rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
+  height: 1rem;
+  margin: 0%;
 }
-
-
- 
+.list a{
+  margin:0%;
+}
+li{
+  margin-bottom:1% !important;
+}
+#col-1, #col-2, #col-3 {
+  height: 6.25rem;
+}
+/* Estilos para el footer en pantallas pequeñas */
+@media (max-width: 750px) {
+  #footerRow {
+    height: auto;
+  }
+  #col-1, #col-2, #col-3 {
+    height: auto;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: .5rem;
+    width: 25%;
+    padding-bottom: .0625rem;
+  }
+  footer h5 {
+    font-size: .625rem;
+    text-transform: uppercase;
+   margin-bottom: .625rem;
+  }
+  .list-unstyled{
+    font-size: .3125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    height: 1rem;
+    margin: 0%;
+  }
+}

@@ -8,7 +8,7 @@ import { MdFoodBank } from "react-icons/md";
 import { MdBorderColor } from "react-icons/md";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../Style/AdminUser.css";
-import M17 from "../assets/M17.jpg";
+import C8 from "../assets/C8.jpg";
 import NavbarPrueba from '../Component/NavbarView';
 
 
@@ -41,7 +41,7 @@ function AdminUser() {
                 <Card.Text>
                   Aquí podrás supervisar y gestionar todas las operaciones de los usuarios, así como controlar los pedidos de ingredientes y mantener actualizadas las recetas,  para que sólo te preocupes en crear una experiencia culinaria única para tus comensales!.
                 </Card.Text>
-                <Card.Img variant="top" src={M17} />
+                <Card.Img variant="top" src={C8} />
               </Card.Body>
             </Card>
           </div>

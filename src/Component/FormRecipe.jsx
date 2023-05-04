@@ -11,7 +11,8 @@ function RecipeForm() {
   const [observations, setObservations] = useState("");
   const [materials, setMaterials] = useState("");
   const [postedBy, setPostedBy] = useState("");
-  const [selectAlergens, setSelectAlergens] = useState([]);
+  const [alergens, setAlergens] = useState("");
+ 
 
   const [ingredients, setIngredients] = useState([]);
   const [ingredient, setIngredient] = useState('');
@@ -39,13 +40,11 @@ function RecipeForm() {
   const handlePostedByChange = (event) => {
     setPostedBy(event.target.value);
   };
+  
   const handleAlergensChange = (event) => {
-    const selectAlergensArray = Array.from(
-      event.target.selectedOptions,
-      (option) => option.value
-    );
-    setSelectAlergens(selectAlergensArray);
+    setAlergens(event.target.value);
   };
+ 
   
   const handleAdd = () => {
     const newIngredient = {
@@ -78,7 +77,7 @@ function RecipeForm() {
       <Form onSubmit={handleSubmit}>
         <Row>
           <Col>
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" style={{marginTop:'40px'}}>
               <Form.Label>Nombre</Form.Label>
               <Form.Control type="text" placeholder="Nombre" value={name} onChange={handleNameChange} required />
             </Form.Group>
@@ -159,39 +158,8 @@ function RecipeForm() {
             </Button>
             <Form.Group className="mb-3">
               <Form.Label>Alérgenos</Form.Label>
-              {selectAlergens.length > 0 && (
-                <div className="selected">
-                  <label>Opciones seleccionadas:</label>
-                  {selectAlergens.map((option) => (
-                    <span key={option} className="selected">
-                      {option}
-                    </span>
-                  ))}
-                </div>
-              )}
-              <Form.Select
-                multiple
-                value={selectAlergens}
-                onChange={handleAlergensChange}
-              >
-                <option value="Cereales con gluten">Cereales con gluten</option>
-                <option value="Crustaceos y derivados">Crustaceos y derivados</option>
-                <option value="Huevos y derivados">Huevos y derivados</option>
-                <option value="Cacahuetes y derivados">Cacahuetes y derivados</option>
-                <option value="Leche y derivados">Leche y derivados</option>
-                <option value="Frutos de cascara y derivados">Frutos de cascara y derivados</option>
-                <option value="Apio">Apio</option>
-                <option value="Soja y derivados">Soja y derivados</option>
-                <option value="Mostaza y derivados">Mostaza y derivados</option>
-                <option value="Sésamo y derivados">Sésamo y derivados</option>
-                <option value="Pescado y derivados">Pescado y derivados</option>
-                <option value="Dióxido de Azufre">Dióxido de Azufre</option>
-                <option value="Altramuces y derivados">Altramuces y derivados</option>
-                <option value="Moluscos y derivados">Moluscos y derivados</option>
-                <option value="Ninguno conocido">Ninguno conocido</option>
-              </Form.Select>
-             
-            </Form.Group>
+              <Form.Control type="text"  placeholder="Alérgenos" value={alergens} onChange={handleAlergensChange} />
+            </Form.Group> 
             <Button variant="primary" type="submit">Añadir receta</Button>
           </Col>
         </Row>

@@ -16,8 +16,6 @@ import { ButtonGroup, Button } from 'react-bootstrap';
 import { Carousel } from 'react-bootstrap';
 
 
-
-
 const CarouselImg = () => {
   return (
     
@@ -175,6 +173,8 @@ const Home = () => {
       <Buttons />
       <ImageContainers />
       <Recipe />
+    
+
 
     </div>
   )
