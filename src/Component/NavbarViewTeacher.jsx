@@ -12,6 +12,7 @@ import { HiOutlineLogout } from "react-icons/hi";
 import {TbChefHat} from 'react-icons/tb';
 import {MdOutlineRestaurantMenu} from 'react-icons/md';
 import {AiOutlinePlus} from 'react-icons/ai';
+import { PersonCircle } from 'react-bootstrap-icons';
 
 
 function NavbarViewTeacher() {
@@ -29,9 +30,12 @@ function NavbarViewTeacher() {
         <div>
             <MediaQuery minWidth={768}>
                 {/* barra lateral en pantallas grandes */}
-                <div className="sidebar" style={{ position: "relative", width: "9vw", overflow: "hidden", backgroundColor: "#8B8961", borderRadius: '15px', width: '170px', height: '350px', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: '50px', maxHeight: '80vh', overflowY: 'auto' }}>
+                <div className="sidebar" style={{ position: "relative", width: "9vw", overflow: "hidden", backgroundColor: "#8B8961", borderRadius: '15px', width: '170px', height: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: '50px', maxHeight: '80vh', overflowY: 'auto' }}>
                     <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", fontSize: '20px'}} /> Home
+                    </Nav.Link>
+                    <Nav.Link href= '/PerfilTeacher' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                        <PersonCircle className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Mi perfil
                     </Nav.Link>
                     <Nav.Link href='/TeacherMenu' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdFoodBank className="my-icon mr-2" style={{ backgroundColor: "none", color: "white",  marginBottom: "10px", fontSize: '22px' }} /> Recetas por categorías
@@ -60,6 +64,9 @@ function NavbarViewTeacher() {
                             <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem" }}>
                                 <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",  fontSize: '20px' }} />
                             </Nav.Link>
+                            <Nav.Link href= '/PerfilTeacher' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                        <PersonCircle className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Mi perfil
+                    </Nav.Link>
                             <Nav.Link href='/TeacherMenu' style={{ color: "white", marginBottom: "1rem" }}>
                                 <MdFoodBank className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px",  fontSize: '22px' }} />
                             </Nav.Link>

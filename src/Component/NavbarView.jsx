@@ -38,7 +38,7 @@ function NavbarView() {
                     <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Home
                     </Nav.Link>
-                    <Nav.Link href= '/Perfil' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                    <Nav.Link href= '/PerfilAdmin' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <PersonCircle className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Mi perfil
                     </Nav.Link>
                     <Nav.Link href='/UserList' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
@@ -74,7 +74,7 @@ function NavbarView() {
                             <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem" }}>
                                 <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} />
                             </Nav.Link>
-                            <Nav.Link href='/Perfil/:id' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                            <Nav.Link href='/PerfilAdmin' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                                 <PersonCircle className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "20px" }} />
                             </Nav.Link>
                             <Nav.Link href='/UserList' style={{ color: "white", marginBottom: "1rem" }}>
@@ -83,7 +83,6 @@ function NavbarView() {
                             <Nav.Link href='/Register' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <BsFillPersonPlusFill className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} />
                     </Nav.Link>
-                    
                             <Nav.Link href='AdminRecipe' style={{ color: "white", marginBottom: "1rem" }}>
                                 <MdFoodBank className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} />
                             </Nav.Link>

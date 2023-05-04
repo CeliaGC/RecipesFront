@@ -28,6 +28,8 @@ import TeacherMenu from "../Pages/TeacherMenu";
 import AddRecipeTeacher from "../Pages/AddRecipeTeacher";
 import TeacherList from "../Pages/TeacherList";
 import AddRecipeUser from "../Pages/AddRecipeUser";
+import PerfilAdmin from "../Pages/PerfilAdmin";
+import PerfilTeacher from "../Pages/PerfilTeacher";
 
 
 export const router = createBrowserRouter([
@@ -149,7 +151,18 @@ export const router = createBrowserRouter([
                     {
                         path: '/AddRecipeUser',
                         element: <AddRecipeUser/>,
+                    },
+                    {
+                        path: '/PerfilAdmin',
+                        element: <PerfilAdmin/>,
+                        loader: fetchUserProfile,
+                    },
+                    {
+                        path: '/PerfilTeacher',
+                        element: <PerfilTeacher/>,
+                        loader: fetchUserProfile,
                     }
+        
         
                    
 
