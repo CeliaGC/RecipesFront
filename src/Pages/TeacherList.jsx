@@ -2,6 +2,8 @@ import React from 'react';
 import NavbarViewTeacher from "../Component/NavbarViewTeacher";
 import { Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Ingredients from "../Component/Ingredients";
+
 
 
 function TeacherList() {
