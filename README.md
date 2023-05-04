@@ -1,8 +1,8 @@
-# COOKSMART:
+ COOKSMART:
 
 We are a page of cooking recipes, described by teachers so that our students and users can learn their recipes. We indicate ingredients with their quantities, allergens and method of preparation. All separated by categories. At the same time, the ingredients of the recipes selected by the teachers for their elaboration are all collected in a total list of ingredients that the administrator receives. the administrator receives these individual lists plus the total list of all these lists and can edit this last list. This one is designed for the purchase of ingredients, so you can edit it if there are ingredients that you may have in stock.
 
-# TOOLS:
+ TOOLS:
 
 -Jira:
 https://acalabustos.atlassian.net/jira/software/projects/FIN/boards/2
@@ -17,7 +17,7 @@ https://github.com/Proyecto-Pedagogico-Recetas/Frontend
 
 -Visual Studio Code
 
-TECHNOLOGIES:
+ TECHNOLOGIES:
 -React
 -HTML
 -Bootstrap
@@ -32,7 +32,7 @@ Requirements, Installation and Getting started:
 
 # CONTENT:
 
-USER PAGES:
+ USER PAGES:
 -Modal user, user login.
 -Modal user, register login.
 -First user page (home), landing page that shows what you will find on our platform with images of different recipes.
@@ -45,7 +45,7 @@ Each category with title and image, and you can open it if you do click.
 -Fifth user page, the user can see all the recipes that she/he added. Three buttons add new ingredient, add and edit recipes. 
 -Sixth user page, formulary to add or edit a recipe with a button to add the recipe or to add the new changes.
 -Seven user page (Blog in the navbar menu), the user can open a blog’s link.
-ADMIN PAGES:
+ ADMIN PAGES:
 -Modal Admin, admin login.
 -First admin page (home), landing page that shows what you will find on our platform with images of different recipes.
 -Second admin page (menu) with the different categories.
@@ -63,7 +63,7 @@ CRUD user: can see, add, edit and delete recipes.
 CRUD admin: can see and edit the ingredient’s list. Can make changes with the users.
 Search Bar: You can search by categories.
 
-# COMPONET TESTING: 
+ COMPONET TESTING: 
 
 * CardRecipeTest: This is a unit test file for the CardRecipe component. The @testing-library/react and @testing-library/jest-dom libraries are used for integration with Jest. The file imports the necessary tools, the CardRecipe component, and vi.mock to simulate the data received by the component. In the describe block, all the tests that will be performed are grouped, and beforeEach is used to render the component before each test. The tests verify that the recipe name, author, category, and link to view the recipe are correctly rendered using screen.getByText and expect.
 
@@ -80,7 +80,7 @@ correctly:
 
 -Our tests should pass, if we executed the comand npm run test.
 
-Our Team:
+ Our Team:
 
 [<img src="https://avatars.githubusercontent.com/u/117833586?v=4" width=115><br><sub> Ainhoa Cala </sub>](https://github.com/acalabustos)| [<img src="https://avatars.githubusercontent.com/u/117833121?v=4" width=115><br><sub> Jennifer Cordero </sub>](https://github.com/JenniferCorderoR) |[<img src="https://avatars.githubusercontent.com/u/117834632?v=4" width=115><br><sub> Anyi Flores </sub>](https://github.com/Anyi79) |[<img src="https://avatars.githubusercontent.com/u/117834265?v=4" width=115><br><sub> Celia García </sub>](https://github.com/CeliaGC) |[<img src="https://avatars.githubusercontent.com/u/117834229?v=4" width=115><br><sub> RoseMary Rengel </sub>](https://github.com/rrengelj) |
 | :---: | :---: | :---: |  :---: |  :---: | 
