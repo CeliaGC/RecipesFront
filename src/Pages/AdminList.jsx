@@ -16,31 +16,36 @@ export default function ListAdmin() {
     <div className="row">
       {orders.map((order) => (
         <div key={order.id} className="col col-4">
-            
-            <Card style={{ width: '13rem' }} className="m-4">
+            El profe ha pedido esto:
+            {order.map(orderItem => {
+              return (
+                <Card style={{ width: '13rem' }} className="m-4">
              
-              <Card.Body>
-                <Card.Text>
-                  Uduario
-                  {order.idUser}
-                  {order.UserName}
-                </Card.Text>
-                <Card.Text>
-                  Ingrediente
-                  {order.idIngredient}
-                  {order.IngredientName}
-                </Card.Text>
-                <Card.Text>
-                  Cantidad
-                  {order.amount}
-                </Card.Text>
-                <Card.Text>
-                  Unidad
-                  {order.unit}
-                </Card.Text>
-              </Card.Body>
-              
-            </Card>
+                <Card.Body>
+                  <Card.Text>
+                    Uduario
+                    {orderItem.idUser}
+                    {orderItem.UserName}
+                  </Card.Text>
+                  <Card.Text>
+                    Ingrediente
+                    {orderItem.idIngredient}
+                    {orderItem.IngredientName}
+                  </Card.Text>
+                  <Card.Text>
+                    Cantidad
+                    {orderItem.amount}
+                  </Card.Text>
+                  <Card.Text>
+                    Unidad
+                    {orderItem.unit}
+                  </Card.Text>
+                </Card.Body>
+                
+              </Card>
+              )
+            })}
+            
           
         </div>
       ))}
