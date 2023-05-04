@@ -1,8 +1,8 @@
-COOKSMART:
+# COOKSMART:
 
 We are a page of cooking recipes, described by teachers so that our students and users can learn their recipes. We indicate ingredients with their quantities, allergens and method of preparation. All separated by categories. At the same time, the ingredients of the recipes selected by the teachers for their elaboration are all collected in a total list of ingredients that the administrator receives. the administrator receives these individual lists plus the total list of all these lists and can edit this last list. This one is designed for the purchase of ingredients, so you can edit it if there are ingredients that you may have in stock.
 
-TOOLS:
+# TOOLS:
 
 -Jira:
 https://acalabustos.atlassian.net/jira/software/projects/FIN/boards/2
@@ -30,7 +30,7 @@ Requirements, Installation and Getting started:
 2) npm install
 5) npm run dev
 
-CONTENT:
+# CONTENT:
 
 USER PAGES:
 -Modal user, user login.
@@ -63,56 +63,15 @@ CRUD user: can see, add, edit and delete recipes.
 CRUD admin: can see and edit the ingredient’s list. Can make changes with the users.
 Search Bar: You can search by categories.
 
-COMPONET TESTING: 
+# COMPONET TESTING: 
 
--CardRecipeTest:  Es   un   archivo   de   pruebas   unitarias   para   el
-componente CardRecipe. Se utiliza la biblioteca @testing-library/react
-y   @testing-library/jest-dom   para   integración   con   Jest.   El   archivo
-importa   las   herramientas   necesarias,   el   componente   CardRecipe   y
-vi.mock   para   simular   los   datos   que   recibe   la   componente.   En   el
-bloque describe se agrupan todas las pruebas que se van a realizar y
-se   usa   beforeEach   para   renderizar   la   componente   antes   de   cada
-prueba.   Las   pruebas   comprueban   que   el   nombre   de   la   receta,   el
-autor,   la   categoría   y   el   enlace   para   ver   la   receta   se   rendericen
-correctamente, utilizando screen.getByText y expect.
-RecipeInfoTest:   Es   un   archivo   de   prueba   unitaria   para   el
-componente   RecipeInfo   que   se   importa   desde
-"../src/Component/RecipeInfo.jsx". Se utiliza la biblioteca de pruebas
-@testing-library/react   y   @testing-library/jest-dom   para   realizar   las
-pruebas. El archivo contiene cuatro pruebas que comprueban si los
-distintos elementos de la receta se muestran correctamente, como el
-título, la descripción, los ingredientes y la imagen. Para cada prueba,
-se utiliza la función screen.getByText para obtener el elemento que
-contiene   el   texto   deseado   y   la   función   expect   para   comprobar   que
-este elemento está presente en el DOM. También se utiliza vi.mock
-para   crear   un   mock   de   useLoaderData   de   react-router-dom   que
-devuelve   datos   ficticios   de   una   receta   que   se   utilizarán   en   las
-pruebas.
+* CardRecipeTest: This is a unit test file for the CardRecipe component. The @testing-library/react and @testing-library/jest-dom libraries are used for integration with Jest. The file imports the necessary tools, the CardRecipe component, and vi.mock to simulate the data received by the component. In the describe block, all the tests that will be performed are grouped, and beforeEach is used to render the component before each test. The tests verify that the recipe name, author, category, and link to view the recipe are correctly rendered using screen.getByText and expect.
 
--RegisterTest: Este código es un conjunto de pruebas unitarias para
-la   aplicación   web   que   permite   a   los   usuarios   registrarse.   Se   está
-utilizando   la   biblioteca   de   pruebas   @testing-library/react   para
-renderizar y probar el componente Register.
-La primera prueba comprueba si todos los campos del formulario se
-están renderizando correctamente en la pantalla. Se utiliza el método
-getByLabelText para obtener los campos de entrada correspondientes
-a cada etiqueta del formulario y luego se verifica que estén presentes
-en la pantalla con el método toBeInTheDocument.
-La   segunda   prueba   verifica   si   se   pueden   introducir   valores   en   los
-campos   del   formulario.   Se   utiliza   el   método   fireEvent.change   para
-simular la entrada de datos del usuario en cada campo de entrada.
-Luego se utiliza el método toHaveValue para verificar si los valores de
-entrada del usuario se han actualizado correctamente en la pantalla.
-En   general,   estas   pruebas   unitarias   son   importantes   para   asegurar
-que el formulario de registro de usuario funciona correctamente y que
-cualquier cambio futuro en el código no afecte su funcionamiento.
-Test Backend
+* RecipeInfoTest: This is a unit test file for the RecipeInfo component, which is imported from "../src/Component/RecipeInfo.jsx".
+The @testing-library/react and @testing-library/jest-dom testing libraries are used to perform the tests. 
+The file contains four tests that verify if the different elements of the recipe are displayed correctly, such as the title, description, ingredients, and image. For each test, the screen.getByText function is used to get the element containing the desired text, and the expect function is used to verify that this element is present in the DOM. vi.mock is also used to create a mock of react-router-dom's useLoaderData, which returns fictitious data of a recipe that will be used in the tests.
 
--RecipeItemTest:Este archivo de prueba es para verificar si el método ValidateRecipe
-de la clase RecipeItemService funciona correctamente.
-Primero, se crean tres objetos RecipeItem (recipeA, recipeB y recipeC)
-con   diferentes   valores   de   propiedad.   Luego,   se   llama   al   método
-ValidateRecipe de la clase RecipeItemService para cada uno de estos
+* RegisterTest: This code is a set of unit tests for the web application that allows users to register. The @testing-library/react testing library is being used to render and test the Register component. The first test checks if all the form fields are correctly rendered on the screen. The getByLabelText method is used to obtain the corresponding input fields for each form label, and then it is verified that they are present on the screen using the toBeInTheDocument method. The second test verifies if values can be entered into the form fields. The fireEvent.change method is used to simulate user input in each input field. Then, the toHaveValue method is used to verify if the user's input values have been correctly updated on the screen. Overall, these unit tests are important to ensure that the user registration form works correctly, and that any future changes to the code do not affect its functionality.
 
 
 correctly:
