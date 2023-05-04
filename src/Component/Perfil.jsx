@@ -24,7 +24,6 @@ const Perfil = () => {
           <p> {user[0].userEmail}</p>
           <h4>Teléfono de contacto</h4>
           <p>{user[0].userPhone}</p>
-          <p>{user[0].EncryptedToken}</p>
         
         </Col>
       </Row>
