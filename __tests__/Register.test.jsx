@@ -1,5 +1,14 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Register from '../src/Component/Register';
+import '@testing-library/jest-dom'
+
+vi.mock('react-router-dom', () => ({
+  useLoaderData: vi.fn(() => ({
+    username: 'testUser',
+    email: 'test@example.com',
+    password: 1234,
+  })),
+}));
 
 describe('Register', () => {
   test('should render all form fields', () => {
@@ -13,7 +22,7 @@ describe('Register', () => {
     expect(userNameField).toBeInTheDocument();
     expect(passwordField).toBeInTheDocument();
     expect(confirmPasswordField).toBeInTheDocument();
-    expect(userEmailField).toBeInTheDocument();
+    expect(userEmailField).toBeInTheDocument()
     expect(userPhoneField).toBeInTheDocument();
   });
 
@@ -46,3 +55,4 @@ describe('Register', () => {
     expect(userPhoneField).toHaveValue(inputValues.userPhone);
   });
 });
+
