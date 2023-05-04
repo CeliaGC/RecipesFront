@@ -1,4 +1,5 @@
-import LayoutPublic from "../src/Layout/LayoutPublic"
+import LayoutPublic from "../src/Layout/LayoutPublic";
+import "../src/App.css";
 
 
 

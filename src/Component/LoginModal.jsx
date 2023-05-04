@@ -8,6 +8,7 @@ import React, { useState, useEffect, useContext } from "react";
 import swal from 'sweetalert';
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../Contexts/UserContext";
+import '../Style/LoginModal.css';
 
 
 const LoginModal =(props) => {
@@ -69,6 +70,9 @@ const LoginModal =(props) => {
   };
 
   return (
+
+    <>
+    <div className=' ContainerLogin'>
     <Modal show={props.show} onHide={props.onHide}>
       <Modal.Header closeButton>
         <Modal.Title>Iniciar sesión</Modal.Title>
@@ -97,7 +101,8 @@ const LoginModal =(props) => {
           ¿No está registrado aún? <a href="/Register">Regístrese aquí</a>
         </Form.Text>
       </Modal.Footer>
-    </Modal>
+    </Modal></div>
+    </>
   );
 };
 
