@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Table, Form, Button, Row, Col } from "react-bootstrap";
 import { recipeHandler } from "../Handlers/recipeHandler";
-import "../Style/FormRecipe.css";
-
 
 function RecipeForm() {
   const [name, setName] = useState("");
@@ -13,13 +11,10 @@ function RecipeForm() {
   const [materials, setMaterials] = useState("");
   const [postedBy, setPostedBy] = useState("");
   const [alergens, setAlergens] = useState("");
- 
-
   const [ingredients, setIngredients] = useState([]);
   const [ingredient, setIngredient] = useState('');
   const [amount, setAmount] = useState('');
   const [unit, setUnit] = useState('');
-
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
@@ -41,24 +36,20 @@ function RecipeForm() {
   const handlePostedByChange = (event) => {
     setPostedBy(event.target.value);
   };
-  
   const handleAlergensChange = (event) => {
     setAlergens(event.target.value);
   };
- 
-  
   const handleAdd = () => {
     const newIngredient = {
       ingredient: ingredient,
       amount: amount,
-      unit: unit 
+      unit: unit
     };
     setIngredients([...ingredients, newIngredient]);
     setIngredient('');
     setAmount('');
     setUnit('');
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     let newRecipe = {
@@ -70,9 +61,7 @@ function RecipeForm() {
       ]
     };
     await recipeHandler.addRecipe(newRecipe);
-
   };
-
   return (
     <div className="recipe-form-container">
       <Form id="formRecipe" onSubmit={handleSubmit}>

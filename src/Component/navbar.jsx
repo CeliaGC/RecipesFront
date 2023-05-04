@@ -1,6 +1,6 @@
 import React from "react";
-import {  Nav, Navbar, Container} from 'react-bootstrap';
-import MediaQuery from "react-responsive";
+import {  Nav, Navbar, Container, Row ,Col} from 'react-bootstrap';
+
 
 
 const NavbarLog = () => {
@@ -13,7 +13,7 @@ const NavbarLog = () => {
             <Nav.Link href='/' style={{ color: "black", marginBottom: "1rem", fontSize:'35px' }}>CookSmart</Nav.Link>
             <Nav.Link href='/FormLogin' style={{ color: "black", marginBottom: "1rem", marginLeft: '20px', fontSize:'20px' }}>
                 Iniciar sesión</Nav.Link>
-            <a href='https://claudiaandjulia.com/blogs/general' style={{ color: "black", marginBottom: "1rem", fontSize:'20px' }}>Acceso a blog</a>
+            <Nav.Link href="https://www.ucam.edu/estudios/grados/gastronomia-presencial" style={{ color: "black", marginBottom: "1rem", fontSize:'20px' }}>Acceso a blog</Nav.Link>
         </Nav>
     </Container>
 </Navbar>
