@@ -72,7 +72,7 @@ export default function ListAdmin() {
             </tbody>
           </Table>
         </div>
-        <div className="col col-12 d-flex justify-content-center">
+        <div className=" d-flex justify-content-center">
           <button className="btnSendEmail" onClick={handleSendEmail}>
             Enviar correo electrónico
           </button>
