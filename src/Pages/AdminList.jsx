@@ -22,7 +22,7 @@ export default function ListAdmin() {
   );
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100">
+    <div className="container mt-5">
       <div className="row">
         <div>
           <h3>Listado de pedidos</h3>
