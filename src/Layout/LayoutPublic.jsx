@@ -2,6 +2,8 @@ import { Outlet, useNavigation } from "react-router-dom";
 import Navbar from "../Component/Navbar";
 
 
+
+
 function Layout() {
   const navigation = useNavigation()
   return (
@@ -11,10 +13,11 @@ function Layout() {
         {navigation.state === "loading" && (
           <div className="alert alert-info my-S">Loading...</div>
         )}
-        <Outlet />
+        <Outlet/>
+        
       </main>
     </>
   )
 }
 
-export default Layout
+export default Layout;

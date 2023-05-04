@@ -1,0 +1,10 @@
+th{
+    text-align: center;
+   
+}
+
+@media (max-width: 833px) {
+    .user-table-container {
+      margin-left: 30px;
+    }
+  }
