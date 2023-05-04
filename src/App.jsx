@@ -5,12 +5,12 @@ import "../src/App.css";
 
 function App() {
   return (
-    <div className='App'>
+    <>
          <LayoutPublic/>
-    
-         <Root style={{ background: '#F2CC49' }}></Root>
+        
+         <Root className="bodyRoot" ></Root>
 
-      </div>
+    </>
   )
 }
 

@@ -70,6 +70,9 @@ function FormLogin() {
   };
 
   return (
+
+    <>
+    <div className="FormLoginBox">
     <div className="registration-form-container">
       <div className="registration-form-title"></div>
       <Form onSubmit={handleSubmit} className="center-form">
@@ -86,6 +89,8 @@ function FormLogin() {
     </div>
       </Form>
     </div>
+    </div>
+    </>
   );
 }
 

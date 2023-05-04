@@ -1,13 +1,8 @@
-
-
+  
 #root{
-    background-color: #FFECE3 !important;
-    width: 100vw;
+    background-color: #FFECE3;
+    margin-left: 0%;
     height: auto;
    
-}
+} 
 
-.container{
-    margin:0% ;
-    padding: 0%;
-}

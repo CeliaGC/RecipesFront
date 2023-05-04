@@ -14,7 +14,7 @@ import AdminUser from "../Pages/AdminUser";
 import { recipeHandler } from "../Handlers/recipeHandler";
 import { categoryHandler } from "../Handlers/categoryHandler";
 import AdminIngredientList from "../Pages/AdminIngredientList";
-import FormLogin from "../Component/FormLogin";
+import Loginview from "../Pages/Loginview";
 import { orderHandler } from "../Handlers/orderHandler"
 import AdminList from "../Pages/AdminList";
 import { usersHandler } from "../Handlers/userHandler";
@@ -23,7 +23,7 @@ import AdminRecipeView from "../Pages/AdminRecipeView";
 import Register from "../Component/Register";
 import NavbarPrueba from "../Component/NavbarView";
 import Perfil from "../Component/Perfil";
-import LoginModal from "../Component/LoginModal";
+
 
 
 export const router = createBrowserRouter([
@@ -96,8 +96,8 @@ export const router = createBrowserRouter([
                         element: <AdminIngredientList />,
                     },
                     {
-                        path: '/FormLogin',
-                        element: <FormLogin />,
+                        path: '/Loginview',
+                        element: <Loginview/>,
 
                     },
                     {
