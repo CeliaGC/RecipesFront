@@ -157,7 +157,7 @@ function List() {
                     </div>
                     <div className="col-auto">
                       <button type="submit" className="btn btn-primary">
-                        Añadir nuevo ingrediente
+                        Añadir ingrediente
                       </button>
                       
                     </div>

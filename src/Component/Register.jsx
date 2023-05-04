@@ -57,10 +57,10 @@ function Register() {
         </Col>
         <Col xs={12} sm={10}>
 <Form onSubmit={handleSubmit} className="center-form">
-<h2 style={{marginBottom: '40px'}}>Registro de usuario</h2>
-    <Row>
-      <Col>
-        <Form.Group controlId="formUserName">
+<h2 style={{marginTop:'120px'}}>Registro de usuario</h2>
+    <Row style={{marginTop: '50px'}}>
+      <Col >
+        <Form.Group controlId="formUserName" >
         <Form.Label><FontAwesomeIcon icon={faUser} /> Nombre de Usuario</Form.Label>
           <Form.Control type="text" placeholder="Introduce usuario elegido" value={userName} onChange={handleUserNameChange} required />
         </Form.Group>

@@ -32,7 +32,7 @@ function NavbarView() {
         <div>
             <MediaQuery minWidth={768}>
                 {/* barra lateral en pantallas grandes */}
-                <div className="sidebar" style={{ position: "relative", width: "9vw", overflow: "hidden", backgroundColor: "#8B8961", borderRadius: '15px', width: '150px', height: '450px', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: '50px', maxHeight: '80vh', overflowY: 'auto' }}>
+                <div className="sidebar" style={{ position: "relative", width: "9vw", overflow: "hidden", backgroundColor: "#8B8961", borderRadius: '15px', width: '150px', height: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', marginTop: '50px', maxHeight: '80vh', overflowY: 'auto' }}>
                     <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <AiFillHome className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", marginBottom: "10px", size: "4em" }} /> Home
                     </Nav.Link>
@@ -47,9 +47,6 @@ function NavbarView() {
                     </Nav.Link>
                     <Nav.Link href='AdminRecipe' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdFoodBank className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Recetas
-                    </Nav.Link>
-                    <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
-                        <TbChefHat className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Mis recetas
                     </Nav.Link>
                     <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdBorderColor className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Lista de Pedidos
@@ -85,9 +82,6 @@ function NavbarView() {
                             <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <TbChefHat className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} />
                     </Nav.Link>
-                            <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem" }}>
-                                <MdBorderColor className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} />
-                            </Nav.Link>
                             <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem" }}>
                                 <HiOutlineLogout className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} onClick={handleLogout} />
                             </Nav.Link>
