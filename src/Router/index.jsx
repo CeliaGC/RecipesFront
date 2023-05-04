@@ -3,7 +3,7 @@ import LayoutPublic from "../Layout/LayoutPublic";
 import NotFound from "../Pages/NotFound";
 import Menu from "../Pages/Menu";
 import Home from "../Pages/Home";
-import EditRecipe from "../Pages/EditRecipe";
+import PostRecipe from "../Pages/PostRecipe";
 import MenuRecipe from "../Pages/MenuRecipe";
 import ViewRecipe from "../Pages/ViewRecipe";
 import List from "../Pages/List";
@@ -17,8 +17,13 @@ import AdminIngredientList from "../Pages/AdminIngredientList";
 import FormLogin from "../Component/FormLogin";
 import { orderHandler } from "../Handlers/orderHandler"
 import AdminList from "../Pages/AdminList";
-
-
+import { usersHandler } from "../Handlers/userHandler";
+import UserList from "../Pages/UserList";
+import AdminRecipeView from "../Pages/AdminRecipeView";
+import Register from "../Component/Register";
+import NavbarPrueba from "../Component/NavbarView";
+import Perfil from "../Component/Perfil";
+import LoginModal from "../Component/LoginModal";
 
 
 export const router = createBrowserRouter([
@@ -41,8 +46,8 @@ export const router = createBrowserRouter([
                     },
 
                     {
-                        path: '/EditRecipe',
-                        element: <EditRecipe />,
+                        path: '/PostRecipe',
+                        element: <PostRecipe />,
                         loader: fetchRecipes,
                     },
                     {
@@ -59,6 +64,7 @@ export const router = createBrowserRouter([
                     {
                         path: '/List',
                         element: <List />,
+                        loader: fetchOrders,
                     },
                     {
                         path: '/MyRecipe',
@@ -73,10 +79,12 @@ export const router = createBrowserRouter([
                     {
                         path: '/AdminRecipe',
                         element: <AdminRecipe />,
+                        loader: fetchRecipes,
                     },
                     {
                         path: '/AdminUser',
                         element: <AdminUser />,
+                      
                     },
                     {
                         path: '/AdminList',
@@ -91,7 +99,32 @@ export const router = createBrowserRouter([
                         path: '/FormLogin',
                         element: <FormLogin />,
 
+                    },
+                    {
+                        path: '/UserList',
+                        element: <UserList/>,
+                        loader: fetchUsers,
+
+
+                    },
+                    {
+                        path: '/AdminRecipeView',
+                        element: <AdminRecipeView />,
+                    },
+                    {
+                        path: '/Register',
+                        element: <Register />,
+                    },
+                    {
+                        path: '/NavbarPrueba',
+                        element: <NavbarPrueba />,
+                    },
+                    {
+                        path: '/Perfil',
+                        element: <Perfil/>,
+                        loader: fetchUserProfile,
                     }
+                   
 
                 ]
             },
@@ -111,14 +144,25 @@ async function fetchRecipe({ params }) {
     const recipesData = await recipeHandler.loadRecipes();
     const recipes = recipesData.filter(recipe => recipe.category == params.category)
     const categories = await categoryHandler.loadCategories();
-    return { recipes, categories };
+    return { recipes, categories }; 
 }
 async function fetchRecipeId({ params }) {
-    const recipe = await recipeHandler.loadRecipe(params.id);
+    const recipe = await recipeHandler.loadRecipes(params.id);
     return { recipe };
 }
 async function fetchOrders() {
     const orders = await orderHandler.loadOrders();
-    console.log(orders)
     return { orders };
+}
+async function fetchUsers() {
+    const users= await usersHandler.loadUsers();
+    return { users };
+}
+
+async function fetchUserProfile(){
+    const userData = JSON.parse(localStorage.getItem('userData')).item5;
+     const user= await usersHandler.loadUser(userData);
+    return { user };
+
+
 }

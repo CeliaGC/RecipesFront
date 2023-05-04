@@ -4,7 +4,7 @@ import "../Style/NavbarMenu.css";
 
 function Navbarmenu() {
     return (
-      <Navbar expand="lg" className="navbarmenu">
+      <Navbar expand="lg" className="navbarmenu" >
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navbarmenu-nav" gap={30}>
@@ -12,7 +12,7 @@ function Navbarmenu() {
             <Nav.Link href='/Menu'>Menú</Nav.Link>
             <Nav.Link href='/MyRecipe'>Mis recetas</Nav.Link>
             <Nav.Link href='/List'>Lista</Nav.Link>
-            <Nav.Link href='/EditRecipe'>Añadir receta</Nav.Link>
+            <Nav.Link href='/PostRecipe'>Añadir receta</Nav.Link>
             {/* <Nav.Link href="https://www.ucam.edu/estudios/grados/gastronomia-presencial">Blog</Nav.Link> */}
             <Nav.Link href='/AdminCategory'>ACategoria</Nav.Link>
             <Nav.Link href='/AdminRecipe'>AReceta</Nav.Link>

@@ -30,6 +30,6 @@ export const recipeHandler = {
         }
         console.log ("structure",newRecipeStructure)
         return recipeService.submitRecipe(newRecipeStructure);
-    },
+    }
 }
 

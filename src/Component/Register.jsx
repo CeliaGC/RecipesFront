@@ -1,23 +1,39 @@
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from "react";
-import { Form, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faUser, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faUser, faLock, faPhone } from "@fortawesome/free-solid-svg-icons";
 import "../Style/Register.css"
+import { usersHandler } from "../Handlers/userHandler";
+import { Form, Row, Col,Button } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
+import NavbarView from "../Component/NavbarView";
 
-function Register({handleSubmit}) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+
+function Register() {
+
+ const [idRol, setIdRol] = useState('');
+  const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [userPhone, setUserPhone] = useState('');
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
-  const handleNameChange = (event) => {
-    setName(event.target.value);
+
+/*   const handleIdRolChange = (event) => {
+    setIdRol(event.target.value);
+  }; */
+  const handleUserNameChange = (event) => {
+    setUserName(event.target.value);
   };
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+
+  const handleUserEmailChange = (event) => {
+    setUserEmail(event.target.value);
+  };
+  const handleUserPhoneChange = (event) => {
+    setUserPhone(event.target.value);
   };
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
@@ -26,54 +42,62 @@ function Register({handleSubmit}) {
     setConfirmPassword(event.target.value);
   };
   
-  const handleSubmitForm = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    if (name.trim() === '' || email.trim() === '' || password.trim() === '' || confirmPassword.trim() === '') {
-      setError(true);
-      return;
-    }
-    if (password !== confirmPassword) {
-      setError(true);
-      return;
-    }
-    setError(false);
-    handleSubmit({name, email, password});
+    let newUser = {/* idRol , */ userName,  password, confirmPassword, userEmail, userPhone };
+    usersHandler.addUser(newUser);
+    navigate('/FormLogin');
   };
 
   return (
-    <div className="registration-form-container">
-      <div className="registration-form-title">
-      </div>
-      <Form onSubmit={handleSubmitForm} className="center-form">
-        <h2 style={{marginBottom: '40px'}}>Registro de usuario</h2>
-        <Form.Group className="mb-3" style={{width:'300px'}}>
-          <Form.Label><FontAwesomeIcon icon={faUser} /> Nombre completo</Form.Label>
-          <Form.Control type="text" placeholder="Introduce tu nombre completo" value={name} onChange={handleNameChange} required style={{ border: 'none'}}/>
-          <hr className="my-3"/>
+    <div >
+     <Row>
+      <Col xs={12} sm={2} style={{marginTop: '80px'}}>
+         <NavbarView/> 
+        </Col>
+        <Col xs={12} sm={10}>
+<Form onSubmit={handleSubmit} className="center-form">
+<h2 style={{marginBottom: '40px'}}>Registro de usuario</h2>
+    <Row>
+      <Col>
+        <Form.Group controlId="formUserName">
+        <Form.Label><FontAwesomeIcon icon={faUser} /> Nombre de Usuario</Form.Label>
+          <Form.Control type="text" placeholder="Introduce usuario elegido" value={userName} onChange={handleUserNameChange} required />
         </Form.Group>
-        <Form.Group className="mb-3" style={{width:'300px'}}>
+   {/*      <Form.Group controlId="formIdRol">
+          <Form.Label><FontAwesomeIcon icon={faUser} /> Introduce el Rol</Form.Label>
+          <Form.Control type="text" placeholder="Introduce el Rol" value={idRol} onChange={handleIdRolChange} required />
+        </Form.Group> */}
+        <Form.Group controlId="formEmail">
           <Form.Label><FontAwesomeIcon icon={faEnvelope} /> Correo electrónico</Form.Label>
-          <Form.Control type="email" placeholder="Introduce tu correo electrónico" value={email} onChange={handleEmailChange} required style={{ border: 'none'}}/>
-          <hr className="my-3"/>
+          <Form.Control type="email" placeholder="Enter email" value={userEmail} onChange={handleUserEmailChange} required />
         </Form.Group>
-        <Form.Group className="mb-3" style={{width:'300px'}}>
+      </Col>
+      <Col>
+      <Form.Group controlId="formPhone">
+          <Form.Label><FontAwesomeIcon icon={faPhone} /> Teléfono</Form.Label>
+          <Form.Control type="tel" placeholder="Introduce un teléfono" value={userPhone} onChange={handleUserPhoneChange} required />
+        </Form.Group>
+        <Form.Group controlId="formPassword">
           <Form.Label><FontAwesomeIcon icon={faLock} /> Contraseña</Form.Label>
-          <Form.Control type="password" placeholder="Introduce tu contraseña" value={password} onChange={handlePasswordChange} required style={{ border: 'none'}}/>
-          <hr className="my-3"/>
+          <Form.Control type="password" placeholder="Contraseña"  value={password} onChange={handlePasswordChange} required />
         </Form.Group>
-        <Form.Group className="mb-3" style={{width:'300px'}}>
-          <Form.Label><FontAwesomeIcon icon={faLock} /> Confirmar contraseña</Form.Label>
-          <Form.Control type="password" placeholder="Repite tu contraseña" value={password} onChange={handleConfirmPasswordChange} required style={{ border: 'none'}}/>
-          <hr className="my-3"/>
+        <Form.Group controlId="formConfirmPassword">
+          <Form.Label><FontAwesomeIcon icon={faLock} /> Confirma Contraseña</Form.Label>
+          <Form.Control type="password" placeholder="Confirma contraseña"  value={confirmPassword} onChange={handleConfirmPasswordChange} required />
         </Form.Group>
-        <br/>
-        <Button variant="primary" type="submit">Registrarse</Button>
-      </Form>
-      <div className="registration-form-footer">
-        <p>Already Registered?</p>
-        <a href="#">Login</a>
-      </div>
-    </div>
+      </Col>
+    </Row>
+    <Form.Group controlId="formTerms">
+      <Form.Check className="custom-checkbox" type="checkbox" style={{color:'grey'}} label="I agree to the terms and conditions" />
+    </Form.Group>
+    <div className="d-flex justify-content-center">
+    <button type="submit" className="btn btn-primary" style={{marginTop:'40px'}}>Añadir usuario</button>
+  </div>
+  </Form>
+  </Col>
+  </Row>
+</div>
   );
 }
 

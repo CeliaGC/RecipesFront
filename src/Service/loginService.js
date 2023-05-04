@@ -12,10 +12,12 @@ const apiClient = axios.create({
 });
 
 export const loginService = async(data) => {
-  console.log('hola', data);
- let response= await apiClient.post("/User/Login", data);
+ let response= await apiClient.post("/User/Login", data)/* .catch( */
+/*   function(error){
+    alert(error.message);
+  } 
+ );*/
  let dataResponse= await response.data
- console.log("desde el servicio", dataResponse)
  return dataResponse;
 };
 

@@ -9,13 +9,13 @@ import { MdBorderColor } from "react-icons/md";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../Style/AdminUser.css";
 import M17 from "../assets/M17.jpg";
-import NavbarPrueba from '../Component/NavbarView';
+import NavbarView from '../Component/NavbarView';
 
 
 import { UserContext } from "../Contexts/UserContext";
 
 
-function AdminUser() {
+function TeacherUser() {
 
   const { userStorage, setUserStorage } = useContext(UserContext);
   const navigate = useNavigate();
@@ -51,4 +51,4 @@ function AdminUser() {
   );
 };
 
-export default AdminUser;
+export default TeacherUser;
