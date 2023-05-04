@@ -10,6 +10,16 @@ export default function ListAdmin() {
   const handleSendEmail = () => {
     window.location.href = 'mailto:cooksmart56@gmail.com';
   };
+  const totalsByIngredient = {};
+  orders.forEach((order) =>
+    order.forEach((orderItem) => {
+      const { ingredientName, amount, unit } = orderItem;
+      if (!totalsByIngredient[ingredientName]) {
+        totalsByIngredient[ingredientName] = { amount: 0, unit };
+      }
+      totalsByIngredient[ingredientName].amount += amount;
+    })
+  );
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100">
@@ -41,7 +51,27 @@ export default function ListAdmin() {
             </tbody>
           </Table>
         </div>
-        
+        <div className="col col-12">
+          <h3>Tabla de totales</h3>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Ingrediente</th>
+                <th>Cantidad</th>
+                <th>Unidad</th>
+              </tr>
+            </thead>
+            <tbody>
+              {Object.entries(totalsByIngredient).map(([ingredientName, { amount, unit }]) => (
+                <tr key={ingredientName}>
+                  <td>{ingredientName}</td>
+                  <td>{amount}</td>
+                  <td>{unit}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </div>
         <div className="col col-12 d-flex justify-content-center">
           <button className="btnSendEmail" onClick={handleSendEmail}>
             Enviar correo electrónico
