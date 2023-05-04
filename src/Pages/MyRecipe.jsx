@@ -8,8 +8,6 @@ function MenuRecipe() {
   return (
     <div >
       
-      <NavbarMenu />
-      
       <CardRecipe />
 
       <div className="card-footer d-flex justify-content-between">

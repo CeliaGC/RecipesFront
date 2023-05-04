@@ -21,16 +21,18 @@ import { usersHandler } from "../Handlers/userHandler";
 import UserList from "../Pages/UserList";
 import AdminRecipeView from "../Pages/AdminRecipeView";
 import Register from "../Component/Register";
-import NavbarPrueba from "../Component/NavbarView";
+import NavbarView from "../Component/NavbarView";
 import Perfil from "../Component/Perfil";
 import TeacherUser from "../Pages/TeacherUser";
 import TeacherMenu from "../Pages/TeacherMenu";
 import AddRecipeTeacher from "../Pages/AddRecipeTeacher";
 import TeacherList from "../Pages/TeacherList";
-import AdminMyRecipes from "../Pages/AdminMyRecipes";
+import AMyRecipeView from "../Pages/AMyRecipeView";
 import AddRecipeUser from "../Pages/AddRecipeUser";
 import PerfilAdmin from "../Pages/PerfilAdmin";
 import PerfilTeacher from "../Pages/PerfilTeacher";
+
+
 
 
 export const router = createBrowserRouter([
@@ -89,8 +91,8 @@ export const router = createBrowserRouter([
                         loader: fetchRecipes,
                     },
                     {
-                        path: '/AdminMyRecipes',
-                        element: <AdminMyRecipes />,
+                        path: '/AMyRecipeView',
+                        element: <AMyRecipeView />,
                         loader: fetchRecipes,
                     },
                     {
@@ -128,8 +130,8 @@ export const router = createBrowserRouter([
                         element: <Register />,
                     },
                     {
-                        path: '/NavbarPrueba',
-                        element: <NavbarPrueba />,
+                        path: '/NavbarView',
+                        element: <NavbarView />,
                     },
                     {
                         path: '/Perfil',
@@ -167,8 +169,13 @@ export const router = createBrowserRouter([
                         path: '/PerfilTeacher',
                         element: <PerfilTeacher/>,
                         loader: fetchUserProfile,
-                    }
-        
+                    },
+                    {
+                        path: '/PerfilTeacher',
+                        element: <PerfilTeacher/>,
+                        loader: fetchUserProfile,
+                    },
+                  
         
                    
 

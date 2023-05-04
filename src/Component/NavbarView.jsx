@@ -50,7 +50,7 @@ function NavbarView() {
                     <Nav.Link href='AdminRecipe' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdFoodBank className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Recetas
                     </Nav.Link>
-                    <Nav.Link href='/AdminMyRecipes' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                    <Nav.Link href='/AMyRecipeView' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <TbChefHat className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Mis recetas
                     </Nav.Link>
                     <Nav.Link href='/AddRecipeUser' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>

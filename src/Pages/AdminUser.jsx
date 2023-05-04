@@ -9,7 +9,7 @@ import { MdBorderColor } from "react-icons/md";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../Style/AdminUser.css";
 import C8 from "../assets/C8.jpg";
-import NavbarPrueba from '../Component/NavbarView';
+import NavbarView from '../Component/NavbarView';
 
 
 import { UserContext } from "../Contexts/UserContext";
@@ -30,7 +30,7 @@ function AdminUser() {
     <Container fluid>
       <Row>
         <Col xs={12} sm={2}>
-         <NavbarPrueba/> 
+         <NavbarView/> 
         </Col>
         <Col xs={12} sm={10}>
           <div style={{ marginTop: "70px", marginLeft: "auto", marginRight: "auto" }}>

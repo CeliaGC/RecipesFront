@@ -21,6 +21,7 @@ const AdminMyRecipes = () => {
   console.log(adminRecipes);
   const renderRecipes = adminRecipes.map((recipe) => {
     return (
+      
       <Col xs={12} md={4} key={recipe.id}>
         <Card className="mb-5 recipe-card">
           <Card.Body>
