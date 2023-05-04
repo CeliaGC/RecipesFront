@@ -51,7 +51,7 @@ function NavbarView() {
                     <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <TbChefHat className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Mis recetas
                     </Nav.Link>
-                    <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
+                    <Nav.Link href='/OrderList' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <MdBorderColor className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} /> Lista de Pedidos
                     </Nav.Link>
                     <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
@@ -85,7 +85,7 @@ function NavbarView() {
                             <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem", marginLeft: '20px' }}>
                         <TbChefHat className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} />
                     </Nav.Link>
-                            <Nav.Link href='/List' style={{ color: "white", marginBottom: "1rem" }}>
+                            <Nav.Link href='/OrderList' style={{ color: "white", marginBottom: "1rem" }}>
                                 <MdBorderColor className="my-icon mr-2" style={{ backgroundColor: "none", color: "white", size: "2em", marginBottom: "10px", size: "4em" }} />
                             </Nav.Link>
                             <Nav.Link href='/' style={{ color: "white", marginBottom: "1rem" }}>

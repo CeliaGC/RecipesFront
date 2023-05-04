@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Form, FormControl, Nav, Navbar, Container, Row ,Col} from 'react-bootstrap';
-import MediaQuery from "react-responsive";
+import {  Nav, Container, Row } from 'react-bootstrap';
 
 
-const NavbarLog = () => {
+
+const Navbar= () => {
 
   return (
   
@@ -23,4 +23,4 @@ const NavbarLog = () => {
 }
 
 
-export default NavbarLog;
+export default Navbar;
