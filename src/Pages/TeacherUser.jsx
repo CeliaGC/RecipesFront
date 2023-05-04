@@ -36,10 +36,8 @@ function TeacherUser() {
             <Card style={{ marginTop: '-50px', border:'none' }}>
 
               <Card.Body>
-                <Card.Title>Bienvenid@ a tu espacio personal</Card.Title>
-                <Card.Text>
-                  Aquí podrás supervisar y gestionar todas las operaciones de los usuarios, así como controlar los pedidos de ingredientes y mantener actualizadas las recetas,  para que sólo te preocupes en crear una experiencia culinaria única para tus comensales!.
-                </Card.Text>
+                <Card.Title style={{marginBottom: '30px'}}>Bienvenid@ a tu espacio personal</Card.Title>
+                
                 <Card.Img variant="top" src={C2} />
               </Card.Body>
             </Card>
