@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Form, FormControl, Nav, Navbar, Container, Row ,Col} from 'react-bootstrap';
-import MediaQuery from "react-responsive";
+import {  Nav, Navbar, Container, Row ,Col} from 'react-bootstrap';
+
 
 
 const NavbarLog = () => {
