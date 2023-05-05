@@ -1,5 +1,5 @@
 import { Modal, Form, Button } from 'react-bootstrap';
-import '../Style/LoginModal.css'; // Importar los estilos CSS
+import '../Style/LoginModal.css'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";

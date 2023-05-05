@@ -2,11 +2,7 @@
 import { useLoaderData } from "react-router-dom";
 import { Container, Row, Col, Card, Table, Button, Navbar,Nav } from 'react-bootstrap';
 import React from "react";  
-import {BsPersonFill} from 'react-icons/bs';
-import {MdFoodBank} from "react-icons/md";
-import {MdBorderColor} from "react-icons/md";
 import "../Style/AdminUser.css";
-import {AiFillHome} from 'react-icons/ai';
 import { usersHandler } from "../Handlers/userHandler";
 import NavbarView from "../Component/NavbarView";
 import {BsTrashFill} from 'react-icons/bs';
