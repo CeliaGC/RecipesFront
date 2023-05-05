@@ -1,5 +1,4 @@
 import React from 'react';
-import NavbarMenu from "../Component/NavbarMenu";
 import RecipeInfo from "../Component/RecipeInfo";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useLoaderData } from 'react-router-dom';
@@ -19,8 +18,7 @@ function Recipe() {
  
   return (
     <div >
-    <NavbarMenu/>
-    {/* <RecipeInfo recipe={recipe} addToIngredient={addToIngredient} categories={categories}/> */}
+      
     <RecipeInfo recipe={recipe} addToIngredient={addToIngredient}/>
 
     </div>

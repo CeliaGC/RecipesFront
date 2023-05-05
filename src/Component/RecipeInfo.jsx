@@ -1,4 +1,3 @@
-
 import React from "react";
 import Table from "react-bootstrap/Table";
 import Card from "react-bootstrap/Card";
@@ -6,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../Style/RecipeInfo.css";
 
 
-  
 const RecipeCard = ({ recipe, addToIngredient }) => {
  
   const handleAddToIngredients = () => {
@@ -16,8 +14,8 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
  
   return (
     <section>
-      <div className="card-info" >
-        <div className="card-body">
+      <Card>
+        <Card.Body>
           <div className="row">
             <div className="col-md-7">
               <Card>
@@ -29,7 +27,7 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
                     </div>
                     <div className="col-md-3">
                       <strong>Categoría</strong>
-                      <p>{recipe.categoryName}</p>
+                      <p>{recipe.category}</p>
                     </div>
                     <div className="col-md-3">
                       <strong>Número de Personas: 4</strong>
@@ -64,38 +62,37 @@ const RecipeCard = ({ recipe, addToIngredient }) => {
             </div>
             
             <div className="col-md-5">
-              <div className="col-md-6">
-                <Card>
-                  <Card.Body>
-                    <Card.Title>Preparación</Card.Title>
-                    <Card.Text>{recipe.instructions}</Card.Text>
-                    <Card.Title>Observaciones</Card.Title>
-                    <Card.Text>{recipe.observations}</Card.Text>
-                    <Card.Title>Materiales</Card.Title>
-                    <Card.Text>{recipe.materials}</Card.Text>
-                    <Card.Title>Alergenos</Card.Title>
-                    <ul>
-                      {recipe.alergens.map(alergen => (
-                        <li key={alergen.id}>{alergen.alergenName}</li>
-                      ))}
-                    </ul>
-                  </Card.Body>
-                </Card>
-              </div>
+              <Card>
+                <Card.Body>
+                  <Card.Title>Preparación</Card.Title>
+                  <Card.Text>{recipe.instructions}</Card.Text>
+                  <Card.Title>Observaciones</Card.Title>
+                  <Card.Text>{recipe.observations}</Card.Text>
+                  <Card.Title>Materiales</Card.Title>
+                  <Card.Text>{recipe.materials}</Card.Text>
+                  <Card.Title>Alergenos</Card.Title>
+                  <ul>
+                    {recipe.alergens.map(alergen => (
+                      <li key={alergen.id}>{alergen.alergenName}</li>
+                    ))}
+                  </ul>
+                </Card.Body>
+              </Card>
             </div>
             <div className="row mt-auto">
-                <div className="card-footer d-flex justify-content-between">
+              <div className="card-footer d-flex justify-content-between">
                 <button className="btn btn-secondary" onClick={handleAddToIngredients}>Guardar ingredientes</button>
                 <button className="btn btn-secondary" href='/Menu'>Menú</button>
-                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </Card.Body>
+      </Card>
     </section>
   );
 };
 
 export default RecipeCard;
+
 
 

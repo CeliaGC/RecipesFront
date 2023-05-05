@@ -1,13 +1,13 @@
 import React from 'react';
-import NavbarMenu from "../Component/NavbarMenu";
 import CardRecipe from "../Component/CardRecipe";
+import NavbarViewTeacher from "../Component/NavbarViewTeacher";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function MenuRecipe() {
   return (
     <div >
-    <NavbarMenu/>
+    <NavbarViewTeacher></NavbarViewTeacher>
     <CardRecipe/>
 
     

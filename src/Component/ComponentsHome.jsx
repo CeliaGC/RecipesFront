@@ -53,8 +53,8 @@ const Buttons = () => {
     <div style={{ padding: "2rem"}} >
       <ButtonGroup >
         <Button variant="primary">Misión</Button>
-        <Button variant="secondary">Objetivos</Button>
-        <Button variant="success">Aprendizaje</Button>
+        <Button variant="primary">Objetivos</Button>
+        <Button variant="primary">Aprendizaje</Button>
       </ButtonGroup>
 
 
