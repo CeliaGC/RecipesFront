@@ -1,86 +1,150 @@
- COOKSMART:
+# COOK-SMART
 
-We are a page of cooking recipes, described by teachers so that our students and users can learn their recipes. We indicate ingredients with their quantities, allergens and method of preparation. All separated by categories. At the same time, the ingredients of the recipes selected by the teachers for their elaboration are all collected in a total list of ingredients that the administrator receives. the administrator receives these individual lists plus the total list of all these lists and can edit this last list. This one is designed for the purchase of ingredients, so you can edit it if there are ingredients that you may have in stock.
+"CookSmart" is a full-stack application designed for recipe management in a cooking academy. The initial need is to have a platform where teachers can save, consult, and select recipes that, once added to a favorites list, generate a list with all the necessary ingredients and quantities to prepare them. This list is then automatically sent to the person in charge of the storeroom for purchase processing. Other user profiles, such as "student", are also considered, allowing them to consult the recipes. The recipes are grouped into categories and can be consulted using various filters.
 
- TOOLS:
+## Technology stack used in Back-end:
+* **Microsoft Visual Studio** - [Sitio web oficial](https://visualstudio.microsoft.com/es/)
+* **C#** - [Sitio web oficial](https://learn.microsoft.com/es-es/dotnet/csharp/)
+* **ASP.NET Core 6** - [Sitio web oficial](https://dotnet.microsoft.com/es-es/download/dotnet/6.0)
+* **Entity Framework 7** - [Sitio web oficial](https://learn.microsoft.com/es-es/ef/core/what-is-new/ef-core-7.0/plan)
+* **SQL Server Management Studio 18** - [Sitio web oficial](https://learn.microsoft.com/es-es/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16&viewFallbackFrom=sql-server-ver18)  
 
--Jira:
-https://acalabustos.atlassian.net/jira/software/projects/FIN/boards/2
+## Technology stack used in Front-end:
+* **Visual Studio Code** 
+* **HTML, CSS, Javascript** 
+* **React Vite** 
+* **Axios** 
+* **Bootstrap**  
 
--Desktop graphic reference.
-
-Figma:
-https://www.figma.com/file/BQIskQl8MPebxlx859YY2Y/PROTOTYPE?node-id=0-1&t=7sx8YryM9i9y5xm0-0
-
--Git / GitHub:
-https://github.com/Proyecto-Pedagogico-Recetas/Frontend
-
--Visual Studio Code
-
- TECHNOLOGIES:
--React
--HTML
--Bootstrap
--CSS
--JS
-
-Requirements, Installation and Getting started:
--NodeJS.
-1) Clone the repository
-2) npm install
-5) npm run dev
-
- CONTENT:
-
- USER PAGES:
--Modal user, user login.
--Modal user, register login.
--First user page (home), landing page that shows what you will find on our platform with images of different recipes.
--Second user page (menu) with the different categories.
-Each category with title and image, and you can open it if you do click. 
-*When you select the category what you want, we can see the third page:
--Third user page (Recipes for categories), you can see all the recipes of the category that you select previously.
--Fourth user page, you can see all ingredients, allergens and who make the recipe.
-*When you select My recipes (in the navbar menu):
--Fifth user page, the user can see all the recipes that she/he added. Three buttons add new ingredient, add and edit recipes. 
--Sixth user page, formulary to add or edit a recipe with a button to add the recipe or to add the new changes.
--Seven user page (Blog in the navbar menu), the user can open a blog’s link.
- ADMIN PAGES:
--Modal Admin, admin login.
--First admin page (home), landing page that shows what you will find on our platform with images of different recipes.
--Second admin page (menu) with the different categories.
--Third admin page, where can edit, deleted and add categories.
--Fourth admin page, where can edit, deleted and add recipes.
--Fifth admin page, where can edit, deleted and add users.
-- Sixth admin page, where you can see the list of ingredients of the different masters and the total list of ingredients of all masters. The administrator can edit, download and send by email this list.
+## Both Front and Back-end:
+* **Git** 
+* **GitHub** 
 
 
-We use Bootstrap to make the web responsive.
-User experience.
-Admin experience.
-Repository commits related to the task checklist.
-CRUD user: can see, add, edit and delete recipes.
-CRUD admin: can see and edit the ingredient’s list. Can make changes with the users.
-Search Bar: You can search by categories.
 
- COMPONET TESTING: 
-
-* CardRecipeTest: This is a unit test file for the CardRecipe component. The @testing-library/react and @testing-library/jest-dom libraries are used for integration with Jest. The file imports the necessary tools, the CardRecipe component, and vi.mock to simulate the data received by the component. In the describe block, all the tests that will be performed are grouped, and beforeEach is used to render the component before each test. The tests verify that the recipe name, author, category, and link to view the recipe are correctly rendered using screen.getByText and expect.
-
-* RecipeInfoTest: This is a unit test file for the RecipeInfo component, which is imported from "../src/Component/RecipeInfo.jsx".
-The @testing-library/react and @testing-library/jest-dom testing libraries are used to perform the tests. 
-The file contains four tests that verify if the different elements of the recipe are displayed correctly, such as the title, description, ingredients, and image. For each test, the screen.getByText function is used to get the element containing the desired text, and the expect function is used to verify that this element is present in the DOM. vi.mock is also used to create a mock of react-router-dom's useLoaderData, which returns fictitious data of a recipe that will be used in the tests.
-
-* RegisterTest: This code is a set of unit tests for the web application that allows users to register. The @testing-library/react testing library is being used to render and test the Register component. The first test checks if all the form fields are correctly rendered on the screen. The getByLabelText method is used to obtain the corresponding input fields for each form label, and then it is verified that they are present on the screen using the toBeInTheDocument method. The second test verifies if values can be entered into the form fields. The fireEvent.change method is used to simulate user input in each input field. Then, the toHaveValue method is used to verify if the user's input values have been correctly updated on the screen. Overall, these unit tests are important to ensure that the user registration form works correctly, and that any future changes to the code do not affect its functionality.
+## Installation:
+Create a directory on your computer to store the project:
+* Run ***$ git clone https://github.com/Proyecto-Pedagogico-Recetas/APIRecipes.git***
+* Run ***$ git clone https://github.com/Proyecto-Pedagogico-Recetas/Frontend.git***
 
 
-correctly:
+## How to use it? 
+In terminal, in front-end directory run:
+* To install the dependencies ***$ npm install***
+* To install react router ***$ npm install react-router-dom@6***
+* To install axios ***$ npm install axios***
+* To activate the server and keep this terminal open ***$ npm run dev***
 
-![Test](https://user-images.githubusercontent.com/117833121/235528417-bc316fae-a454-42de-b6fa-94ae59ac491c.JPG)
+In back-end, get de server from connection step in SSMS. Add a new connection to server in server explorer, paste de server name, type the new database name and confirm to create the database. Right click on the new connection and get the data connection string from "Properties". Copy it and paste the connection string in appsettings.json file, exactly overwritting from terms "Data"... to ..."Security=true".  
+In terminal, run the command "update-database" so the migrations from project Data will be applied in order to built the database in SQL Server. Then you can use the SQL commands here provided to ingress by this order:
+* First rol type "Administrador"
+* First "UserAdmin"
 
--Our tests should pass, if we executed the comand npm run test.
+We also provide some other commands so you can also register a few more files in some tables directly from SQL.
 
- NEXT STEPS:
+
+## Methodologies:
+*Methodology Agile with Scrum
+* Mob Programming
+* Pair Programming
+* Solo Programming
+
+
+## Screenshots:
+### This is our BBDD:
+ ![Diagramatablas](https://user-images.githubusercontent.com/117833121/236322754-6a31388d-5f1e-4591-a3eb-bd062e4b1561.png)
+
+## Media queries:
+
+* insert into RolType
+
+([Name], [Description],IsActive)
+
+values
+('Administrador','Access to all methods, management of users', 1)
+
+('Operator','Posts, selects and lists recipes', 1)   
+
+('Visitor','Consults recipes', 1) 
+
+
+
+* select * from RolType
+
+
+* insert into Users
+
+(IdRol, [UserName], InsertDate, IsActive, EncryptedPassword, EncryptedToken, TokenExpireDate)
+
+values  
+
+(1, 'UserAdmin', GETDATE(), 1, '$2a$11$ESGTCdOxoR8oBsDj1OB9m.EmSJ3KTXf.Z873KzubFOtC16dno/0Cq', '', GETDATE())
+--password asdasd2, this user, due to his IdRol, will be the only with this rol asingned and the only one able to insert other users--
+
+(2, 'UserOperator', GETDATE(), 1, '$2a$11$F62mpHhfDZQJ65p50Lzz0OgzMnu3fZXcZWTbDjdMl.UrYcJqqG6k6', '', GETDATE())
+
+(3, 'UserVisitor', GETDATE(), 1, '$2a$11$F62mpHhfDZQJ65p50Lzz0OgzMnu3fZXcZWTbDjdMl.UrYcJqqG6k6', '', GETDATE())
+
+
+* select * from Users
+
+
+* insert into Alergens
+
+([Name], [IsActive], [IsChecked])
+
+values
+
+('Gluten', 1 , 0 ),
+
+('Lactosa', 1 , 0 )
+
+('Frutos secos', 1, 0)
+
+
+* select * from Alergens
+
+* insert into Categories
+
+([Name])
+
+values
+
+('Carne'),
+
+('Pescado'),
+
+('Pasta'),
+
+('Arroz')
+
+
+* select * from Categories
+
+
+
+
+
+## Tests:
+
+
+* RecipeItemTest: This test file is to verify if the ValidateRecipe method of the RecipeItemService class works correctly. First, three RecipeItem objects (recipeA, recipeB, and recipeC) with different property values are created. Then, the ValidateRecipe method of the RecipeItemService class is called for each of these objects. Finally, the check or assertion is made that each of these recipe objects returns the expected value in the ValidateRecipe method, using the Assert.AreEqual assertion method. If any of the assertions fail, the custom error message is displayed on the console. In summary, this test file verifies if the ValidateRecipe method of the RecipeItemService class works correctly and produces the expected results for each RecipeItem object.
+
+* OrderItemTest: This code shows an example of a unit test for the OrderItem class. The OrderItemTest class has a ValidateOrderTest method, which is responsible for testing the validity of the OrderItem instance. First, three instances of OrderItem are created with different values for their properties. Then the ValidateOrderA methods are commented out, leaving only the test objects, but the validation code is commented out. Finally, the Assert.AreEqual methods are used to verify that the validation result is true. It is important to mention that the commented code found within the OrderItemService.ValidateOrderA method and the OrderItemService class is a possible implementation of OrderItem object validation.
+
+* UserItemTest: This code shows an example of a unit test using the Microsoft .NET unit testing framework, known as MSTest. The test is performed on the UserItemTest class, and the test method is called ValidateUserTest. The ValidateUserTest method uses three instances of the UserItem class, userA, userB, and userC, and configures them with specific values for each property of the UserItem class. Then, each user is attempted to be validated by calling the ValidateUser method of the UserService class, which is defined in a separate file not included in this code. However, it appears that this method is not used in this implementation since it is commented out in the //Act section.
+
+* Finally, three assertions are included using the Assert.AreEqual method to verify that the users are valid. However, these assertions are also commented out in the //Assert section, suggesting that this particular test has been disabled or not fully implemented.
+
+
+![Test-Back](https://user-images.githubusercontent.com/117833121/235530906-dbbab2c3-47b4-4258-96eb-29da1ac24bdb.JPG)
+
+
+## Contributors:
+[<img src="https://avatars.githubusercontent.com/u/117833586?v=4" width=115><br><sub> Ainhoa Cala </sub>](https://github.com/acalabustos)| [<img src="https://avatars.githubusercontent.com/u/117833121?v=4" width=115><br><sub> Jennifer Cordero </sub>](https://github.com/JenniferCorderoR) |[<img src="https://avatars.githubusercontent.com/u/117834632?v=4" width=115><br><sub> Anyi Flores </sub>](https://github.com/Anyi79) |[<img src="https://avatars.githubusercontent.com/u/117834265?v=4" width=115><br><sub> Celia García </sub>](https://github.com/CeliaGC) |[<img src="https://avatars.githubusercontent.com/u/117834229?v=4" width=115><br><sub> RoseMary Rengel </sub>](https://github.com/rrengelj) |
+| :---: | :---: | :---: |  :---: |  :---: |
+
+## Next steps:
  
 * Administrator limits the recipes that each user can view (subscription): This means that the system administrator can restrict access to certain recipes for specific users, depending on the type of subscription they have.
 
@@ -99,8 +163,3 @@ correctly:
 * Incorporate more users (students), sections like blog, curiosities, recipe images, subject content: This feature refers to the possibility of adding new users, such   as students, and creating additional sections in the system, such as a blog, a section for curiosities, recipe images and subject-specific content.
 
 * Add tag: This feature allows users to add new tags to an existing recipe to categorize it more specifically.
-
- Our Team:
-
-[<img src="https://avatars.githubusercontent.com/u/117833586?v=4" width=115><br><sub> Ainhoa Cala </sub>](https://github.com/acalabustos)| [<img src="https://avatars.githubusercontent.com/u/117833121?v=4" width=115><br><sub> Jennifer Cordero </sub>](https://github.com/JenniferCorderoR) |[<img src="https://avatars.githubusercontent.com/u/117834632?v=4" width=115><br><sub> Anyi Flores </sub>](https://github.com/Anyi79) |[<img src="https://avatars.githubusercontent.com/u/117834265?v=4" width=115><br><sub> Celia García </sub>](https://github.com/CeliaGC) |[<img src="https://avatars.githubusercontent.com/u/117834229?v=4" width=115><br><sub> RoseMary Rengel </sub>](https://github.com/rrengelj) |
-| :---: | :---: | :---: |  :---: |  :---: | 
