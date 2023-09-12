@@ -1,7 +1,8 @@
 import LayoutPublic from "../src/Layout/LayoutPublic";
 import "../src/App.css";
+import { AxiosInterceptor } from "./Interceptors/axios.interceptor";
 
-
+AxiosInterceptor(instance);
 
 function App() {
   return (

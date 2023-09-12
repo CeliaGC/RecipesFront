@@ -1,5 +1,6 @@
 import axios from "axios";
-
+import  {AxiosInterceptor}  from "../Interceptors/axios.interceptor"; //
+ 
 const apiClient = axios.create({
     baseURL: 'https://localhost:7286', 
     withCredentials: false,
@@ -7,9 +8,9 @@ const apiClient = axios.create({
       Accept: 'application/json',
       'Content-Type': 'application/json'
     }
-  })
+  });
 
-
+AxiosInterceptor(apiClient);
   export const userService = {
 
     async submitUser(newUser) {

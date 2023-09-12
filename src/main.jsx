@@ -7,7 +7,7 @@ import { AxiosInterceptor } from './Interceptors/axios.interceptor';
 import "../src/App.css";
 
 
-AxiosInterceptor();
+// AxiosInterceptor(instance);
 
 ReactDOM.createRoot(document.getElementById('root')).render(  
   <React.StrictMode>

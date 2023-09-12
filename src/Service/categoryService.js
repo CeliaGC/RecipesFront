@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import  {AxiosInterceptor}  from "../Interceptors/axios.interceptor"; // Importa el interceptor
 const apiClient = axios.create({
     baseURL: 'https://localhost:7286', 
     withCredentials: false,
@@ -7,8 +7,10 @@ const apiClient = axios.create({
       Accept: 'application/json',
       'Content-Type': 'application/json'
     }
-  })
+  });
 
+  AxiosInterceptor(apiClient); 
+  
   export const categoryService = {
     async getCategories() {
       let response = await apiClient.get("/Category/GetCategories");
