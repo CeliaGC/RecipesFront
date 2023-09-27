@@ -8,6 +8,7 @@ import React, { useState, useEffect, useContext } from "react";
 import swal from 'sweetalert';
 import { Link, useNavigate } from "react-router-dom";
 import { UserContext } from "../Contexts/UserContext";
+import jwtDecode from 'jwt-decode';
 
 
 
@@ -30,15 +31,54 @@ function FormLogin() {
     setUserPassword(event.target.value);
   };
 
+  // const handleLogin = () => {
+  //   // setIsLoginFormSubmitted(true);
+  //   // Realizar una solicitud al servidor de autenticación para iniciar sesión
+  //   fetch('https://localhost:7286/api/auth/login', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       email: userData.email,
+  //       password: userData.password,
+  //     }),
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         return response.json();
+  //       } else {
+  //         throw new Error('Credenciales incorrectas');
+  //       }
+  //     })
+  //     .then((data) => {
+  //       // Guardar el token en el almacenamiento local
+  //       localStorage.setItem('authToken', data.Token);
+  //       // Redirigir al usuario a la página de inicio
+  //       navigate('/home');
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error al iniciar sesión:', error);
+  //       // Swal.fire('Error', 'Credenciales incorrectas', 'error');
+  //     });
+  // };
+
+// comento para probar jwToken
   const handleLogin = async (formData) => {
     try {
       const data = await loginService(formData);
       setUserStorage(data);
 
-      if (IdRol && IdRol == 1) {
+      const token = data.token;
+      const decodedToken = jwtDecode(token);
+      const userRole = decodedToken.role; // Asume que el claim del rol es "role"
+      
+      console.log(userRole);
+
+      if (userRole && userRole == 1) {
         navigate('/AdminUser');
 
-      } if (IdRol && IdRol === 2) {
+      } if (userRole && userRole == 2) {
         navigate('/TeacherUser');
 
       }

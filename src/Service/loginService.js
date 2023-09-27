@@ -14,7 +14,7 @@ const apiClient = axios.create({
 AxiosInterceptor(apiClient); 
 
 export const loginService = async(data) => {
- let response= await apiClient.post("/User/Login", data)/* .catch( */
+ let response= await apiClient.post("api/auth/login", data)/* .catch( */
 /*   function(error){
     alert(error.message);
   } 
