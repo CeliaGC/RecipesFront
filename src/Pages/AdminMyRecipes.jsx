@@ -4,16 +4,31 @@ import { useLoaderData } from "react-router-dom";
 import "../Style/AdminRecipe.css";
 import {UserContext} from "../Contexts/UserContext";
 import { useContext } from "react";
+import { recipeHandler } from "../Handlers/recipeHandler";
 
 const AdminMyRecipes = () => {
-  const {recipes} = useLoaderData();
+  const recipes = useLoaderData();
   const [currentPage, setCurrentPage] = useState(1);
   const [recipesPerPage] = useState(3);
   const [showAddRecipeForm, setShowAddRecipeForm] = useState(false);
   const [newRecipe, setNewRecipe] = useState({ id: null, name: '', category: '' });
   const { userStorage, setUserStorage } = useContext(UserContext);
 
+  
+  // const handleDelete = async (id) => {
+  //   adminRecipes.filter((r) => r.id !== id)
+  //   recipeHandler.deleteRecipe(id)
+  // }
 
+  const handleDelete = async (id) => {
+    try {
+      await recipeHandler.deleteRecipe(id); // Primero borra la receta en el back-end
+      const updatedRecipes = localRecipes.filter((r) => r.id !== id);
+      setLocalRecipes(updatedRecipes); // Luego actualiza el estado local
+    } catch (error) {
+      console.error('Error al eliminar la receta:', error);
+    }
+  };
  
   const userName = userStorage.item4;
   
@@ -31,7 +46,7 @@ const AdminMyRecipes = () => {
               <Button  size="sm" style={{ backgroundColor: "rgba(139, 137, 97, 1)" }}>
                 Editar
               </Button>
-              <Button size="sm" style={{ backgroundColor: "rgba(139, 137, 97, 1)" }}>
+              <Button size="sm" style={{ backgroundColor: "rgba(139, 137, 97, 1)" }} onClick= {() => handleDelete(recipe.id)}>
                 Eliminar
               </Button>
             </div>
